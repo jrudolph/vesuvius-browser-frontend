@@ -304,7 +304,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                       .map(key => (
                         <ImagePreview
                           key={key}
-                          url={getLayerUrl(row.scroll.num, row.id, key)}
+                          url={getLayerUrl(row.scroll.oldId, row.id, key)}
                           label={layerLabels[key]}
                           scrollNum={row.scroll.num}
                           segmentId={row.id}
