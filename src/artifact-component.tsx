@@ -79,7 +79,7 @@ const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
   if (type === "range") {
     const [range, setRange] = useState([minValues[column], maxValues[column]]);
     return (
-      <div className="px-2">
+      <div className="filter-slider px-2">
         <div className="flex justify-between text-xs mb-1">
           <span>{range[0]}</span>
           <span>{range[1]}</span>
