@@ -40,11 +40,11 @@ const layerLabels = {
   'timesformer-scroll5-27112024_17_32': 'Scroll 5 Model',
   'first-word_15_32': 'First Word Model',
   'first-word_15_32_reverse': 'First Word Model (reverse)',
-  'grand-prize-inklabels': 'Grand Prize Inklabels',
-  'polytrope-inklabels-2024-08-16': 'Polytrope Inklabels',
-  'first-letters-inklabels': 'First Letters Inklabels',
   'autosegmented-prediction': 'Auto Segmented Prediction',
+  'grand-prize-inklabels': 'Grand Prize Inklabels',
+  'first-letters-inklabels': 'First Letters Inklabels',
   'polytrope-test3-predictions': 'Polytrope Test Model 3 Predictions',
+  'polytrope-inklabels-2024-08-16': 'Polytrope Inklabels',
 };
 
 const parseOr = (value, defaultValue) => {
@@ -171,6 +171,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
     key: null,
     direction: 'ascending'
   });
+  const [filterByLayers, setFilterByLayers] = useState(false);
 
   const toggleLayer = (layer) => {
     setSelectedLayers(prev => 
@@ -186,6 +187,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
     );
   };
 
+  
   const handleSort = (key) => {
     let direction = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -203,6 +205,12 @@ const ScrollTable = React.memo(({ data, showImages }) => {
 
   const filteredAndSortedData = useMemo(() => {
     let processed = [...data];
+
+    if (filterByLayers) {
+      processed = processed.filter(item => 
+        item.layers.some(layer => selectedLayers.includes(layer))
+      );
+    }
 
     Object.keys(filters).forEach(key => {
       if (filters[key]) {
@@ -232,7 +240,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
     }
 
     return processed;
-  }, [filters, sortConfig, data]);
+  }, [filters, sortConfig, data, filterByLayers, selectedLayers]);
 
   const columns = useMemo(() => [
     { label: "Volume", column: "volume" },
@@ -270,6 +278,14 @@ const ScrollTable = React.memo(({ data, showImages }) => {
         onClick={toggleAll}
       >
         {selectedLayers.length === Object.keys(layerLabels).length ? 'Hide All' : 'Show All'}
+      </Badge>
+      
+      <Badge
+        variant={filterByLayers ? "default" : "outline"}
+        className="cursor-pointer font-semibold"
+        onClick={() => setFilterByLayers(prev => !prev)}
+      >
+        Filter
       </Badge>
       
       <div className="w-px h-6 bg-gray-200 mx-2" />
