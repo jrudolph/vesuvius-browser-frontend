@@ -1,82 +1,11 @@
-const initialData = [
-  {
-    scroll: 'PHercParis4',
-    volumeId: '20230205180739',
-    volumeVersion: '7.91',
-    segment: '20240301161650',
-    voxelSize: '16.40',
-    area: '23213',
-    width: '2321',
-    layers: {
-      grandPrize: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/inferred/grand-prize_17_32?v2',
-      polytrope: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/inferred/polytrope-test3-predictions?v2',
-      firstWord: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/inferred/first-word_15_32?v2',
-      firstWordReverse: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/inferred/first-word_15_32_reverse?v2',
-      polytopeInk: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/inferred/polytrope-inklabels-2024-08-16?v2',
-      firstLetters: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/inferred/first-letters-inklabels?v2',
-      autoSegmented: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/inferred/autosegmented-prediction?v2'
-    },
-    mask: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240301161650/mask?v2'
-  },
-  {
-    scroll: 'PHercParis4',
-    volumeId: '20230205180739',
-    volumeVersion: '7.91',
-    segment: '20240227085920',
-    voxelSize: '15.05',
-    area: '21322',
-    width: '2200',
-    layers: {
-      grandPrize: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240227085920/inferred/grand-prize_17_32?v2',
-      polytrope: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240227085920/inferred/polytrope-test3-predictions?v2',
-      firstWord: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240227085920/inferred/first-word_15_32?v2',
-      firstWordReverse: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240227085920/inferred/first-word_15_32_reverse?v2',
-      polytopeInk: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240227085920/inferred/polytrope-inklabels-2024-08-16?v2',
-    },
-    mask: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240227085920/mask?v2'
-  },
-  {
-    scroll: 'PHercParis4',
-    volumeId: '20230205180739',
-    volumeVersion: '7.91',
-    segment: '20240223130140',
-    voxelSize: '15.18',
-    area: '21813',
-    width: '2126',
-    layers: {
-      grandPrize: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240223130140/inferred/grand-prize_17_32?v2',
-      polytrope: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240223130140/inferred/polytrope-test3-predictions?v2',
-      firstWord: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240223130140/inferred/first-word_15_32?v2',
-      firstWordReverse: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240223130140/inferred/first-word_15_32_reverse?v2',
-      polytopeInk: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240223130140/inferred/polytrope-inklabels-2024-08-16?v2',
-    },
-    mask: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240223130140/mask?v2'
-  },
-  {
-    scroll: 'PHercParis4',
-    volumeId: '20230205180739',
-    volumeVersion: '7.91',
-    segment: '20240222111510',
-    voxelSize: '16.93',
-    area: '24419',
-    width: '2106',
-    layers: {
-      grandPrize: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240222111510/inferred/grand-prize_17_32?v2',
-      polytrope: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240222111510/inferred/polytrope-test3-predictions?v2',
-      firstWord: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240222111510/inferred/first-word_15_32?v2',
-      firstWordReverse: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240222111510/inferred/first-word_15_32_reverse?v2',
-      polytopeInk: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240222111510/inferred/polytrope-inklabels-2024-08-16?v2',
-    },
-    mask: 'https://vesuvius.virtual-void.net/scroll/1/segment/20240222111510/mask?v2'
-  }
-];
-
+import initialData from './data';
 import React, { useState, useMemo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { 
   Table,
   TableBody,
@@ -91,48 +20,73 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ChevronUp, ChevronDown, ArrowUpDown, Eye, EyeOff } from 'lucide-react';
+import { ChevronUp, ChevronDown, ArrowUpDown } from 'lucide-react';
+import { parse } from 'path';
+
+// Previous helper functions remain the same
+const getLayerUrl = (scrollNum, segmentId, layer) => {
+  if (layer === 'mask') {
+    return `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/mask?v2`;
+  }
+  const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
+  const layerPaths = {
+    grandPrize: 'grand-prize_17_32',
+    //polytrope: 'polytrope-test3-predictions',
+    firstWord: 'first-word_15_32',
+    firstWordReverse: 'first-word_15_32_reverse',
+    //polytopeInk: 'polytrope-inklabels',
+    //firstLetters: 'first-letters-inklabels',
+    //autoSegmented: 'autosegmented-prediction'
+  };
+  
+  return `${baseUrl}/${layerPaths[layer]}?v2`;
+};
 
 const layerLabels = {
+  mask: 'Mask',
   grandPrize: 'Grand Prize Model',
-  polytrope: 'Polytrope Test3',
+  //polytrope: 'Polytrope Test3',
   firstWord: 'First Word',
   firstWordReverse: 'First Word Reverse',
-  grandPrizeInk: 'Grand Prize Ink',
-  polytopeInk: 'Polytrope Ink',
-  firstLetters: 'First Letters',
-  autoSegmented: 'Auto Segmented',
-  mask: 'Mask'
+  //polytopeInk: 'Polytrope Ink',
+  //firstLetters: 'First Letters',
+  //autoSegmented: 'Auto Segmented',
 };
 
-// Calculate max width from initial data once
-const getMaxWidth = (data) => {
-  return Math.max(...data.map(item => parseInt(item.width))) + 100; // Add buffer
-};
-
-const getMinWidth = (data) => {
-  return Math.min(...data.map(item => parseInt(item.width))) - 100; // Add buffer
+const parseOr = (value, defaultValue) => {
+  parseInt(value) || defaultValue;
 }
 
-const MAX_WIDTH = getMaxWidth(initialData);
-const MIN_WIDTH = getMinWidth(initialData);
+const minColumnValue = (column: string) => {
+  return Math.min(...initialData.map(item => parseInt(item[column])));
+}
+const maxColumnValue = (column: string) => {
+  return Math.max(...initialData.map(item => parseInt(item[column])));
+}
 
+const rangeColumns = ['width', 'height'/* , 'areaCm2' */];
+const minValues = {};
+const maxValues = {};
+
+rangeColumns.forEach(column => {
+  minValues[column] = minColumnValue(column);
+  maxValues[column] = maxColumnValue(column);
+});
+
+// Keep FilterInput and HeaderCell components the same
 const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
   if (type === "range") {
-    const [range, setRange] = useState([MIN_WIDTH, MAX_WIDTH]);
-    
+    const [range, setRange] = useState([minValues[column], maxValues[column]]);
     return (
       <div className="px-2">
         <div className="flex justify-between text-xs mb-1">
           <span>{range[0]}</span>
           <span>{range[1]}</span>
         </div>
-        <style>{`span[role="slider"] { visibility: hidden; }`}
-        </style>
         <Slider 
           value={range}
-          min={MIN_WIDTH}
-          max={MAX_WIDTH}
+          min={minValues[column]}
+          max={maxValues[column]}
           step={10}
           className="mt-2"
           onValueChange={(newRange) => {
@@ -146,7 +100,6 @@ const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
 
   return (
     <Input
-      key={`filter-${column}`}
       placeholder={`Filter ${column}...`}
       value={value}
       onChange={(e) => onChange(column, e.target.value)}
@@ -183,13 +136,13 @@ const HeaderCell = React.memo(({ label, column, sortConfig, onSort, filterValue,
   </TableHead>
 ));
 
-const ImagePreview = React.memo(({ url, label, segmentId, layerKey }) => (
+const ImagePreview = React.memo(({ url, label, scrollNum, segmentId, layerKey }) => (
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
         <div className="flex flex-col items-center">
           <a 
-            href={layerKey ? `/scroll/1/segment/${segmentId}/#layer=${layerKey}` : '#'}
+            href={`/scroll/${scrollNum}/segment/${segmentId}/${layerKey ? `#layer=${layerKey}` : ''}`}
             className="block"
           >
             <img 
@@ -211,21 +164,18 @@ const ImagePreview = React.memo(({ url, label, segmentId, layerKey }) => (
   </TooltipProvider>
 ));
 
-const VesuviusTable = () => {
+const ScrollTable = React.memo(({ data, showImages }) => {
   const [filters, setFilters] = useState({
-    scroll: '',
-    volumeId: '',
-    volumeVersion: '',
-    segment: '',
-    voxelSize: '',
-    area: '',
-    width: { min: MIN_WIDTH, max: MAX_WIDTH }
+    volume: '',
+    id: '',
+    width: { min: minValues['width'], max: maxValues['width'] },
+    height: { min: minValues['height'], max: maxValues['height'] },
+    //areaCm2: { min: minValues['areaCm2'], max: maxValues['areaCm2'] },
   });
   const [sortConfig, setSortConfig] = useState({
     key: null,
     direction: 'ascending'
   });
-  const [showImages, setShowImages] = useState(true);
 
   const handleSort = (key) => {
     let direction = 'ascending';
@@ -243,11 +193,11 @@ const VesuviusTable = () => {
   };
 
   const filteredAndSortedData = useMemo(() => {
-    let processed = [...initialData];
+    let processed = [...data];
 
     Object.keys(filters).forEach(key => {
       if (filters[key]) {
-        if (key === 'width') {
+        if (typeof filters[key] === 'object') {
           processed = processed.filter(item => {
             const width = parseInt(item[key]);
             return width >= filters[key].min && width <= filters[key].max;
@@ -273,17 +223,113 @@ const VesuviusTable = () => {
     }
 
     return processed;
-  }, [filters, sortConfig, initialData]);
+  }, [filters, sortConfig, data]);
 
   const columns = useMemo(() => [
-    { label: "Scroll", column: "scroll" },
-    { label: "Volume ID", column: "volumeId" },
-    { label: "Version", column: "volumeVersion" },
-    { label: "Segment", column: "segment" },
-    { label: "Voxel Size", column: "voxelSize" },
-    { label: "Area", column: "area" },
-    { label: "Width", column: "width", filterType: "range" }
+    { label: "Volume", column: "volume" },
+    { label: "Segment ID", column: "id" },
+    { label: "Width", column: "width", filterType: "range" },
+    { label: "Height", column: "height", filterType: "range" },
+    { label: "Area/cm²", column: "areaCm2" },
   ], []);
+
+  return (
+    <div className="rounded-md border">
+      <Table>
+        <TableHeader>
+          <TableRow className="align-top">
+            {columns.map(({ label, column, filterType }) => (
+              <HeaderCell
+                key={column}
+                label={label}
+                column={column}
+                sortConfig={sortConfig}
+                onSort={handleSort}
+                filterValue={filters[column]}
+                onFilterChange={handleFilterChange}
+                filterType={filterType}
+              />
+            ))}
+            {showImages && <TableHead>Preview Layers</TableHead>}
+          </TableRow>
+        </TableHeader>
+        
+        <TableBody>
+          {filteredAndSortedData.map((row) => (
+            <TableRow key={row.id} className={showImages ? 'h-36' : 'h-12'}>
+              <TableCell>{row.volume}</TableCell>
+              <TableCell>
+                <a href={`/scroll/${row.scroll.num}/segment/${row.id}/`} className="text-blue-600 hover:underline">
+                  {row.id}
+                </a>
+              </TableCell>
+              <TableCell>{row.width}</TableCell>
+              <TableCell>{row.height}</TableCell>
+              <TableCell>{row.areaCm2}</TableCell>
+              {showImages && (
+                <TableCell>
+                  <div className="flex gap-4 flex-wrap">
+                    {Object.keys(layerLabels).map(key => (
+                      <ImagePreview
+                        key={key}
+                        url={getLayerUrl(row.scroll.num, row.id, key)}
+                        label={layerLabels[key]}
+                        scrollNum={row.scroll.num}
+                        segmentId={row.id}
+                        layerKey={key}
+                      />
+                    ))}
+                  </div>
+                </TableCell>
+              )}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+});
+
+const VesuviusTable = () => {
+  const [showImages, setShowImages] = useState(true);
+  
+  const scrollGroups = useMemo(() => {
+    const groups = {};
+    initialData.forEach(item => {
+      const scrollId = item.scroll.id;
+      if (!groups[scrollId]) {
+        groups[scrollId] = [];
+      }
+      groups[scrollId].push(item);
+    });
+    // convert to array [{ scrollId: [items] }]
+    const entries = Object.entries(groups);
+    // sort entries by scrollId
+    entries.sort((a, b) => a[1][0].scroll.num - b[1][0].scroll.num);
+    
+    return entries;
+  }, []);
+
+  const tabGroup = (filter) => {
+    const groups = scrollGroups.filter(v => filter(v[1][0]));
+    return (
+    <Tabs defaultValue={groups[0][0]} className="w-full">
+        <TabsList className="mb-4">
+          {groups.map(([scrollId, data]) => (
+            <TabsTrigger key={scrollId} value={scrollId}>
+              {data[0].scroll.num} / {scrollId}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        
+        {groups.map(([scrollId, data]) => (
+          <TabsContent key={scrollId} value={scrollId}>
+            <ScrollTable data={data} showImages={showImages} />
+          </TabsContent>
+        ))}
+      </Tabs>
+    );
+  }
 
   return (
     <div className="p-4">
@@ -298,67 +344,22 @@ const VesuviusTable = () => {
           Show Layer Previews
         </Label>      
       </div>
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            <TableRow className="align-top">
-              {columns.map(({ label, column, filterType }) => (
-                <HeaderCell
-                  key={column}
-                  label={label}
-                  column={column}
-                  sortConfig={sortConfig}
-                  onSort={handleSort}
-                  filterValue={filters[column]}
-                  onFilterChange={handleFilterChange}
-                  filterType={filterType}
-                />
-              ))}
-              {showImages && <TableHead>Preview Layers</TableHead>}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filteredAndSortedData.map((row) => (
-              <TableRow key={row.segment} className={showImages ? 'h-36' : 'h-12'}>
-                <TableCell>{row.scroll}</TableCell>
-                <TableCell>{row.volumeId}</TableCell>
-                <TableCell>{row.volumeVersion}</TableCell>
-                <TableCell>
-                  <a href={`/scroll/1/segment/${row.segment}/`} className="text-blue-600 hover:underline">
-                    {row.segment}
-                  </a>
-                </TableCell>
-                <TableCell>{row.voxelSize}</TableCell>
-                <TableCell>{row.area}</TableCell>
-                <TableCell>{row.width}</TableCell>
-                {showImages && (
-                  <TableCell>
-                    <div className="flex gap-4 flex-wrap">
-                      {row.layers && Object.entries(row.layers).map(([key, url]) => (
-                        url && <ImagePreview
-                          key={key}
-                          url={url}
-                          label={layerLabels[key] || key}
-                          segmentId={row.segment}
-                          layerKey={key}
-                        />
-                      ))}
-                      {row.mask && (
-                        <ImagePreview
-                          key="mask"
-                          url={row.mask}
-                          label={layerLabels.mask}
-                          segmentId={row.segment}
-                        />
-                      )}
-                    </div>
-                  </TableCell>
-                )}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
+
+      <Tabs className="w-full">
+        <TabsList defaultValue="scrolls" className="mb-4">
+          <TabsTrigger value="scrolls">Scrolls</TabsTrigger>
+          <TabsTrigger value="fragments">Fragments</TabsTrigger>
+        </TabsList>
+
+          <TabsContent value="scrolls">
+            {tabGroup((value) => !value.scroll.isFragment) }
+          </TabsContent>
+          <TabsContent value="fragments">
+          {tabGroup((value) => value.scroll.isFragment) }
+          </TabsContent>
+      </Tabs>
+      
+      
     </div>
   );
 };
