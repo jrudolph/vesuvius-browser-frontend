@@ -53,7 +53,8 @@ const initialData = [
     "id": "20240618142020",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc332",
@@ -172,7 +173,9 @@ const initialData = [
     "height": 2739,
     "id": "20240716140050",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc332",
@@ -731,6 +734,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -757,6 +761,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -1997,6 +2002,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -2335,6 +2341,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -2387,6 +2394,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -3372,6 +3380,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -3398,6 +3407,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -3424,6 +3434,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -3450,6 +3461,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -3970,6 +3982,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -4048,6 +4061,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -4074,6 +4088,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -4308,6 +4323,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -4490,6 +4506,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -4516,6 +4533,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -4595,6 +4613,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -4855,6 +4874,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5296,6 +5316,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5348,6 +5369,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5374,6 +5396,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5400,6 +5423,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5452,6 +5476,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5530,6 +5555,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5556,6 +5582,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5582,6 +5609,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5608,6 +5636,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5634,6 +5663,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5842,6 +5872,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5868,6 +5899,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5894,6 +5926,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5920,6 +5953,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5946,6 +5980,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5972,6 +6007,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -5999,6 +6035,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6025,6 +6062,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6051,6 +6089,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6078,6 +6117,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6105,6 +6145,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6131,6 +6172,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6157,6 +6199,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6183,6 +6226,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6209,6 +6253,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6235,6 +6280,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6261,6 +6307,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6288,6 +6335,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6315,6 +6363,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6341,6 +6390,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6368,6 +6418,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6395,6 +6446,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6421,6 +6473,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6474,6 +6527,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6501,6 +6555,7 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6527,6 +6582,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6631,6 +6687,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6657,6 +6714,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6683,6 +6741,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6709,6 +6768,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6735,6 +6795,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6761,6 +6822,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6787,6 +6849,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6813,6 +6876,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -6860,6 +6924,8 @@ const initialData = [
     "id": "mesh_window_100414_150414_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -6906,6 +6972,8 @@ const initialData = [
     "id": "mesh_window_150414_200414_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7090,6 +7158,7 @@ const initialData = [
     "id": "mesh_window_350414_400414_flatboi_1",
     "layers": [
       "mask",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7320,6 +7389,8 @@ const initialData = [
     "id": "mesh_window_50414_100414_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7366,6 +7437,8 @@ const initialData = [
     "id": "mesh_window_550414_600414_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7458,6 +7531,8 @@ const initialData = [
     "id": "mesh_window_650414_700414_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7481,6 +7556,8 @@ const initialData = [
     "id": "mesh_window_700414_750414_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7504,6 +7581,7 @@ const initialData = [
     "id": "mesh_window_700414_750414_flatboi_1",
     "layers": [
       "mask",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7573,6 +7651,7 @@ const initialData = [
     "id": "mesh_window_800414_850414_flatboi",
     "layers": [
       "mask",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7596,6 +7675,8 @@ const initialData = [
     "id": "mesh_window_800414_850414_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -7808,7 +7889,8 @@ const initialData = [
     "id": "20231210132040",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc1667",
@@ -7856,7 +7938,8 @@ const initialData = [
     "id": "20240304141531",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc1667",
@@ -7880,7 +7963,8 @@ const initialData = [
     "id": "20240304144030",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc1667",
@@ -7903,7 +7987,8 @@ const initialData = [
     "id": "20240304144031",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc1667",
@@ -7927,7 +8012,8 @@ const initialData = [
     "id": "20240304161940",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc1667",
@@ -7951,7 +8037,8 @@ const initialData = [
     "id": "20240304161941",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc1667",
@@ -7973,7 +8060,9 @@ const initialData = [
     "height": 9981,
     "id": "20241025062040",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -7995,7 +8084,9 @@ const initialData = [
     "height": 1405,
     "id": "20241025101030",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8017,7 +8108,9 @@ const initialData = [
     "height": 1302,
     "id": "20241025145341",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8039,7 +8132,9 @@ const initialData = [
     "height": 1301,
     "id": "20241025145701",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8061,7 +8156,9 @@ const initialData = [
     "height": 1657,
     "id": "20241025150211",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8083,7 +8180,9 @@ const initialData = [
     "height": 2486,
     "id": "20241028121111",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8105,7 +8204,9 @@ const initialData = [
     "height": 2472,
     "id": "20241030083650",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8127,7 +8228,9 @@ const initialData = [
     "height": 10551,
     "id": "20241030152030",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8149,7 +8252,9 @@ const initialData = [
     "height": 10562,
     "id": "20241030152031",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8171,7 +8276,9 @@ const initialData = [
     "height": 1831,
     "id": "20241101163240",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8193,7 +8300,9 @@ const initialData = [
     "height": 2539,
     "id": "20241102125650",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8215,7 +8324,9 @@ const initialData = [
     "height": 1233,
     "id": "20241102160330",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8237,7 +8348,9 @@ const initialData = [
     "height": 3636,
     "id": "20241105112301",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8259,7 +8372,9 @@ const initialData = [
     "height": 7394,
     "id": "20241108111522",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8281,7 +8396,9 @@ const initialData = [
     "height": 7349,
     "id": "20241108115232",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8303,7 +8420,9 @@ const initialData = [
     "height": 1197,
     "id": "20241108120730",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8325,7 +8444,9 @@ const initialData = [
     "height": 3546,
     "id": "20241108120731",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8347,7 +8468,9 @@ const initialData = [
     "height": 7414,
     "id": "20241108120732",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8369,7 +8492,9 @@ const initialData = [
     "height": 1556,
     "id": "20241113070770",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8391,7 +8516,9 @@ const initialData = [
     "height": 1579,
     "id": "20241113080880",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8413,7 +8540,9 @@ const initialData = [
     "height": 1583,
     "id": "20241113090990",
     "layers": [
-      "mask"
+      "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHerc172",
@@ -8482,6 +8611,7 @@ const initialData = [
     "id": "mesh_0_window_-4562_45437_flatboi_2",
     "layers": [
       "mask",
+      "grand-prize_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8528,6 +8658,8 @@ const initialData = [
     "id": "mesh_0_window_145437_195437_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8597,6 +8729,8 @@ const initialData = [
     "id": "mesh_0_window_195437_245437_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8643,6 +8777,7 @@ const initialData = [
     "id": "mesh_0_window_245437_295437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8712,6 +8847,8 @@ const initialData = [
     "id": "mesh_0_window_295437_345437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8827,6 +8964,7 @@ const initialData = [
     "id": "mesh_0_window_345437_395437_flatboi_2",
     "layers": [
       "mask",
+      "grand-prize_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8896,6 +9034,7 @@ const initialData = [
     "id": "mesh_0_window_395437_445437_flatboi_2",
     "layers": [
       "mask",
+      "grand-prize_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8919,6 +9058,8 @@ const initialData = [
     "id": "mesh_0_window_445437_495437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8942,6 +9083,8 @@ const initialData = [
     "id": "mesh_0_window_445437_495437_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -8965,6 +9108,8 @@ const initialData = [
     "id": "mesh_0_window_445437_495437_flatboi_2",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9011,6 +9156,8 @@ const initialData = [
     "id": "mesh_0_window_45437_95437_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9057,6 +9204,8 @@ const initialData = [
     "id": "mesh_0_window_45437_95437_flatboi_3",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9126,6 +9275,8 @@ const initialData = [
     "id": "mesh_0_window_495437_545437_flatboi_2",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9149,6 +9300,7 @@ const initialData = [
     "id": "mesh_0_window_545437_595437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9218,6 +9370,8 @@ const initialData = [
     "id": "mesh_0_window_595437_645437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9241,6 +9395,8 @@ const initialData = [
     "id": "mesh_0_window_595437_645437_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9287,6 +9443,8 @@ const initialData = [
     "id": "mesh_0_window_645437_695437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9356,6 +9514,8 @@ const initialData = [
     "id": "mesh_0_window_695437_745437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9379,6 +9539,8 @@ const initialData = [
     "id": "mesh_0_window_695437_745437_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9494,6 +9656,8 @@ const initialData = [
     "id": "mesh_0_window_795437_845437_flatboi",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -9540,6 +9704,8 @@ const initialData = [
     "id": "mesh_0_window_95437_145437_flatboi_1",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "autosegmented-prediction"
     ],
     "scroll": {
@@ -10917,6 +11083,7 @@ const initialData = [
     "layers": [
       "mask",
       "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse"
     ],
@@ -10968,7 +11135,8 @@ const initialData = [
     "id": "20240516205750",
     "layers": [
       "mask",
-      "grand-prize_17_32"
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32"
     ],
     "scroll": {
       "id": "PHercParis3",
@@ -11256,6 +11424,8 @@ const initialData = [
     "id": "54keV_exposed_surface",
     "layers": [
       "mask",
+      "grand-prize_17_32",
+      "timesformer-scroll5-27112024_17_32",
       "inklabel"
     ],
     "scroll": {
