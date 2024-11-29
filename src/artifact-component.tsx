@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { 
@@ -170,12 +171,20 @@ const ScrollTable = React.memo(({ data, showImages }) => {
     id: '',
     width: { min: minValues['width'], max: maxValues['width'] },
     height: { min: minValues['height'], max: maxValues['height'] },
-    //areaCm2: { min: minValues['areaCm2'], max: maxValues['areaCm2'] },
   });
+  const [selectedLayers, setSelectedLayers] = useState(Object.keys(layerLabels));
   const [sortConfig, setSortConfig] = useState({
     key: null,
     direction: 'ascending'
   });
+
+  const toggleLayer = (layer) => {
+    setSelectedLayers(prev => 
+      prev.includes(layer) 
+        ? prev.filter(l => l !== layer)
+        : [...prev, layer]
+    );
+  };
 
   const handleSort = (key) => {
     let direction = 'ascending';
@@ -250,7 +259,28 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                 filterType={filterType}
               />
             ))}
-            {showImages && <TableHead>Preview Layers</TableHead>}
+            {showImages && 
+              <>
+            <TableHead>
+              Preview Layers
+              <div className="p-4 border-b flex gap-2 flex-wrap">
+          {Object.entries(layerLabels).map(([key, label]) => (
+            <Badge
+              key={key}
+              variant={selectedLayers.includes(key) ? "default" : "outline"}
+              className="cursor-pointer"
+              onClick={() => toggleLayer(key)}
+            >
+              {label}
+            </Badge>
+          ))}
+        </div>
+
+            </TableHead>
+            
+        </>
+            }
+
           </TableRow>
         </TableHeader>
         
@@ -269,15 +299,17 @@ const ScrollTable = React.memo(({ data, showImages }) => {
               {showImages && (
                 <TableCell>
                   <div className="flex gap-4 flex-wrap">
-                    {Object.keys(layerLabels).map(key => (
-                      <ImagePreview
-                        key={key}
-                        url={getLayerUrl(row.scroll.num, row.id, key)}
-                        label={layerLabels[key]}
-                        scrollNum={row.scroll.num}
-                        segmentId={row.id}
-                        layerKey={key}
-                      />
+                    {Object.keys(layerLabels)
+                      .filter(key => selectedLayers.includes(key))
+                      .map(key => (
+                        <ImagePreview
+                          key={key}
+                          url={getLayerUrl(row.scroll.num, row.id, key)}
+                          label={layerLabels[key]}
+                          scrollNum={row.scroll.num}
+                          segmentId={row.id}
+                          layerKey={key}
+                        />
                     ))}
                   </div>
                 </TableCell>
