@@ -30,28 +30,21 @@ const getLayerUrl = (scrollNum, segmentId, layer) => {
     return `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/mask?v2`;
   }
   const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
-  const layerPaths = {
-    grandPrize: 'grand-prize_17_32',
-    //polytrope: 'polytrope-test3-predictions',
-    firstWord: 'first-word_15_32',
-    firstWordReverse: 'first-word_15_32_reverse',
-    //polytopeInk: 'polytrope-inklabels',
-    //firstLetters: 'first-letters-inklabels',
-    //autoSegmented: 'autosegmented-prediction'
-  };
   
-  return `${baseUrl}/${layerPaths[layer]}?v2`;
+  return `${baseUrl}/${layer}?v2`;
 };
 
 const layerLabels = {
   mask: 'Mask',
-  grandPrize: 'Grand Prize Model',
-  //polytrope: 'Polytrope Test3',
-  firstWord: 'First Word',
-  firstWordReverse: 'First Word Reverse',
-  //polytopeInk: 'Polytrope Ink',
-  //firstLetters: 'First Letters',
-  //autoSegmented: 'Auto Segmented',
+  'grand-prize_17_32': 'Grand Prize Model',
+  'timesformer-scroll5-27112024_17_32': 'Scroll 5 Model',
+  'first-word_15_32': 'First Word Model',
+  'first-word_15_32_reverse': 'First Word Model (reverse)',
+  'grand-prize-inklabels': 'Grand Prize Inklabels',
+  'polytrope-inklabels-2024-08-16': 'Polytrope Inklabels',
+  'first-letters-inklabels': 'First Letters Inklabels',
+  'autosegmented-prediction': 'Auto Segmented Prediction',
+  'polytrope-test3-predictions': 'Polytrope Test Model 3 Predictions',
 };
 
 const parseOr = (value, defaultValue) => {
@@ -84,6 +77,7 @@ const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
           <span>{range[0]}</span>
           <span>{range[1]}</span>
         </div>
+        
         <Slider 
           value={range}
           min={minValues[column]}
@@ -186,6 +180,12 @@ const ScrollTable = React.memo(({ data, showImages }) => {
     );
   };
 
+  const toggleAll = () => {
+    setSelectedLayers(prev => 
+      prev.length === Object.keys(layerLabels).length ? [] : Object.keys(layerLabels)
+    );
+  };
+
   const handleSort = (key) => {
     let direction = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -264,6 +264,16 @@ const ScrollTable = React.memo(({ data, showImages }) => {
             <TableHead>
               Preview Layers
               <div className="p-4 border-b flex gap-2 flex-wrap">
+              <Badge
+        variant={selectedLayers.length === Object.keys(layerLabels).length ? "default" : "outline"}
+        className="cursor-pointer font-semibold"
+        onClick={toggleAll}
+      >
+        {selectedLayers.length === Object.keys(layerLabels).length ? 'Hide All' : 'Show All'}
+      </Badge>
+      
+      <div className="w-px h-6 bg-gray-200 mx-2" />
+
           {Object.entries(layerLabels).map(([key, label]) => (
             <Badge
               key={key}
@@ -299,7 +309,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
               {showImages && (
                 <TableCell>
                   <div className="flex gap-4 flex-wrap">
-                    {Object.keys(layerLabels)
+                    {row.layers
                       .filter(key => selectedLayers.includes(key))
                       .map(key => (
                         <ImagePreview
