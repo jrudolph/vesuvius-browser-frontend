@@ -256,7 +256,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
         
         <TableBody>
           {filteredAndSortedData.map((row) => (
-            <TableRow key={row.id} className={showImages ? 'h-36' : 'h-12'}>
+            <TableRow key={`${row.scroll.id}-${row.id}`} className={showImages ? 'h-36' : 'h-12'}>
               <TableCell>{row.volume}</TableCell>
               <TableCell>
                 <a href={`/scroll/${row.scroll.num}/segment/${row.id}/`} className="text-blue-600 hover:underline">
