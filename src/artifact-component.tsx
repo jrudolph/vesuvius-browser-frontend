@@ -292,8 +292,10 @@ const ScrollTable = React.memo(({ data, showImages }) => {
 
 const VesuviusTable = () => {
   const [showImages, setShowImages] = useState(true);
-  
-  const scrollGroups = useMemo(() => {
+  const [activeScrollType, setActiveScrollType] = useState('scrolls');
+  const [activeScrollId, setActiveScrollId] = useState(null);
+
+  const { scrollGroups, filteredData } = useMemo(() => {
     const groups = {};
     initialData.forEach(item => {
       const scrollId = item.scroll.id;
@@ -302,34 +304,37 @@ const VesuviusTable = () => {
       }
       groups[scrollId].push(item);
     });
-    // convert to array [{ scrollId: [items] }]
+    
     const entries = Object.entries(groups);
-    // sort entries by scrollId
     entries.sort((a, b) => a[1][0].scroll.num - b[1][0].scroll.num);
     
-    return entries;
-  }, []);
+    const isFragment = activeScrollType === 'fragments';
+    const filtered = initialData.filter(item => item.scroll.isFragment === isFragment);
+    
+    if (activeScrollId) {
+      return {
+        scrollGroups: entries,
+        filteredData: filtered.filter(item => item.scroll.id === activeScrollId)
+      };
+    }
+    
+    return {
+      scrollGroups: entries,
+      filteredData: filtered
+    };
+  }, [activeScrollType, activeScrollId]);
 
-  const tabGroup = (filter) => {
-    const groups = scrollGroups.filter(v => filter(v[1][0]));
-    return (
-    <Tabs defaultValue={groups[0][0]} className="w-full">
-        <TabsList className="mb-4">
-          {groups.map(([scrollId, data]) => (
-            <TabsTrigger key={scrollId} value={scrollId}>
-              {data[0].scroll.num} / {scrollId}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        
-        {groups.map(([scrollId, data]) => (
-          <TabsContent key={scrollId} value={scrollId}>
-            <ScrollTable data={data} showImages={showImages} />
-          </TabsContent>
-        ))}
-      </Tabs>
-    );
-  }
+  const scrollTabs = useMemo(() => {
+    return scrollGroups
+      .filter(([, data]) => {
+        const isFragment = activeScrollType === 'fragments';
+        return data[0].scroll.isFragment === isFragment;
+      })
+      .map(([scrollId, data]) => ({
+        id: scrollId,
+        label: `${data[0].scroll.num} / ${scrollId}`
+      }));
+  }, [scrollGroups, activeScrollType]);
 
   return (
     <div className="p-4">
@@ -345,21 +350,37 @@ const VesuviusTable = () => {
         </Label>      
       </div>
 
-      <Tabs className="w-full">
-        <TabsList defaultValue="scrolls" className="mb-4">
+      <Tabs 
+        defaultValue="scrolls" 
+        onValueChange={(value) => {
+          setActiveScrollType(value);
+          setActiveScrollId(null);
+        }}
+      >
+        <TabsList className="mb-4">
           <TabsTrigger value="scrolls">Scrolls</TabsTrigger>
           <TabsTrigger value="fragments">Fragments</TabsTrigger>
         </TabsList>
-
-          <TabsContent value="scrolls">
-            {tabGroup((value) => !value.scroll.isFragment) }
-          </TabsContent>
-          <TabsContent value="fragments">
-          {tabGroup((value) => value.scroll.isFragment) }
-          </TabsContent>
       </Tabs>
-      
-      
+
+      <Tabs 
+        value={activeScrollId || scrollTabs[0]?.id} 
+        onValueChange={setActiveScrollId}
+        className="mb-4"
+      >
+        <TabsList>
+          {scrollTabs.map(tab => (
+            <TabsTrigger key={tab.id} value={tab.id}>
+              {tab.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </Tabs>
+
+      <ScrollTable 
+        data={filteredData}
+        showImages={showImages}
+      />
     </div>
   );
 };
