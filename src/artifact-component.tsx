@@ -1,5 +1,5 @@
 import initialData from "./data";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -25,13 +25,13 @@ import { ChevronUp, ChevronDown, ArrowUpDown } from "lucide-react";
 import { parse } from "path";
 import TableSettings from "./table-settings";
 
-// Previous helper functions remain the same
+const STORAGE_KEY = "vesuvius-table-settings";
+
 const getLayerUrl = (scrollNum, segmentId, layer) => {
   if (layer === "mask") {
     return `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/mask?v2`;
   }
   const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
-
   return `${baseUrl}/${layer}?v2`;
 };
 
@@ -52,14 +52,15 @@ const parseOr = (value, defaultValue) => {
   parseInt(value) || defaultValue;
 };
 
-const minColumnValue = (column: string) => {
+const minColumnValue = (column) => {
   return Math.min(...initialData.map((item) => parseInt(item[column])));
 };
-const maxColumnValue = (column: string) => {
+
+const maxColumnValue = (column) => {
   return Math.max(...initialData.map((item) => parseInt(item[column])));
 };
 
-const rangeColumns = ["width", "height" /* , 'areaCm2' */];
+const rangeColumns = ["width", "height"];
 const minValues = {};
 const maxValues = {};
 
@@ -68,7 +69,50 @@ rangeColumns.forEach((column) => {
   maxValues[column] = maxColumnValue(column);
 });
 
-// Keep FilterInput and HeaderCell components the same
+const defaultSettings = {
+  filters: {
+    volume: "",
+    id: "",
+    width: { min: minValues["width"], max: maxValues["width"] },
+    height: { min: minValues["height"], max: maxValues["height"] },
+  },
+  selectedLayers: Object.keys(layerLabels),
+  sortConfig: {
+    key: null,
+    direction: "ascending",
+  },
+  filterByLayers: false,
+  visibleColumns: ["volume", "id", "width", "height", "areaCm2"],
+  showImages: true,
+  activeScrollType: "scrolls",
+  activeScrollId: null,
+};
+
+const useLocalStorage = (key, initialValue) => {
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error("Error reading from localStorage:", error);
+      return initialValue;
+    }
+  });
+
+  const setValue = (value) => {
+    try {
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error("Error writing to localStorage:", error);
+    }
+  };
+
+  return [storedValue, setValue];
+};
+
 const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
   if (type === "range") {
     const [range, setRange] = useState([minValues[column], maxValues[column]]);
@@ -139,7 +183,7 @@ const HeaderCell = React.memo(
         />
       </div>
     </TableHead>
-  ),
+  )
 );
 
 const ImagePreview = React.memo(
@@ -169,106 +213,99 @@ const ImagePreview = React.memo(
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  ),
+  )
 );
 
 const ScrollTable = React.memo(({ data, showImages }) => {
-  const [filters, setFilters] = useState({
-    volume: "",
-    id: "",
-    width: { min: minValues["width"], max: maxValues["width"] },
-    height: { min: minValues["height"], max: maxValues["height"] },
-  });
-  const [selectedLayers, setSelectedLayers] = useState(
-    Object.keys(layerLabels),
-  );
-  const [sortConfig, setSortConfig] = useState({
-    key: null,
-    direction: "ascending",
-  });
-  const [filterByLayers, setFilterByLayers] = useState(false);
+  const [settings, setSettings] = useLocalStorage(STORAGE_KEY, defaultSettings);
 
-  const toggleLayer = (layer) => {
-    setSelectedLayers((prev) =>
-      prev.includes(layer) ? prev.filter((l) => l !== layer) : [...prev, layer],
-    );
-  };
-
-  const toggleAll = () => {
-    setSelectedLayers((prev) =>
-      prev.length === Object.keys(layerLabels).length
-        ? []
-        : Object.keys(layerLabels),
-    );
+  const updateSettings = (key, value) => {
+    setSettings((prev) => ({ ...prev, [key]: value }));
   };
 
   const handleSort = (key) => {
     let direction = "ascending";
-    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+    if (
+      settings.sortConfig.key === key &&
+      settings.sortConfig.direction === "ascending"
+    ) {
       direction = "descending";
     }
-    setSortConfig({ key, direction });
+    updateSettings("sortConfig", { key, direction });
   };
 
   const handleFilterChange = (key, value) => {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: value,
-    }));
+    updateSettings("filters", { ...settings.filters, [key]: value });
+  };
+
+  const toggleLayer = (layer) => {
+    const newLayers = settings.selectedLayers.includes(layer)
+      ? settings.selectedLayers.filter((l) => l !== layer)
+      : [...settings.selectedLayers, layer];
+    updateSettings("selectedLayers", newLayers);
+  };
+
+  const toggleAll = () => {
+    const newLayers =
+      settings.selectedLayers.length === Object.keys(layerLabels).length
+        ? []
+        : Object.keys(layerLabels);
+    updateSettings("selectedLayers", newLayers);
+  };
+
+  const resetSettings = () => {
+    setSettings(defaultSettings);
   };
 
   const filteredAndSortedData = useMemo(() => {
     let processed = [...data];
 
-    if (filterByLayers) {
+    if (settings.filterByLayers) {
       processed = processed.filter((item) =>
-        item.layers.some((layer) => selectedLayers.includes(layer)),
+        item.layers.some((layer) => settings.selectedLayers.includes(layer))
       );
     }
 
-    Object.keys(filters).forEach((key) => {
-      if (filters[key]) {
-        if (typeof filters[key] === "object") {
+    Object.keys(settings.filters).forEach((key) => {
+      if (settings.filters[key]) {
+        if (typeof settings.filters[key] === "object") {
           processed = processed.filter((item) => {
-            const width = parseInt(item[key]);
-            return width >= filters[key].min && width <= filters[key].max;
+            const value = parseInt(item[key]);
+            return (
+              value >= settings.filters[key].min &&
+              value <= settings.filters[key].max
+            );
           });
         } else {
           processed = processed.filter((item) =>
             String(item[key])
               .toLowerCase()
-              .includes(filters[key].toLowerCase()),
+              .includes(settings.filters[key].toLowerCase())
           );
         }
       }
     });
 
-    if (sortConfig.key) {
+    if (settings.sortConfig.key) {
       processed.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? -1 : 1;
+        if (a[settings.sortConfig.key] < b[settings.sortConfig.key]) {
+          return settings.sortConfig.direction === "ascending" ? -1 : 1;
         }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? 1 : -1;
+        if (a[settings.sortConfig.key] > b[settings.sortConfig.key]) {
+          return settings.sortConfig.direction === "ascending" ? 1 : -1;
         }
         return 0;
       });
     }
 
     return processed;
-  }, [filters, sortConfig, data, filterByLayers, selectedLayers]);
-
-  const [visibleColumns, setVisibleColumns] = useState([
-    "volume",
-    "id",
-    "width",
-    "height",
-    "areaCm2",
+  }, [
+    settings.filters,
+    settings.sortConfig,
+    data,
+    settings.filterByLayers,
+    settings.selectedLayers,
   ]);
-
-  const toggleColumn = (newColumns) => {
-    setVisibleColumns(newColumns);
-  };
 
   const columns = useMemo(
     () => [
@@ -278,7 +315,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
       { label: "Height", column: "height", filterType: "range" },
       { label: "Area/cm²", column: "areaCm2" },
     ],
-    [],
+    []
   );
 
   return (
@@ -286,23 +323,26 @@ const ScrollTable = React.memo(({ data, showImages }) => {
       <div className="p-4 border-b flex justify-between items-center">
         <TableSettings
           columns={columns}
-          visibleColumns={visibleColumns}
-          onToggleColumn={toggleColumn}
+          visibleColumns={settings.visibleColumns}
+          onToggleColumn={(cols) => updateSettings("visibleColumns", cols)}
         />
+        <Button variant="outline" onClick={resetSettings} className="ml-4">
+          Reset Settings
+        </Button>
       </div>
       <Table>
         <TableHeader>
           <TableRow className="align-top">
             {columns
-              .filter(({ column }) => visibleColumns.includes(column))
+              .filter(({ column }) => settings.visibleColumns.includes(column))
               .map(({ label, column, filterType }) => (
                 <HeaderCell
                   key={column}
                   label={label}
                   column={column}
-                  sortConfig={sortConfig}
+                  sortConfig={settings.sortConfig}
                   onSort={handleSort}
-                  filterValue={filters[column]}
+                  filterValue={settings.filters[column]}
                   onFilterChange={handleFilterChange}
                   filterType={filterType}
                 />
@@ -314,7 +354,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                   <div className="p-4 border-b flex gap-2 flex-wrap">
                     <Badge
                       variant={
-                        selectedLayers.length ===
+                        settings.selectedLayers.length ===
                         Object.keys(layerLabels).length
                           ? "default"
                           : "outline"
@@ -322,15 +362,21 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                       className="cursor-pointer font-semibold"
                       onClick={toggleAll}
                     >
-                      {selectedLayers.length === Object.keys(layerLabels).length
+                      {settings.selectedLayers.length ===
+                      Object.keys(layerLabels).length
                         ? "Hide All"
                         : "Show All"}
                     </Badge>
 
                     <Badge
-                      variant={filterByLayers ? "default" : "outline"}
+                      variant={settings.filterByLayers ? "default" : "outline"}
                       className="cursor-pointer font-semibold"
-                      onClick={() => setFilterByLayers((prev) => !prev)}
+                      onClick={() =>
+                        updateSettings(
+                          "filterByLayers",
+                          !settings.filterByLayers
+                        )
+                      }
                     >
                       Filter
                     </Badge>
@@ -341,7 +387,9 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                       <Badge
                         key={key}
                         variant={
-                          selectedLayers.includes(key) ? "default" : "outline"
+                          settings.selectedLayers.includes(key)
+                            ? "default"
+                            : "outline"
                         }
                         className="cursor-pointer"
                         onClick={() => toggleLayer(key)}
@@ -363,7 +411,9 @@ const ScrollTable = React.memo(({ data, showImages }) => {
               className={showImages ? "h-36" : "h-12"}
             >
               {columns
-                .filter(({ column }) => visibleColumns.includes(column))
+                .filter(({ column }) =>
+                  settings.visibleColumns.includes(column)
+                )
                 .map(({ column }) => (
                   <TableCell key={column}>
                     {column === "id" ? (
@@ -382,7 +432,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                 <TableCell>
                   <div className="flex gap-4 flex-wrap">
                     {row.layers
-                      .filter((key) => selectedLayers.includes(key))
+                      .filter((key) => settings.selectedLayers.includes(key))
                       .map((key) => (
                         <ImagePreview
                           key={key}
@@ -405,9 +455,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
 });
 
 const VesuviusTable = () => {
-  const [showImages, setShowImages] = useState(true);
-  const [activeScrollType, setActiveScrollType] = useState("scrolls");
-  const [activeScrollId, setActiveScrollId] = useState(null);
+  const [settings, setSettings] = useLocalStorage(STORAGE_KEY, defaultSettings);
 
   const { scrollGroups, filteredData } = useMemo(() => {
     const groups = {};
@@ -422,16 +470,16 @@ const VesuviusTable = () => {
     const entries = Object.entries(groups);
     entries.sort((a, b) => a[1][0].scroll.num - b[1][0].scroll.num);
 
-    const isFragment = activeScrollType === "fragments";
+    const isFragment = settings.activeScrollType === "fragments";
     const filtered = initialData.filter(
-      (item) => item.scroll.isFragment === isFragment,
+      (item) => item.scroll.isFragment === isFragment
     );
 
-    if (activeScrollId) {
+    if (settings.activeScrollId) {
       return {
         scrollGroups: entries,
         filteredData: filtered.filter(
-          (item) => item.scroll.id === activeScrollId,
+          (item) => item.scroll.id === settings.activeScrollId
         ),
       };
     }
@@ -440,27 +488,29 @@ const VesuviusTable = () => {
       scrollGroups: entries,
       filteredData: filtered,
     };
-  }, [activeScrollType, activeScrollId]);
+  }, [settings.activeScrollType, settings.activeScrollId]);
 
   const scrollTabs = useMemo(() => {
     return scrollGroups
       .filter(([, data]) => {
-        const isFragment = activeScrollType === "fragments";
+        const isFragment = settings.activeScrollType === "fragments";
         return data[0].scroll.isFragment === isFragment;
       })
       .map(([scrollId, data]) => ({
         id: scrollId,
         label: `${data[0].scroll.num} / ${scrollId}`,
       }));
-  }, [scrollGroups, activeScrollType]);
+  }, [scrollGroups, settings.activeScrollType]);
 
   return (
     <div className="p-4">
       <div className="flex justify-end mb-4 space-x-2">
         <Switch
           id="show-images"
-          checked={showImages}
-          onClick={() => setShowImages(!showImages)}
+          checked={settings.showImages}
+          onClick={() =>
+            setSettings((prev) => ({ ...prev, showImages: !prev.showImages }))
+          }
           className="flex items-center gap-2"
         />
         <Label htmlFor="show-images" className="text-sm font-semibold">
@@ -469,10 +519,13 @@ const VesuviusTable = () => {
       </div>
 
       <Tabs
-        defaultValue="scrolls"
+        value={settings.activeScrollType}
         onValueChange={(value) => {
-          setActiveScrollType(value);
-          setActiveScrollId(null);
+          setSettings((prev) => ({
+            ...prev,
+            activeScrollType: value,
+            activeScrollId: null,
+          }));
         }}
       >
         <TabsList className="mb-4">
@@ -482,8 +535,10 @@ const VesuviusTable = () => {
       </Tabs>
 
       <Tabs
-        value={activeScrollId || scrollTabs[0]?.id}
-        onValueChange={setActiveScrollId}
+        value={settings.activeScrollId || scrollTabs[0]?.id}
+        onValueChange={(value) =>
+          setSettings((prev) => ({ ...prev, activeScrollId: value }))
+        }
         className="mb-4"
       >
         <TabsList>
@@ -495,7 +550,7 @@ const VesuviusTable = () => {
         </TabsList>
       </Tabs>
 
-      <ScrollTable data={filteredData} showImages={showImages} />
+      <ScrollTable data={filteredData} showImages={settings.showImages} />
     </div>
   );
 };
