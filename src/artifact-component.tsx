@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { 
+import {
   Table,
   TableBody,
   TableCell,
@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/tooltip";
 import { ChevronUp, ChevronDown, ArrowUpDown } from 'lucide-react';
 import { parse } from 'path';
+import TableSettings from './table-settings';
 
 // Previous helper functions remain the same
 const getLayerUrl = (scrollNum, segmentId, layer) => {
@@ -30,7 +31,7 @@ const getLayerUrl = (scrollNum, segmentId, layer) => {
     return `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/mask?v2`;
   }
   const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
-  
+
   return `${baseUrl}/${layer}?v2`;
 };
 
@@ -77,8 +78,8 @@ const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
           <span>{range[0]}</span>
           <span>{range[1]}</span>
         </div>
-        
-        <Slider 
+
+        <Slider
           value={range}
           min={minValues[column]}
           max={maxValues[column]}
@@ -107,8 +108,8 @@ const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
 const HeaderCell = React.memo(({ label, column, sortConfig, onSort, filterValue, onFilterChange, filterType }) => (
   <TableHead>
     <div className="space-y-2">
-      <Button 
-        variant="ghost" 
+      <Button
+        variant="ghost"
         onClick={() => onSort(column)}
         className="font-semibold w-full flex justify-between items-center"
       >
@@ -116,8 +117,8 @@ const HeaderCell = React.memo(({ label, column, sortConfig, onSort, filterValue,
         {sortConfig.key !== column ? (
           <ArrowUpDown className="ml-2 h-4 w-4" />
         ) : (
-          sortConfig.direction === 'ascending' ? 
-            <ChevronUp className="ml-2 h-4 w-4" /> : 
+          sortConfig.direction === 'ascending' ?
+            <ChevronUp className="ml-2 h-4 w-4" /> :
             <ChevronDown className="ml-2 h-4 w-4" />
         )}
       </Button>
@@ -136,12 +137,12 @@ const ImagePreview = React.memo(({ url, label, scrollNum, segmentId, layerKey })
     <Tooltip>
       <TooltipTrigger asChild>
         <div className="flex flex-col items-center">
-          <a 
+          <a
             href={`/scroll/${scrollNum}/segment/${segmentId}/${layerKey ? `#layer=${layerKey}` : ''}`}
             className="block"
           >
-            <img 
-              src={url} 
+            <img
+              src={url}
               alt={label}
               className="w-48 h-36 object-cover rounded"
               loading="lazy"
@@ -174,20 +175,20 @@ const ScrollTable = React.memo(({ data, showImages }) => {
   const [filterByLayers, setFilterByLayers] = useState(false);
 
   const toggleLayer = (layer) => {
-    setSelectedLayers(prev => 
-      prev.includes(layer) 
+    setSelectedLayers(prev =>
+      prev.includes(layer)
         ? prev.filter(l => l !== layer)
         : [...prev, layer]
     );
   };
 
   const toggleAll = () => {
-    setSelectedLayers(prev => 
+    setSelectedLayers(prev =>
       prev.length === Object.keys(layerLabels).length ? [] : Object.keys(layerLabels)
     );
   };
 
-  
+
   const handleSort = (key) => {
     let direction = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -207,7 +208,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
     let processed = [...data];
 
     if (filterByLayers) {
-      processed = processed.filter(item => 
+      processed = processed.filter(item =>
         item.layers.some(layer => selectedLayers.includes(layer))
       );
     }
@@ -220,7 +221,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
             return width >= filters[key].min && width <= filters[key].max;
           });
         } else {
-          processed = processed.filter(item => 
+          processed = processed.filter(item =>
             String(item[key]).toLowerCase().includes(filters[key].toLowerCase())
           );
         }
@@ -242,6 +243,12 @@ const ScrollTable = React.memo(({ data, showImages }) => {
     return processed;
   }, [filters, sortConfig, data, filterByLayers, selectedLayers]);
 
+  const [visibleColumns, setVisibleColumns] = useState(['volume', 'id', 'width', 'height', 'areaCm2']);
+
+  const toggleColumn = (newColumns) => {
+    setVisibleColumns(newColumns);
+  };
+
   const columns = useMemo(() => [
     { label: "Volume", column: "volume" },
     { label: "Segment ID", column: "id" },
@@ -252,10 +259,19 @@ const ScrollTable = React.memo(({ data, showImages }) => {
 
   return (
     <div className="rounded-md border">
+      <div className="p-4 border-b flex justify-between items-center">
+        <TableSettings
+          columns={columns}
+          visibleColumns={visibleColumns}
+          onToggleColumn={toggleColumn}
+        />
+      </div>
       <Table>
         <TableHeader>
           <TableRow className="align-top">
-            {columns.map(({ label, column, filterType }) => (
+          {columns
+            .filter(({ column }) => visibleColumns.includes(column))
+            .map(({ label, column, filterType }) => (
               <HeaderCell
                 key={column}
                 label={label}
@@ -266,8 +282,8 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                 onFilterChange={handleFilterChange}
                 filterType={filterType}
               />
-            ))}
-            {showImages && 
+          ))}
+            {showImages &&
               <>
             <TableHead>
               Preview Layers
@@ -279,7 +295,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
       >
         {selectedLayers.length === Object.keys(layerLabels).length ? 'Hide All' : 'Show All'}
       </Badge>
-      
+
       <Badge
         variant={filterByLayers ? "default" : "outline"}
         className="cursor-pointer font-semibold"
@@ -287,7 +303,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
       >
         Filter
       </Badge>
-      
+
       <div className="w-px h-6 bg-gray-200 mx-2" />
 
           {Object.entries(layerLabels).map(([key, label]) => (
@@ -303,25 +319,29 @@ const ScrollTable = React.memo(({ data, showImages }) => {
         </div>
 
             </TableHead>
-            
+
         </>
             }
 
           </TableRow>
         </TableHeader>
-        
+
         <TableBody>
           {filteredAndSortedData.map((row) => (
             <TableRow key={`${row.scroll.id}-${row.id}`} className={showImages ? 'h-36' : 'h-12'}>
-              <TableCell>{row.volume}</TableCell>
-              <TableCell>
-                <a href={`/scroll/${row.scroll.num}/segment/${row.id}/`} className="text-blue-600 hover:underline">
-                  {row.id}
-                </a>
-              </TableCell>
-              <TableCell>{row.width}</TableCell>
-              <TableCell>{row.height}</TableCell>
-              <TableCell>{row.areaCm2}</TableCell>
+            {columns
+              .filter(({ column }) => visibleColumns.includes(column))
+              .map(({ column }) => (
+                <TableCell key={column}>
+                  {column === 'id' ? (
+                    <a href={`/scroll/${row.scroll.num}/segment/${row.id}/`} className="text-blue-600 hover:underline">
+                      {row[column]}
+                    </a>
+                  ) : (
+                    row[column]
+                  )}
+                </TableCell>
+              ))}
               {showImages && (
                 <TableCell>
                   <div className="flex gap-4 flex-wrap">
@@ -362,20 +382,20 @@ const VesuviusTable = () => {
       }
       groups[scrollId].push(item);
     });
-    
+
     const entries = Object.entries(groups);
     entries.sort((a, b) => a[1][0].scroll.num - b[1][0].scroll.num);
-    
+
     const isFragment = activeScrollType === 'fragments';
     const filtered = initialData.filter(item => item.scroll.isFragment === isFragment);
-    
+
     if (activeScrollId) {
       return {
         scrollGroups: entries,
         filteredData: filtered.filter(item => item.scroll.id === activeScrollId)
       };
     }
-    
+
     return {
       scrollGroups: entries,
       filteredData: filtered
@@ -405,11 +425,11 @@ const VesuviusTable = () => {
         />
         <Label htmlFor="show-images" className="text-sm font-semibold">
           Show Layer Previews
-        </Label>      
+        </Label>
       </div>
 
-      <Tabs 
-        defaultValue="scrolls" 
+      <Tabs
+        defaultValue="scrolls"
         onValueChange={(value) => {
           setActiveScrollType(value);
           setActiveScrollId(null);
@@ -421,8 +441,8 @@ const VesuviusTable = () => {
         </TabsList>
       </Tabs>
 
-      <Tabs 
-        value={activeScrollId || scrollTabs[0]?.id} 
+      <Tabs
+        value={activeScrollId || scrollTabs[0]?.id}
         onValueChange={setActiveScrollId}
         className="mb-4"
       >
@@ -435,7 +455,7 @@ const VesuviusTable = () => {
         </TabsList>
       </Tabs>
 
-      <ScrollTable 
+      <ScrollTable
         data={filteredData}
         showImages={showImages}
       />
