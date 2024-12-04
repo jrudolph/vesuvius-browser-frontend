@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
@@ -7,23 +7,23 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Settings2 } from 'lucide-react';
+import { Settings2 } from "lucide-react";
 
 const defaultColumns = [
   { label: "Volume", column: "volume" },
   { label: "Segment ID", column: "id" },
   { label: "Width", column: "width", filterType: "range" },
   { label: "Height", column: "height", filterType: "range" },
-  { label: "Area/cm²", column: "areaCm2" }
+  { label: "Area/cm²", column: "areaCm2" },
 ];
 
 const TableSettings = ({
   columns = defaultColumns,
-  visibleColumns = columns.map(c => c.column),
-  onToggleColumn
+  visibleColumns = columns.map((c) => c.column),
+  onToggleColumn,
 }) => {
   const toggleAll = () => {
-    const allColumns = columns.map(c => c.column);
+    const allColumns = columns.map((c) => c.column);
     const shouldShowAll = visibleColumns.length !== allColumns.length;
     onToggleColumn(shouldShowAll ? allColumns : []);
   };
@@ -40,12 +40,10 @@ const TableSettings = ({
         <div className="space-y-4">
           <div className="flex items-center justify-between mb-4">
             <h4 className="font-medium">Toggle Columns</h4>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleAll}
-            >
-              {visibleColumns.length === columns.length ? 'Hide All' : 'Show All'}
+            <Button variant="outline" size="sm" onClick={toggleAll}>
+              {visibleColumns.length === columns.length
+                ? "Hide All"
+                : "Show All"}
             </Button>
           </div>
           <div className="space-y-2">
@@ -54,7 +52,12 @@ const TableSettings = ({
                 <Switch
                   id={`column-${column}`}
                   checked={visibleColumns.includes(column)}
-                  onCheckedChange={() => onToggleColumn([...visibleColumns.filter(c => c !== column), ...(visibleColumns.includes(column) ? [] : [column])])}
+                  onCheckedChange={() =>
+                    onToggleColumn([
+                      ...visibleColumns.filter((c) => c !== column),
+                      ...(visibleColumns.includes(column) ? [] : [column]),
+                    ])
+                  }
                 />
                 <Label htmlFor={`column-${column}`}>{label}</Label>
               </div>

@@ -1,12 +1,12 @@
-import './App.css'
-import Artifact from './artifact-component'
+import "./App.css";
+import Artifact from "./artifact-component";
 
 function App() {
   return (
     <>
       <Artifact />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
