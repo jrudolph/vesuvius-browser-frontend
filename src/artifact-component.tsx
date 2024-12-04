@@ -216,7 +216,7 @@ const ImagePreview = React.memo(
   )
 );
 
-const ScrollTable = React.memo(({ data, showImages }) => {
+const ScrollTable = React.memo(({ data }) => {
   const [settings, setSettings] = useLocalStorage(STORAGE_KEY, defaultSettings);
 
   const updateSettings = (key, value) => {
@@ -320,15 +320,17 @@ const ScrollTable = React.memo(({ data, showImages }) => {
 
   return (
     <div className="rounded-md border">
-      <div className="p-4 border-b flex justify-between items-center">
+      <div className="p-4 border-b">
         <TableSettings
           columns={columns}
           visibleColumns={settings.visibleColumns}
           onToggleColumn={(cols) => updateSettings("visibleColumns", cols)}
+          showImages={settings.showImages}
+          onShowImagesChange={(show) =>
+            setSettings((prev) => ({ ...prev, showImages: show }))
+          }
+          onReset={resetSettings}
         />
-        <Button variant="outline" onClick={resetSettings} className="ml-4">
-          Reset Settings
-        </Button>
       </div>
       <Table>
         <TableHeader>
@@ -347,7 +349,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                   filterType={filterType}
                 />
               ))}
-            {showImages && (
+            {settings.showImages && (
               <>
                 <TableHead>
                   Preview Layers
@@ -408,7 +410,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
           {filteredAndSortedData.map((row) => (
             <TableRow
               key={`${row.scroll.id}-${row.id}`}
-              className={showImages ? "h-36" : "h-12"}
+              className={settings.showImages ? "h-36" : "h-12"}
             >
               {columns
                 .filter(({ column }) =>
@@ -428,7 +430,7 @@ const ScrollTable = React.memo(({ data, showImages }) => {
                     )}
                   </TableCell>
                 ))}
-              {showImages && (
+              {settings.showImages && (
                 <TableCell>
                   <div className="flex gap-4 flex-wrap">
                     {row.layers
@@ -504,20 +506,6 @@ const VesuviusTable = () => {
 
   return (
     <div className="p-4">
-      <div className="flex justify-end mb-4 space-x-2">
-        <Switch
-          id="show-images"
-          checked={settings.showImages}
-          onClick={() =>
-            setSettings((prev) => ({ ...prev, showImages: !prev.showImages }))
-          }
-          className="flex items-center gap-2"
-        />
-        <Label htmlFor="show-images" className="text-sm font-semibold">
-          Show Layer Previews
-        </Label>
-      </div>
-
       <Tabs
         value={settings.activeScrollType}
         onValueChange={(value) => {
@@ -550,7 +538,9 @@ const VesuviusTable = () => {
         </TabsList>
       </Tabs>
 
-      <ScrollTable data={filteredData} showImages={settings.showImages} />
+      <div className="p-4">
+        <ScrollTable data={filteredData} showImages={settings.showImages} />
+      </div>
     </div>
   );
 };
