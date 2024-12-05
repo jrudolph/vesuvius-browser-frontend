@@ -12,10 +12,9 @@ RUN npx vite build
 
 FROM node:23 AS node-runner
 
+RUN npm install -g serve
 WORKDIR /app
 
 COPY --from=node-builder /tmp/dist /app/dist
-
-RUN npm install -g serve
 
 CMD ["serve", "-s", "dist"]
