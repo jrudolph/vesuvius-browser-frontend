@@ -6,6 +6,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
+import { Link } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   Table,
@@ -192,9 +193,8 @@ const ImagePreview = React.memo(
       <Tooltip>
         <TooltipTrigger asChild>
           <div className="flex flex-col items-center">
-            <a
-              href={`/scroll/${scrollNum}/segment/${segmentId}/${layerKey ? `#layer=${layerKey}` : ""}`}
-              className="block"
+            <Link
+              to={`/scroll/${scrollNum}/segment/${segmentId}/${layerKey ? `#layer=${layerKey}` : ""}`}
             >
               <img
                 src={url}
@@ -202,10 +202,10 @@ const ImagePreview = React.memo(
                 className="w-48 h-36 object-cover rounded"
                 loading="lazy"
               />
-            </a>
-            <span className="text-xs text-gray-600 mt-1 text-center break-words w-20">
-              {label}
-            </span>
+              <span className="text-xs text-gray-600 mt-1 text-center break-words w-20">
+                {label}
+              </span>
+            </Link>
           </div>
         </TooltipTrigger>
         <TooltipContent>
@@ -419,12 +419,12 @@ const ScrollTable = React.memo(({ data }) => {
                 .map(({ column }) => (
                   <TableCell key={column}>
                     {column === "id" ? (
-                      <a
-                        href={`/scroll/${row.scroll.num}/segment/${row.id}/`}
-                        className="text-blue-600 hover:underline"
+                      <Link
+                        to={`/scroll/${row.scroll.oldId}/segment/${row.id}/`}
+                        className="text-blue-600 hover:text-blue-800 hover:underline"
                       >
                         {row[column]}
-                      </a>
+                      </Link>
                     ) : (
                       row[column]
                     )}
@@ -440,7 +440,7 @@ const ScrollTable = React.memo(({ data }) => {
                           key={key}
                           url={getLayerUrl(row.scroll.oldId, row.id, key)}
                           label={layerLabels[key]}
-                          scrollNum={row.scroll.num}
+                          scrollNum={row.scroll.oldId}
                           segmentId={row.id}
                           layerKey={key}
                         />
