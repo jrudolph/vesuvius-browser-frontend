@@ -77,7 +77,8 @@ const SegmentDetail = () => {
           <OpenSeadragonViewer
             scrollNum={scrollNum}
             segmentId={segmentId}
-            allLayers={["32", "34", "36"]} //segmentData.layers}
+            allLayers={["32", "34", "36", "38", ...segmentData.layers]}
+            extraLayers={segmentData.layers}
           />
         </CardContent>
       </Card>

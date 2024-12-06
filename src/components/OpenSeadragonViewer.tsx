@@ -7,7 +7,7 @@ const OpenSeadragonViewer = ({
   extraLayers = [],
 }) => {
   const viewerRef = useRef(null);
-  const [index, setIndex] = useState(0);
+  //const [index, setIndex] = useState(0);
   const [position, setPosition] = useState("");
   const [ppmSocket, setPpmSocket] = useState(null);
 
@@ -17,6 +17,8 @@ const OpenSeadragonViewer = ({
   };
 
   useEffect(() => {
+    let index = 0;
+
     console.log("All Layers:", allLayers);
     const viewer = OpenSeadragon({
       id: containerId,
@@ -37,7 +39,7 @@ const OpenSeadragonViewer = ({
     });
 
     viewerRef.current = viewer;
-    setIndex(0);
+    //setIndex(0);
 
     const sibling = (idx, shownIdx) => {
       if (idx >= viewer.world.getItemCount())
@@ -65,11 +67,12 @@ const OpenSeadragonViewer = ({
 
       const oldTiledImage = viewer.world.getItemAt(index);
       const oldIndex = index;
-      setIndex(nextIndex);
 
       if (nextIndex >= viewer.world.getItemCount())
         nextIndex = viewer.world.getItemCount() - 1;
       if (nextIndex < 0) nextIndex = 0;
+
+      index = nextIndex;
 
       const newTiledImage = viewer.world.getItemAt(nextIndex);
       oldTiledImage.setOpacity(0);
@@ -108,11 +111,22 @@ const OpenSeadragonViewer = ({
       history.replaceState(undefined, undefined, newHash);
     };
 
+    const showNext = () => {
+      show(index + 1);
+    };
+
     viewer.bindSequenceControls();
     viewer.previousButton.removeAllHandlers("release");
     viewer.previousButton.addHandler("release", () => show(index - 1));
     viewer.nextButton.removeAllHandlers("release");
-    viewer.nextButton.addHandler("release", () => show(index + 1));
+    viewer.nextButton.addHandler("release", showNext);
+
+    viewer.goToPreviousPage = function () {
+      show(index - 1);
+    };
+    viewer.goToNextPage = function () {
+      show(index + 1);
+    };
 
     viewer.addHandler("pan", updateHash);
     viewer.addHandler("zoom", updateHash);
