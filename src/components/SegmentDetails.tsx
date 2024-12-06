@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useParams } from "react-router-dom";
+import OpenSeadragonViewer from "./OpenSeadragonViewer";
 
 const SegmentDetail = () => {
   const { scrollNum, segmentId } = useParams();
@@ -71,92 +72,13 @@ const SegmentDetail = () => {
         <CardHeader>
           <CardTitle>Layer Visualizations</CardTitle>
         </CardHeader>
+
         <CardContent>
-          <Tabs defaultValue="texture" className="w-full">
-            <TabsList className="mb-4">
-              <TabsTrigger value="texture">Texture</TabsTrigger>
-              <TabsTrigger value="surface">Surface Volume</TabsTrigger>
-              <TabsTrigger value="models">ML Models</TabsTrigger>
-              <TabsTrigger value="inklabels">Ink Labels</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="texture">
-              <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src={getImageUrl("mask")}
-                  alt="Texture Image"
-                  className="rounded-lg object-cover w-full"
-                />
-              </div>
-            </TabsContent>
-
-            <TabsContent value="surface">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {Array.from({ length: 6 }, (_, i) => (
-                  <div key={i} className="relative">
-                    <img
-                      src={getImageUrl(`surface_${i + 1}`)}
-                      alt={`Surface Layer ${i + 1}`}
-                      className="rounded-lg object-cover w-full"
-                    />
-                    <span className="absolute bottom-2 left-2 bg-black/50 text-white px-2 py-1 rounded">
-                      Layer {i + 1}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="models">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h3 className="mb-2 font-semibold">Grand Prize Model</h3>
-                  <img
-                    src={getImageUrl("grand-prize_17_32")}
-                    alt="Grand Prize Model"
-                    className="rounded-lg object-cover w-full"
-                  />
-                </div>
-                <div>
-                  <h3 className="mb-2 font-semibold">First Letters Model</h3>
-                  <img
-                    src={getImageUrl("first-word_15_32")}
-                    alt="First Letters Model"
-                    className="rounded-lg object-cover w-full"
-                  />
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="inklabels">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {segmentData.layers.includes("grand-prize-inklabels") && (
-                  <div>
-                    <h3 className="mb-2 font-semibold">
-                      Grand Prize Ink Labels
-                    </h3>
-                    <img
-                      src={getImageUrl("grand-prize-inklabels")}
-                      alt="Grand Prize Ink Labels"
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
-                )}
-                {segmentData.layers.includes("first-letters-inklabels") && (
-                  <div>
-                    <h3 className="mb-2 font-semibold">
-                      First Letters Ink Labels
-                    </h3>
-                    <img
-                      src={getImageUrl("first-letters-inklabels")}
-                      alt="First Letters Ink Labels"
-                      className="rounded-lg object-cover w-full"
-                    />
-                  </div>
-                )}
-              </div>
-            </TabsContent>
-          </Tabs>
+          <OpenSeadragonViewer
+            scrollNum={scrollNum}
+            segmentId={segmentId}
+            allLayers={["32", "34", "36"]} //segmentData.layers}
+          />
         </CardContent>
       </Card>
     </div>
