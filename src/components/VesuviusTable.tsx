@@ -1,4 +1,4 @@
-import initialData from "./data";
+import initialData from "../data";
 import React, { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/tooltip";
 import { ChevronUp, ChevronDown, ArrowUpDown } from "lucide-react";
 import { parse } from "path";
-import TableSettings from "./table-settings";
+import TableSettings from "./TableSettings";
 
 const STORAGE_KEY = "vesuvius-table-settings";
 

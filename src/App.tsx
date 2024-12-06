@@ -1,7 +1,7 @@
 //import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import VesuviusTable from "./artifact-component";
-import SegmentDetail from "./segment-details";
+import VesuviusTable from "./components/VesuviusTable";
+import SegmentDetail from "./components/SegmentDetails";
 import Layout from "./Layout";
 
 const App = () => {
