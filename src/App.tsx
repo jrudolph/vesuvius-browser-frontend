@@ -1,12 +1,20 @@
-import "./App.css";
-import Artifact from "./artifact-component";
+//import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import VesuviusTable from "./artifact-component";
+import SegmentDetail from "./segment-details";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Artifact />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<VesuviusTable />} />
+        <Route
+          path="/scroll/:scrollNum/segment/:segmentId"
+          element={<SegmentDetail />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
