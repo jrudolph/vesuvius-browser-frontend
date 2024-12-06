@@ -3,6 +3,8 @@ import OpenSeadragon from "openseadragon";
 
 const OpenSeadragonViewer = ({
   containerId = "openseadragon1",
+  scrollNum,
+  segmentId,
   allLayers = [],
   extraLayers = [],
 }) => {
@@ -12,7 +14,7 @@ const OpenSeadragonViewer = ({
   const [ppmSocket, setPpmSocket] = useState(null);
 
   const layerSource = (layer) => {
-    const relative = `${layer}/dzi`;
+    const relative = `/scroll/${scrollNum}/segment/${segmentId}/${layer}/dzi`;
     return relative;
   };
 

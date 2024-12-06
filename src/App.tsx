@@ -6,7 +6,7 @@ import Layout from "./Layout";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/v2/">
       <Layout>
         <Routes>
           <Route path="/" element={<VesuviusTable />} />
