@@ -408,10 +408,7 @@ const ScrollTable = React.memo(({ data }) => {
 
         <TableBody>
           {filteredAndSortedData.map((row) => (
-            <TableRow
-              key={`${row.scroll.id}-${row.id}`}
-              className={settings.showImages ? "h-36" : "h-12"}
-            >
+            <TableRow key={`${row.scroll.id}-${row.id}`} className="h-12">
               {columns
                 .filter(({ column }) =>
                   settings.visibleColumns.includes(column)
