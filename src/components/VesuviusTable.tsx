@@ -1,13 +1,11 @@
 import initialData from "../data";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
 import { Link } from "react-router-dom";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Table,
   TableBody,
@@ -23,7 +21,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { ChevronUp, ChevronDown, ArrowUpDown } from "lucide-react";
-import { parse } from "path";
 import TableSettings from "./TableSettings";
 
 const STORAGE_KEY = "vesuvius-table-settings";
@@ -47,10 +44,6 @@ const layerLabels = {
   "first-letters-inklabels": "First Letters Inklabels",
   "polytrope-test3-predictions": "Polytrope Test Model 3 Predictions",
   "polytrope-inklabels-2024-08-16": "Polytrope Inklabels",
-};
-
-const parseOr = (value, defaultValue) => {
-  parseInt(value) || defaultValue;
 };
 
 const minColumnValue = (column) => {
