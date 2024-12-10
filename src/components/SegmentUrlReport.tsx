@@ -258,6 +258,7 @@ const SegmentUrlReport = () => {
     const row = {
       scrollId: item.scroll.id,
       scrollNum: item.scroll.num,
+      baseUrl: item.baseUrl,
       oldId: item.scroll.oldId,
       isFragment: item.scroll.isFragment,
       id: item.id,
@@ -508,7 +509,16 @@ const SegmentUrlReport = () => {
                               {row.scrollId}
                             </td>
                             <td className="p-2 border">{row.scrollNum}</td>
-                            <td className="p-2 border">{row.id}</td>
+                            <td className="p-2 border">
+                              <a
+                                href={row.baseUrl}
+                                className="hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {row.id}
+                              </a>
+                            </td>
                             <td className="p-2 border text-center">
                               {renderStatusIcon(item)}
                             </td>
@@ -546,7 +556,16 @@ const SegmentUrlReport = () => {
                   >
                     <td className="p-2 border font-medium">{row.scrollId}</td>
                     <td className="p-2 border">{row.scrollNum}</td>
-                    <td className="p-2 border">{row.id}</td>
+                    <td className="p-2 border">
+                      <a
+                        href={row.baseUrl}
+                        className="hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {row.id}
+                      </a>
+                    </td>
                     <td className="p-2 border text-center">
                       {renderStatusIcon(item)}
                     </td>
