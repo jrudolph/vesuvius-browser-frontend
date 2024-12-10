@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Table } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   CheckCircle,
   XCircle,
@@ -138,32 +146,6 @@ const SegmentUrlReport = () => {
     );
   };
 
-  const renderScrollSummary = (scrollGroup) => {
-    const summary = calculateScrollSummary(scrollGroup);
-
-    return (
-      <div className="text-xs flex gap-4 items-center">
-        <span className="font-medium">Segments: {summary.totalSegments}</span>
-        {fileTypes.map((type) => {
-          const stats = summary.fileTypes[type];
-          const percentage = stats.total
-            ? ((stats.ok / stats.total) * 100).toFixed(1)
-            : 0;
-          return (
-            <span
-              key={type}
-              className={
-                stats.ok === stats.total ? "text-green-600" : "text-gray-600"
-              }
-            >
-              {type}: {stats.ok}/{stats.total} ({percentage}%)
-            </span>
-          );
-        })}
-      </div>
-    );
-  };
-
   const getSortValue = (item, field) => {
     if (field === "overallStatus") {
       return checkSegmentStatus(item);
@@ -281,16 +263,16 @@ const SegmentUrlReport = () => {
   const renderFileColumn = (fileInfo) => {
     if (!fileInfo)
       return (
-        <td className="p-2 border text-center" colSpan="2">
+        <TableCell colSpan={2} className="text-center">
           -
-        </td>
+        </TableCell>
       );
 
     const status = normalizeStatus(fileInfo.status);
 
     return (
       <>
-        <td className={`p-2 border text-center ${getStatusColor(status)}`}>
+        <TableCell className={`text-center ${getStatusColor(status)}`}>
           <a
             href={fileInfo.url}
             className="hover:underline"
@@ -299,10 +281,10 @@ const SegmentUrlReport = () => {
           >
             {status}
           </a>
-        </td>
-        <td className="p-2 border text-right">
+        </TableCell>
+        <TableCell className="text-right">
           {status === "404" ? "-" : formatFileSize(fileInfo.size)}
-        </td>
+        </TableCell>
       </>
     );
   };
@@ -310,10 +292,8 @@ const SegmentUrlReport = () => {
   const sortedData = React.useMemo(() => {
     if (!data?.length) return [];
 
-    // Group by scroll ID
     const grouped = _.groupBy(data, "scroll.id");
 
-    // Sort by scroll number
     return Object.entries(grouped)
       .map(([scrollId, segments]) => ({
         scrollId,
@@ -361,224 +341,223 @@ const SegmentUrlReport = () => {
       </div>
     );
 
+  const SegmentRow = ({
+    row,
+    item,
+    fileTypes,
+    renderStatusIcon,
+    renderFileColumn,
+  }) => (
+    <TableRow key={`${row.scrollId}-${row.id}`} className="hover:bg-gray-50">
+      <TableCell className="font-medium">{row.scrollId}</TableCell>
+      <TableCell>{row.scrollNum}</TableCell>
+      <TableCell>
+        <a
+          href={row.baseUrl}
+          className="hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {row.id}
+        </a>
+      </TableCell>
+      <TableCell className="text-center">{renderStatusIcon(item)}</TableCell>
+      {fileTypes.map((type) => (
+        <React.Fragment key={`${row.id}-${type}`}>
+          {renderFileColumn(row[type])}
+        </React.Fragment>
+      ))}
+    </TableRow>
+  );
+
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="w-full">
       <div className="mb-4 flex items-center gap-2">
-        <label className="flex items-center gap-2 text-sm">
-          <input
-            type="checkbox"
+        <div className="flex items-center space-x-2">
+          <Checkbox
+            id="group-by-scroll"
             checked={isGrouped}
-            onChange={(e) => setIsGrouped(e.target.checked)}
-            className="rounded border-gray-300"
+            onCheckedChange={(checked) => setIsGrouped(checked)}
           />
-          Group by Scroll
-        </label>
+          <label
+            htmlFor="group-by-scroll"
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Group by Scroll
+          </label>
+        </div>
       </div>
-      <table className="w-full border-collapse text-sm">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="p-2 text-left border" colSpan="2">
-              Scroll
-            </th>
-            <th className="p-2 text-left border">Segment ID</th>
-            <th
-              className="p-2 text-center border cursor-pointer"
-              onClick={() => handleSort("overallStatus")}
-            >
-              Status {renderSortIcon("overallStatus")}
-              {renderStatusSummary(calculateOverallSummary())}
-            </th>
-            {fileTypes.map((type) => (
-              <th
-                key={type}
-                className="p-2 text-left border bg-gray-200"
-                colSpan="2"
-              >
-                {type}
-                {renderStatusSummary(calculateColumnSummary(type))}
-              </th>
-            ))}
-          </tr>
-          <tr className="bg-gray-50">
-            <th className="p-2 text-left border">ID</th>
-            <th className="p-2 text-left border">#</th>
-            <th className="p-2 text-left border">ID</th>
-            <th className="p-2 text-center border">All OK?</th>
-            {fileTypes.map((type) => (
-              <React.Fragment key={`${type}-subheaders`}>
-                <th
-                  className="p-2 text-left border cursor-pointer"
-                  onClick={() => handleSort(`${type}_status`)}
+      <div className="rounded-md border">
+        <Table>
+          <TableHeader>
+            <TableRow className="bg-gray-100">
+              <TableHead colSpan={2}>Scroll</TableHead>
+              <TableHead>Segment ID</TableHead>
+              <TableHead className="text-center">
+                <button
+                  onClick={() => handleSort("overallStatus")}
+                  className="inline-flex items-center"
                 >
-                  Status/URL {renderSortIcon(`${type}_status`)}
-                </th>
-                <th
-                  className="p-2 text-left border cursor-pointer"
-                  onClick={() => handleSort(`${type}_size`)}
-                >
-                  Size {renderSortIcon(`${type}_size`)}
-                </th>
-              </React.Fragment>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {isGrouped
-            ? sortedData.map(({ scrollId, segments }) => {
-                const isExpanded = expandedGroups.has(scrollId);
-                return (
-                  <React.Fragment key={scrollId}>
-                    <tr className="bg-gray-100">
-                      <td colSpan="3" className="p-2 border">
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => toggleGroup(scrollId)}
-                            className="hover:bg-gray-200 p-1 rounded"
-                          >
-                            {isExpanded ? (
-                              <ChevronDown size={16} />
-                            ) : (
-                              <ChevronRight size={16} />
-                            )}
-                          </button>
-                          <span className="font-medium">
-                            {segments[0].scroll.isFragment
-                              ? "Fragment"
-                              : "Scroll"}{" "}
-                            {segments[0].scroll.num}/{scrollId}
-                          </span>
-                          <span className="text-sm ml-2">
-                            ({segments.length} segments)
-                          </span>
-                        </div>
-                      </td>
-                      <td className="p-2 border text-center">
-                        {(() => {
-                          const allStats = segments.reduce(
-                            (acc, item) => {
-                              const status = checkSegmentStatus(item);
-                              if (status === "ok") acc.ok++;
-                              acc.total++;
-                              return acc;
-                            },
-                            { ok: 0, total: 0 }
-                          );
-                          const percentage = (
-                            (allStats.ok / allStats.total) *
-                            100
-                          ).toFixed(1);
-                          return (
-                            <div
-                              className={`text-sm ${allStats.ok === allStats.total ? "text-green-600" : "text-gray-600"}`}
+                  Status {renderSortIcon("overallStatus")}
+                </button>
+                {renderStatusSummary(calculateOverallSummary())}
+              </TableHead>
+              {fileTypes.map((type) => (
+                <TableHead key={type} colSpan={2} className="bg-gray-50">
+                  {type}
+                  {renderStatusSummary(calculateColumnSummary(type))}
+                </TableHead>
+              ))}
+            </TableRow>
+            <TableRow className="bg-gray-50">
+              <TableHead>ID</TableHead>
+              <TableHead>#</TableHead>
+              <TableHead>ID</TableHead>
+              <TableHead className="text-center">All OK?</TableHead>
+              {fileTypes.map((type) => (
+                <React.Fragment key={`${type}-subheaders`}>
+                  <TableHead>
+                    <button
+                      onClick={() => handleSort(`${type}_status`)}
+                      className="inline-flex items-center"
+                    >
+                      Status/URL {renderSortIcon(`${type}_status`)}
+                    </button>
+                  </TableHead>
+                  <TableHead>
+                    <button
+                      onClick={() => handleSort(`${type}_size`)}
+                      className="inline-flex items-center"
+                    >
+                      Size {renderSortIcon(`${type}_size`)}
+                    </button>
+                  </TableHead>
+                </React.Fragment>
+              ))}
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {isGrouped
+              ? sortedData.map(({ scrollId, segments }) => {
+                  const isExpanded = expandedGroups.has(scrollId);
+                  return (
+                    <React.Fragment key={scrollId}>
+                      <TableRow className="bg-gray-100">
+                        <TableCell colSpan={3}>
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => toggleGroup(scrollId)}
+                              className="hover:bg-gray-200 p-1 rounded"
                             >
-                              {allStats.ok}/{allStats.total}
-                              <br />({percentage}%)
-                            </div>
-                          );
-                        })()}
-                      </td>
-                      {fileTypes.map((type) => {
-                        const stats =
-                          calculateScrollSummary(segments).fileTypes[type];
-                        const percentage = stats.total
-                          ? ((stats.ok / stats.total) * 100).toFixed(1)
-                          : 0;
-                        return (
-                          <React.Fragment key={`${scrollId}-${type}-summary`}>
-                            <td colSpan="2" className="p-2 border text-center">
+                              {isExpanded ? (
+                                <ChevronDown size={16} />
+                              ) : (
+                                <ChevronRight size={16} />
+                              )}
+                            </button>
+                            <span className="font-medium">
+                              {segments[0].scroll.isFragment
+                                ? "Fragment"
+                                : "Scroll"}{" "}
+                              {segments[0].scroll.num}/{scrollId}
+                            </span>
+                            <span className="text-sm ml-2">
+                              ({segments.length} segments)
+                            </span>
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-center">
+                          {(() => {
+                            const allStats = segments.reduce(
+                              (acc, item) => {
+                                const status = checkSegmentStatus(item);
+                                if (status === "ok") acc.ok++;
+                                acc.total++;
+                                return acc;
+                              },
+                              { ok: 0, total: 0 }
+                            );
+                            const percentage = (
+                              (allStats.ok / allStats.total) *
+                              100
+                            ).toFixed(1);
+                            return (
                               <div
-                                className={`text-sm ${stats.ok === stats.total ? "text-green-600" : "text-gray-600"}`}
+                                className={`text-sm ${allStats.ok === allStats.total ? "text-green-600" : "text-gray-600"}`}
                               >
-                                {stats.ok}/{stats.total}
+                                {allStats.ok}/{allStats.total}
                                 <br />({percentage}%)
                               </div>
-                            </td>
-                          </React.Fragment>
-                        );
-                      })}
-                    </tr>
-                    {isExpanded &&
-                      segments.map((item) => {
-                        const row = createSegmentRow(item);
-                        return (
-                          <tr
-                            key={`${row.scrollId}-${row.id}`}
-                            className="hover:bg-gray-50"
-                          >
-                            <td className="p-2 border font-medium">
-                              {row.scrollId}
-                            </td>
-                            <td className="p-2 border">{row.scrollNum}</td>
-                            <td className="p-2 border">
-                              <a
-                                href={row.baseUrl}
-                                className="hover:underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {row.id}
-                              </a>
-                            </td>
-                            <td className="p-2 border text-center">
-                              {renderStatusIcon(item)}
-                            </td>
-                            {fileTypes.map((type) => (
-                              <React.Fragment key={`${row.id}-${type}`}>
-                                {renderFileColumn(row[type])}
-                              </React.Fragment>
-                            ))}
-                          </tr>
-                        );
-                      })}
-                  </React.Fragment>
-                );
-              })
-            : (sortField
-                ? _.orderBy(
-                    data,
-                    [
-                      (item) => {
-                        const value = getSortValue(item, sortField);
-                        return typeof value === "string"
-                          ? value.toLowerCase()
-                          : value;
-                      },
-                    ],
-                    [sortDirection]
-                  )
-                : data
-              ).map((item) => {
-                const row = createSegmentRow(item);
-                return (
-                  <tr
-                    key={`${row.scrollId}-${row.id}`}
-                    className="hover:bg-gray-50"
-                  >
-                    <td className="p-2 border font-medium">{row.scrollId}</td>
-                    <td className="p-2 border">{row.scrollNum}</td>
-                    <td className="p-2 border">
-                      <a
-                        href={row.baseUrl}
-                        className="hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {row.id}
-                      </a>
-                    </td>
-                    <td className="p-2 border text-center">
-                      {renderStatusIcon(item)}
-                    </td>
-                    {fileTypes.map((type) => (
-                      <React.Fragment key={`${row.id}-${type}`}>
-                        {renderFileColumn(row[type])}
-                      </React.Fragment>
-                    ))}
-                  </tr>
-                );
-              })}
-        </tbody>
-      </table>
+                            );
+                          })()}
+                        </TableCell>
+                        {fileTypes.map((type) => {
+                          const stats =
+                            calculateScrollSummary(segments).fileTypes[type];
+                          const percentage = stats.total
+                            ? ((stats.ok / stats.total) * 100).toFixed(1)
+                            : 0;
+                          return (
+                            <React.Fragment key={`${scrollId}-${type}-summary`}>
+                              <TableCell colSpan={2} className="text-center">
+                                <div
+                                  className={`text-sm ${stats.ok === stats.total ? "text-green-600" : "text-gray-600"}`}
+                                >
+                                  {stats.ok}/{stats.total}
+                                  <br />({percentage}%)
+                                </div>
+                              </TableCell>
+                            </React.Fragment>
+                          );
+                        })}
+                      </TableRow>
+                      {isExpanded &&
+                        segments.map((item) => {
+                          const row = createSegmentRow(item);
+                          return (
+                            <SegmentRow
+                              key={`${row.scrollId}-${row.id}`}
+                              row={row}
+                              item={item}
+                              fileTypes={fileTypes}
+                              renderStatusIcon={renderStatusIcon}
+                              renderFileColumn={renderFileColumn}
+                            />
+                          );
+                        })}
+                    </React.Fragment>
+                  );
+                })
+              : (sortField
+                  ? _.orderBy(
+                      data,
+                      [
+                        (item) => {
+                          const value = getSortValue(item, sortField);
+                          return typeof value === "string"
+                            ? value.toLowerCase()
+                            : value;
+                        },
+                      ],
+                      [sortDirection]
+                    )
+                  : data
+                ).map((item) => {
+                  const row = createSegmentRow(item);
+                  return (
+                    <SegmentRow
+                      key={`${row.scrollId}-${row.id}`}
+                      row={row}
+                      item={item}
+                      fileTypes={fileTypes}
+                      renderStatusIcon={renderStatusIcon}
+                      renderFileColumn={renderFileColumn}
+                    />
+                  );
+                })}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 };
