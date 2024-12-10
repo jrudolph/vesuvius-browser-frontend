@@ -42,7 +42,7 @@ const SegmentUrlReport = () => {
       case "ok":
         return "text-green-600";
       case "error":
-      case "not-found":
+      case "404":
         return "text-red-600";
       default:
         return "text-gray-600";
@@ -51,6 +51,10 @@ const SegmentUrlReport = () => {
 
   // Order of file types matching the SegmentReport class
   const fileTypes = ["mask", "area", "obj", "ppm", "meta", "layer0", "layer32"];
+
+  const normalizeStatus = (status) => {
+    return status?.toLowerCase() === "not-found" ? "404" : status;
+  };
 
   const checkSegmentStatus = (item) => {
     const allStatuses = fileTypes
@@ -63,13 +67,44 @@ const SegmentUrlReport = () => {
       : "error";
   };
 
+  const calculateColumnSummary = (type) => {
+    if (!data?.length) return { ok: 0, total: 0 };
+
+    const total = data.length;
+    const ok = data.filter(
+      (item) => item[type]?.status?.status?.toLowerCase() === "ok"
+    ).length;
+
+    return { ok, total };
+  };
+
+  const calculateOverallSummary = () => {
+    if (!data?.length) return { ok: 0, total: 0 };
+
+    const total = data.length;
+    const ok = data.filter((item) => checkSegmentStatus(item) === "ok").length;
+
+    return { ok, total };
+  };
+
+  const renderStatusSummary = ({ ok, total }) => {
+    const percentage = ((ok / total) * 100).toFixed(1);
+    return (
+      <div className="text-xs text-center pb-1">
+        <span className={ok === total ? "text-green-600" : "text-gray-600"}>
+          {ok}/{total} ({percentage}%)
+        </span>
+      </div>
+    );
+  };
+
   const getSortValue = (item, field) => {
     if (field === "overallStatus") {
       return checkSegmentStatus(item);
     }
     if (field.endsWith("_status")) {
       const type = field.replace("_status", "");
-      return item[type]?.status?.status || "";
+      return normalizeStatus(item[type]?.status?.status) || "";
     }
     if (field.endsWith("_size")) {
       const type = field.replace("_size", "");
@@ -101,15 +136,46 @@ const SegmentUrlReport = () => {
     );
   };
 
-  const renderStatusIcon = (status) => {
-    switch (status) {
-      case "ok":
-        return <CheckCircle className="text-green-600" size={20} />;
-      case "error":
-        return <XCircle className="text-red-600" size={20} />;
-      default:
-        return <AlertCircle className="text-gray-400" size={20} />;
-    }
+  const getStatusSummary = (item) => {
+    const counts = fileTypes.reduce(
+      (acc, type) => {
+        const status = item[type]?.status?.status?.toLowerCase();
+        if (status === "ok") acc.ok++;
+        if (status) acc.total++;
+        return acc;
+      },
+      { ok: 0, total: 0 }
+    );
+    return counts;
+  };
+
+  const renderStatusIcon = (item) => {
+    const status = checkSegmentStatus(item);
+    const counts = getStatusSummary(item);
+
+    const icon = (() => {
+      switch (status) {
+        case "ok":
+          return <CheckCircle className="text-green-600 mb-1" size={20} />;
+        case "error":
+          return <XCircle className="text-red-600 mb-1" size={20} />;
+        default:
+          return <AlertCircle className="text-gray-400 mb-1" size={20} />;
+      }
+    })();
+
+    return (
+      <div className="flex flex-col items-center">
+        {icon}
+        <div className="text-xs">
+          <span
+            className={status === "ok" ? "text-green-600" : "text-gray-600"}
+          >
+            {counts.ok}/{counts.total}
+          </span>
+        </div>
+      </div>
+    );
   };
 
   const createSegmentRow = (item) => {
@@ -143,8 +209,8 @@ const SegmentUrlReport = () => {
         </td>
       );
 
-    const status = fileInfo.status;
-    const showLink = status?.toLowerCase() !== "not-found";
+    const status = normalizeStatus(fileInfo.status);
+    const showLink = status?.toLowerCase() !== "404";
 
     return (
       <>
@@ -163,9 +229,7 @@ const SegmentUrlReport = () => {
           )}
         </td>
         <td className="p-2 border text-right">
-          {status?.toLowerCase() === "not-found"
-            ? "-"
-            : formatFileSize(fileInfo.size)}
+          {status === "404" ? "-" : formatFileSize(fileInfo.size)}
         </td>
       </>
     );
@@ -186,29 +250,24 @@ const SegmentUrlReport = () => {
     );
   }, [data, sortField, sortDirection]);
 
-  if (loading) {
+  if (loading)
     return (
       <div className="w-full p-4 text-center">
         Loading segment URL report...
       </div>
     );
-  }
-
-  if (error) {
+  if (error)
     return (
       <div className="w-full p-4 text-center text-red-600">
         Error loading report: {error}
       </div>
     );
-  }
-
-  if (!data || data.length === 0) {
+  if (!data?.length)
     return (
       <div className="w-full p-4 text-center">
         No segment URL data available.
       </div>
     );
-  }
 
   return (
     <div className="w-full overflow-x-auto">
@@ -224,6 +283,7 @@ const SegmentUrlReport = () => {
               onClick={() => handleSort("overallStatus")}
             >
               Status {renderSortIcon("overallStatus")}
+              {renderStatusSummary(calculateOverallSummary())}
             </th>
             {fileTypes.map((type) => (
               <th
@@ -232,6 +292,7 @@ const SegmentUrlReport = () => {
                 colSpan="2"
               >
                 {type}
+                {renderStatusSummary(calculateColumnSummary(type))}
               </th>
             ))}
           </tr>
@@ -270,7 +331,7 @@ const SegmentUrlReport = () => {
                 <td className="p-2 border">{row.scrollNum}</td>
                 <td className="p-2 border">{row.id}</td>
                 <td className="p-2 border text-center">
-                  {renderStatusIcon(row.overallStatus)}
+                  {renderStatusIcon(item)}
                 </td>
                 {fileTypes.map((type) => (
                   <React.Fragment key={`${row.id}-${type}`}>
