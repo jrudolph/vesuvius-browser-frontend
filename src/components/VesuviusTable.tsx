@@ -54,7 +54,7 @@ const maxColumnValue = (column) => {
   return Math.max(...initialData.map((item) => parseInt(item[column])));
 };
 
-const rangeColumns = ["width", "height"];
+const rangeColumns = ["width", "height", "minZ", "maxZ"];
 const minValues = {};
 const maxValues = {};
 
@@ -69,6 +69,8 @@ const defaultSettings = {
     id: "",
     width: { min: minValues["width"], max: maxValues["width"] },
     height: { min: minValues["height"], max: maxValues["height"] },
+    minZ: { min: minValues["minZ"], max: maxValues["minZ"] },
+    maxZ: { min: minValues["maxZ"], max: maxValues["maxZ"] },
   },
   selectedLayers: Object.keys(layerLabels),
   sortConfig: {
@@ -76,7 +78,15 @@ const defaultSettings = {
     direction: "ascending",
   },
   filterByLayers: false,
-  visibleColumns: ["volume", "id", "width", "height", "areaCm2"],
+  visibleColumns: [
+    "volume",
+    "id",
+    "width",
+    "height",
+    "areaCm2",
+    "minZ",
+    "maxZ",
+  ],
   showImages: true,
   activeScrollType: "scrolls",
   activeScrollId: null,
@@ -307,6 +317,8 @@ const ScrollTable = React.memo(({ data }) => {
       { label: "Width", column: "width", filterType: "range" },
       { label: "Height", column: "height", filterType: "range" },
       { label: "Area/cm²", column: "areaCm2" },
+      { label: "Min Z", column: "minZ", filterType: "range" },
+      { label: "Max Z", column: "maxZ", filterType: "range" },
     ],
     []
   );

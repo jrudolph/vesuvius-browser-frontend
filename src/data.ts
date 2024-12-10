@@ -4,12 +4,7 @@ const initialData = [
     height: 9417,
     id: "20231030220150",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20231030220150/20231030220150.tif",
@@ -30,12 +25,7 @@ const initialData = [
     height: 9523,
     id: "20231031231220",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20231031231220/20231031231220.tif",
@@ -55,13 +45,8 @@ const initialData = [
     areaCm2: 33.5112,
     height: 2491,
     id: "20240618142020",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20240618142020/20240618142020.tif",
@@ -82,12 +67,7 @@ const initialData = [
     height: 995,
     id: "20240712064330",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20240712064330/20240712064330.tif",
@@ -108,12 +88,7 @@ const initialData = [
     height: 1006,
     id: "20240712071520",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20240712071520/20240712071520.tif",
@@ -134,12 +109,7 @@ const initialData = [
     height: 1005,
     id: "20240712074250",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20240712074250/20240712074250.tif",
@@ -160,12 +130,7 @@ const initialData = [
     height: 975,
     id: "20240715203740",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20240715203740/20240715203740.tif",
@@ -185,13 +150,8 @@ const initialData = [
     areaCm2: 34.158,
     height: 2739,
     id: "20240716140050",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc332",
-      isFragment: false,
-      num: "3",
-      oldId: "0332",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc332", isFragment: false, num: "3", oldId: "0332" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll3/PHerc332.volpkg/paths/20240716140050/20240716140050.tif",
@@ -212,12 +172,9 @@ const initialData = [
     height: 85,
     id: "20230503225234",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 72,
+    minZ: 5,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230503225234/20230503225234.tif",
@@ -243,12 +200,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11276,
+    minZ: 9702,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230504093154/20230504093154.tif",
@@ -269,12 +223,9 @@ const initialData = [
     height: 2111,
     id: "20230504094316",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 47,
+    minZ: 10,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230504094316/20230504094316.tif",
@@ -300,12 +251,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 596,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230504125349/20230504125349.tif",
@@ -331,12 +279,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8767,
+    minZ: 7005,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230504171956/20230504171956.tif",
@@ -362,12 +307,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 4443,
+    minZ: 4306,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230504223647/20230504223647.tif",
@@ -393,12 +335,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7370,
+    minZ: 7004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230504225948/20230504225948.tif",
@@ -424,12 +363,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 5991,
+    minZ: 4304,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230504231922/20230504231922.tif",
@@ -455,12 +391,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 885,
+    minZ: 2,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230505093556/20230505093556.tif",
@@ -486,12 +419,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8721,
+    minZ: 7300,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230505113642/20230505113642.tif",
@@ -517,12 +447,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 3093,
+    minZ: 3001,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230505131816/20230505131816.tif",
@@ -548,12 +475,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 3178,
+    minZ: 3050,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230505135219/20230505135219.tif",
@@ -579,12 +503,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6995,
+    minZ: 4004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230505141722/20230505141722.tif",
@@ -610,12 +531,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 109,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230505164332/20230505164332.tif",
@@ -641,12 +559,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 497,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230505175240/20230505175240.tif",
@@ -672,12 +587,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 994,
+    minZ: 4,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230506133355/20230506133355.tif",
@@ -698,12 +610,9 @@ const initialData = [
     height: 71,
     id: "20230507172452",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 59,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230507172452/20230507172452.tif",
@@ -729,12 +638,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 134,
+    minZ: 5,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230507175928/20230507175928.tif",
@@ -755,12 +661,9 @@ const initialData = [
     height: 501,
     id: "20230508164013",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 67,
+    minZ: 4,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230508164013/20230508164013.tif",
@@ -786,12 +689,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 272,
+    minZ: 0,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230508220213/20230508220213.tif",
@@ -817,12 +717,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8194,
+    minZ: 6704,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230509160956/20230509160956.tif",
@@ -845,16 +742,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2464,
+    minZ: 403,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230509182749/20230509182749.tif",
@@ -877,16 +770,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2395,
+    minZ: 400,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230510153006/20230510153006.tif",
@@ -912,12 +801,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1096,
+    minZ: 5,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230510153843/20230510153843.tif",
@@ -943,12 +829,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 600,
+    minZ: 6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230510170242/20230510170242.tif",
@@ -974,12 +857,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 144,
+    minZ: 6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230511085916/20230511085916.tif",
@@ -1005,12 +885,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2310,
+    minZ: 456,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230511094040/20230511094040.tif",
@@ -1036,12 +913,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 125,
+    minZ: 1,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230511201612/20230511201612.tif",
@@ -1067,12 +941,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 567,
+    minZ: 300,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230511204029/20230511204029.tif",
@@ -1098,12 +969,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1107,
+    minZ: 551,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230511211540/20230511211540.tif",
@@ -1129,12 +997,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2514,
+    minZ: 900,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230511215040/20230511215040.tif",
@@ -1160,12 +1025,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1295,
+    minZ: 1111,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230511224701/20230511224701.tif",
@@ -1191,12 +1053,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 438,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512094635/20230512094635.tif",
@@ -1222,12 +1081,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 419,
+    minZ: 301,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512105719/20230512105719.tif",
@@ -1253,12 +1109,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 516,
+    minZ: 420,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512111225/20230512111225.tif",
@@ -1284,12 +1137,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1285,
+    minZ: 524,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512112647/20230512112647.tif",
@@ -1315,12 +1165,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 259,
+    minZ: 105,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512120728/20230512120728.tif",
@@ -1346,12 +1193,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2404,
+    minZ: 699,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512123446/20230512123446.tif",
@@ -1377,12 +1221,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2900,
+    minZ: 1106,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512123540/20230512123540.tif",
@@ -1408,12 +1249,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1036,
+    minZ: 506,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230512170431/20230512170431.tif",
@@ -1434,12 +1272,9 @@ const initialData = [
     height: 234,
     id: "20230513092954",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 97,
+    minZ: 1,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230513092954/20230513092954.tif",
@@ -1465,12 +1300,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 570,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230513095916/20230513095916.tif",
@@ -1496,12 +1328,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2398,
+    minZ: 1003,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230513164153/20230513164153.tif",
@@ -1522,12 +1351,9 @@ const initialData = [
     height: 606,
     id: "20230514173038",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 4048,
+    minZ: 4000,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230514173038/20230514173038.tif",
@@ -1553,12 +1379,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1907,
+    minZ: 804,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230515162442/20230515162442.tif",
@@ -1584,12 +1407,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7045,
+    minZ: 6600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230516112444/20230516112444.tif",
@@ -1615,12 +1435,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2813,
+    minZ: 1002,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230516114341/20230516114341.tif",
@@ -1646,12 +1463,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11348,
+    minZ: 7050,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230516115453/20230516115453.tif",
@@ -1677,12 +1491,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7126,
+    minZ: 7005,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230517021606/20230517021606.tif",
@@ -1703,12 +1514,9 @@ const initialData = [
     height: 1675,
     id: "20230517024455",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7150,
+    minZ: 7104,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230517024455/20230517024455.tif",
@@ -1734,12 +1542,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7795,
+    minZ: 7505,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230517025833/20230517025833.tif",
@@ -1765,12 +1570,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7735,
+    minZ: 7205,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230517180019/20230517180019.tif",
@@ -1796,12 +1598,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 5297,
+    minZ: 5200,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230517204451/20230517204451.tif",
@@ -1827,12 +1626,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13997,
+    minZ: 11350,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230517205601/20230517205601.tif",
@@ -1858,12 +1654,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 5645,
+    minZ: 5300,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518012543/20230518012543.tif",
@@ -1889,12 +1682,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1515,
+    minZ: 856,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518075340/20230518075340.tif",
@@ -1920,12 +1710,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1335,
+    minZ: 1106,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518104908/20230518104908.tif",
@@ -1951,12 +1738,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2635,
+    minZ: 54,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518130337/20230518130337.tif",
@@ -1982,12 +1766,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1531,
+    minZ: 1306,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518135715/20230518135715.tif",
@@ -2013,12 +1794,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6725,
+    minZ: 5652,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518181521/20230518181521.tif",
@@ -2044,12 +1822,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7946,
+    minZ: 7149,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518191548/20230518191548.tif",
@@ -2075,12 +1850,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7246,
+    minZ: 6700,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230518223227/20230518223227.tif",
@@ -2106,12 +1878,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8015,
+    minZ: 7255,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230519031042/20230519031042.tif",
@@ -2137,12 +1906,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1184,
+    minZ: 602,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230519140147/20230519140147.tif",
@@ -2168,12 +1934,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9549,
+    minZ: 8000,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230519195952/20230519195952.tif",
@@ -2199,12 +1962,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8115,
+    minZ: 7600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230519202000/20230519202000.tif",
@@ -2230,12 +1990,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8298,
+    minZ: 8120,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230519212155/20230519212155.tif",
@@ -2261,12 +2018,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8646,
+    minZ: 8330,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230519213404/20230519213404.tif",
@@ -2292,12 +2046,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10096,
+    minZ: 8650,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230519215753/20230519215753.tif",
@@ -2323,12 +2074,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1323,
+    minZ: 1,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230520132429/20230520132429.tif",
@@ -2351,16 +2099,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11397,
+    minZ: 9805,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230520175435/20230520175435.tif",
@@ -2386,12 +2130,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 866,
+    minZ: 500,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230520191415/20230520191415.tif",
@@ -2417,12 +2158,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 999,
+    minZ: 801,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230520192625/20230520192625.tif",
@@ -2448,12 +2186,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8369,
+    minZ: 7560,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230521093501/20230521093501.tif",
@@ -2479,12 +2214,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9046,
+    minZ: 8461,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230521104548/20230521104548.tif",
@@ -2510,12 +2242,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11245,
+    minZ: 9003,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230521113334/20230521113334.tif",
@@ -2541,12 +2270,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10286,
+    minZ: 9049,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230521114306/20230521114306.tif",
@@ -2572,12 +2298,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2847,
+    minZ: 101,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230521155616/20230521155616.tif",
@@ -2603,12 +2326,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10867,
+    minZ: 10290,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230521182226/20230521182226.tif",
@@ -2634,12 +2354,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12328,
+    minZ: 10850,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230521193032/20230521193032.tif",
@@ -2665,12 +2382,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10581,
+    minZ: 10025,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230522055405/20230522055405.tif",
@@ -2696,12 +2410,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1201,
+    minZ: 950,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230522151031/20230522151031.tif",
@@ -2727,12 +2438,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11296,
+    minZ: 9004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230522152820/20230522152820.tif",
@@ -2755,16 +2463,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13156,
+    minZ: 10000,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230522181603/20230522181603.tif",
@@ -2790,12 +2494,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9135,
+    minZ: 8281,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230522210033/20230522210033.tif",
@@ -2818,16 +2519,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12017,
+    minZ: 9119,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230522215721/20230522215721.tif",
@@ -2853,12 +2550,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11745,
+    minZ: 9004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230523002821/20230523002821.tif",
@@ -2884,12 +2578,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10350,
+    minZ: 10091,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230523020515/20230523020515.tif",
@@ -2915,12 +2606,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10541,
+    minZ: 10091,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230523034033/20230523034033.tif",
@@ -2946,12 +2634,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10839,
+    minZ: 9004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230523043449/20230523043449.tif",
@@ -2977,12 +2662,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2044,
+    minZ: 1100,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230523182629/20230523182629.tif",
@@ -3008,12 +2690,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 5366,
+    minZ: 4005,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230523191325/20230523191325.tif",
@@ -3039,12 +2718,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11597,
+    minZ: 10506,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230523233708/20230523233708.tif",
@@ -3065,12 +2741,9 @@ const initialData = [
     height: 49,
     id: "20230524004853",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 523,
+    minZ: 505,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230524004853/20230524004853.tif",
@@ -3096,12 +2769,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1284,
+    minZ: 504,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230524005636/20230524005636.tif",
@@ -3127,12 +2797,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 702,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230524092434/20230524092434.tif",
@@ -3158,12 +2825,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9585,
+    minZ: 9005,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230524163814/20230524163814.tif",
@@ -3189,12 +2853,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2809,
+    minZ: 1000,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230524173051/20230524173051.tif",
@@ -3220,12 +2881,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 3375,
+    minZ: 2505,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230524200918/20230524200918.tif",
@@ -3251,12 +2909,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7403,
+    minZ: 7005,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525051821/20230525051821.tif",
@@ -3282,12 +2937,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7584,
+    minZ: 7400,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525115626/20230525115626.tif",
@@ -3313,12 +2965,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10635,
+    minZ: 9201,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525121901/20230525121901.tif",
@@ -3344,12 +2993,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6798,
+    minZ: 5365,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525190724/20230525190724.tif",
@@ -3375,12 +3021,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6074,
+    minZ: 5360,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525194033/20230525194033.tif",
@@ -3406,12 +3049,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10795,
+    minZ: 8443,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525200512/20230525200512.tif",
@@ -3437,12 +3077,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12226,
+    minZ: 10501,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525212209/20230525212209.tif",
@@ -3468,12 +3105,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11873,
+    minZ: 10505,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230525234349/20230525234349.tif",
@@ -3499,12 +3133,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12445,
+    minZ: 10603,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230526002441/20230526002441.tif",
@@ -3530,12 +3161,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12447,
+    minZ: 10601,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230526015925/20230526015925.tif",
@@ -3561,12 +3189,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9044,
+    minZ: 5599,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230526154635/20230526154635.tif",
@@ -3592,12 +3217,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12445,
+    minZ: 10600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230526164930/20230526164930.tif",
@@ -3623,12 +3245,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12546,
+    minZ: 10605,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230526175622/20230526175622.tif",
@@ -3654,12 +3273,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2776,
+    minZ: 450,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230526183725/20230526183725.tif",
@@ -3685,12 +3301,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12296,
+    minZ: 10603,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230526205020/20230526205020.tif",
@@ -3716,12 +3329,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8896,
+    minZ: 4404,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230527020406/20230527020406.tif",
@@ -3747,12 +3357,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10854,
+    minZ: 8499,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230528112855/20230528112855.tif",
@@ -3778,12 +3385,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10156,
+    minZ: 8600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230529203721/20230529203721.tif",
@@ -3809,12 +3413,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 5694,
+    minZ: 4405,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230530025328/20230530025328.tif",
@@ -3840,12 +3441,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2295,
+    minZ: 404,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230530164535/20230530164535.tif",
@@ -3871,12 +3469,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2805,
+    minZ: 459,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230530172803/20230530172803.tif",
@@ -3902,12 +3497,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2345,
+    minZ: 402,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230530212931/20230530212931.tif",
@@ -3933,12 +3525,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2295,
+    minZ: 400,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230531101257/20230531101257.tif",
@@ -3964,12 +3553,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10546,
+    minZ: 8600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230531121653/20230531121653.tif",
@@ -3992,16 +3578,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2627,
+    minZ: 460,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230531193658/20230531193658.tif",
@@ -4024,16 +3606,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2685,
+    minZ: 463,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230531211425/20230531211425.tif",
@@ -4056,16 +3634,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8998,
+    minZ: 5300,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230601192025/20230601192025.tif",
@@ -4088,16 +3662,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8303,
+    minZ: 5300,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230601193301/20230601193301.tif",
@@ -4123,12 +3693,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8075,
+    minZ: 6104,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230601201143/20230601201143.tif",
@@ -4154,12 +3721,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1398,
+    minZ: 421,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230601204340/20230601204340.tif",
@@ -4185,12 +3749,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10494,
+    minZ: 9400,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230602092221/20230602092221.tif",
@@ -4216,12 +3777,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11995,
+    minZ: 8599,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230602213452/20230602213452.tif",
@@ -4247,12 +3805,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9225,
+    minZ: 6502,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230603153221/20230603153221.tif",
@@ -4278,12 +3833,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8767,
+    minZ: 6500,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230604111512/20230604111512.tif",
@@ -4309,12 +3861,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8686,
+    minZ: 6501,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230604112252/20230604112252.tif",
@@ -4340,12 +3889,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10265,
+    minZ: 8600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230604161948/20230604161948.tif",
@@ -4371,12 +3917,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11406,
+    minZ: 8600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230605065957/20230605065957.tif",
@@ -4402,12 +3945,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7196,
+    minZ: 5805,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230606105130/20230606105130.tif",
@@ -4433,12 +3973,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11225,
+    minZ: 8600,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230606222610/20230606222610.tif",
@@ -4464,12 +4001,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7598,
+    minZ: 6505,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230608150300/20230608150300.tif",
@@ -4495,12 +4029,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12596,
+    minZ: 8589,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230608200454/20230608200454.tif",
@@ -4526,12 +4057,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9196,
+    minZ: 6005,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230608222722/20230608222722.tif",
@@ -4557,12 +4085,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9998,
+    minZ: 8579,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230609123853/20230609123853.tif",
@@ -4588,12 +4113,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10494,
+    minZ: 7745,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230611014200/20230611014200.tif",
@@ -4619,12 +4141,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10544,
+    minZ: 7506,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230611145109/20230611145109.tif",
@@ -4650,12 +4169,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10496,
+    minZ: 8004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230612195231/20230612195231.tif",
@@ -4681,12 +4197,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11297,
+    minZ: 8442,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230613144727/20230613144727.tif",
@@ -4709,16 +4222,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7996,
+    minZ: 3192,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230613204956/20230613204956.tif",
@@ -4744,12 +4253,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6995,
+    minZ: 5603,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230619113941/20230619113941.tif",
@@ -4775,12 +4281,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7894,
+    minZ: 5946,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230619163051/20230619163051.tif",
@@ -4803,16 +4306,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2429,
+    minZ: 421,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230620230617/20230620230617.tif",
@@ -4835,16 +4334,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2418,
+    minZ: 502,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230620230619/20230620230619.tif",
@@ -4870,12 +4365,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11137,
+    minZ: 9390,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230621111336/20230621111336.tif",
@@ -4901,12 +4393,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2094,
+    minZ: 442,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230621122303/20230621122303.tif",
@@ -4932,12 +4421,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13446,
+    minZ: 8378,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230621182552/20230621182552.tif",
@@ -4963,12 +4449,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10556,
+    minZ: 8491,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230623123730/20230623123730.tif",
@@ -4994,12 +4477,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12328,
+    minZ: 6990,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230623160629/20230623160629.tif",
@@ -5025,12 +4505,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 3094,
+    minZ: 5,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230624144604/20230624144604.tif",
@@ -5056,12 +4533,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2643,
+    minZ: 6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230624160816/20230624160816.tif",
@@ -5087,12 +4561,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11754,
+    minZ: 6979,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230624190349/20230624190349.tif",
@@ -5115,16 +4586,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2245,
+    minZ: 40,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230625171244/20230625171244.tif",
@@ -5150,12 +4617,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8578,
+    minZ: 7397,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230625194752/20230625194752.tif",
@@ -5181,12 +4645,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2396,
+    minZ: 5,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230626140105/20230626140105.tif",
@@ -5212,12 +4673,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1195,
+    minZ: 5,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230626151618/20230626151618.tif",
@@ -5243,12 +4701,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1796,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230627122904/20230627122904.tif",
@@ -5274,12 +4729,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7496,
+    minZ: 5745,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230627170800/20230627170800.tif",
@@ -5305,12 +4757,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12910,
+    minZ: 7405,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230627202005/20230627202005.tif",
@@ -5333,16 +4782,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7995,
+    minZ: 5944,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230629215956/20230629215956.tif",
@@ -5365,16 +4810,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6446,
+    minZ: 2005,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230701020044/20230701020044.tif",
@@ -5400,12 +4841,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7295,
+    minZ: 5944,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230701115953/20230701115953.tif",
@@ -5431,12 +4869,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6898,
+    minZ: 5743,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230702182347/20230702182347.tif",
@@ -5460,16 +4895,12 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13698,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230702185753/20230702185753.tif",
@@ -5495,12 +4926,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12607,
+    minZ: 8842,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230705142414/20230705142414.tif",
@@ -5526,12 +4954,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11045,
+    minZ: 7417,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230706165709/20230706165709.tif",
@@ -5557,12 +4982,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11847,
+    minZ: 7406,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230707113838/20230707113838.tif",
@@ -5588,12 +5010,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11956,
+    minZ: 7393,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230709211458/20230709211458.tif",
@@ -5619,12 +5038,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12171,
+    minZ: 8454,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230711201157/20230711201157.tif",
@@ -5650,12 +5066,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 5327,
+    minZ: 4592,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230711210222/20230711210222.tif",
@@ -5681,12 +5094,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6268,
+    minZ: 4760,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230711222033/20230711222033.tif",
@@ -5712,12 +5122,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7066,
+    minZ: 5396,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230712124010/20230712124010.tif",
@@ -5743,12 +5150,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7606,
+    minZ: 6542,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230712210014/20230712210014.tif",
@@ -5771,16 +5175,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8246,
+    minZ: 6145,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230713152725/20230713152725.tif",
@@ -5806,12 +5206,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11268,
+    minZ: 7381,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230717092556/20230717092556.tif",
@@ -5837,12 +5234,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9667,
+    minZ: 7370,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230719103041/20230719103041.tif",
@@ -5868,12 +5262,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9459,
+    minZ: 7347,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230719214603/20230719214603.tif",
@@ -5899,12 +5290,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7688,
+    minZ: 7210,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230720215300/20230720215300.tif",
@@ -5930,12 +5318,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8260,
+    minZ: 7198,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230721122533/20230721122533.tif",
@@ -5961,12 +5346,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12227,
+    minZ: 7441,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230721143008/20230721143008.tif",
@@ -5992,12 +5374,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10767,
+    minZ: 8992,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230801193640/20230801193640.tif",
@@ -6023,12 +5402,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1695,
+    minZ: 345,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230806094533/20230806094533.tif",
@@ -6054,12 +5430,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8095,
+    minZ: 6903,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230806132553/20230806132553.tif",
@@ -6085,12 +5458,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8304,
+    minZ: 6644,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230808163057/20230808163057.tif",
@@ -6116,12 +5486,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6594,
+    minZ: 4798,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230812170020/20230812170020.tif",
@@ -6146,12 +5513,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2809,
+    minZ: 1512,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230813_real_1/20230813_real_1.tif",
@@ -6177,12 +5541,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10005,
+    minZ: 8405,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230819093803/20230819093803.tif",
@@ -6208,12 +5569,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2005,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230819210052/20230819210052.tif",
@@ -6239,12 +5597,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2093,
+    minZ: 6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230820091651/20230820091651.tif",
@@ -6270,12 +5625,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9394,
+    minZ: 7404,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230820174948/20230820174948.tif",
@@ -6298,16 +5650,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2518,
+    minZ: 601,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230820203112/20230820203112.tif",
@@ -6333,12 +5681,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12496,
+    minZ: 10205,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230826135043/20230826135043.tif",
@@ -6361,16 +5706,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9597,
+    minZ: 5203,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230826170124/20230826170124.tif",
@@ -6393,16 +5734,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12005,
+    minZ: 9793,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230826211400/20230826211400.tif",
@@ -6425,16 +5762,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12745,
+    minZ: 9179,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230827161847/20230827161847.tif",
@@ -6460,12 +5793,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12996,
+    minZ: 11002,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230828154913/20230828154913.tif",
@@ -6488,16 +5818,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12095,
+    minZ: 9294,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230901184804/20230901184804.tif",
@@ -6523,12 +5849,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12206,
+    minZ: 10406,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230901234823/20230901234823.tif",
@@ -6554,12 +5877,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12794,
+    minZ: 10004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230902141231/20230902141231.tif",
@@ -6582,16 +5902,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12055,
+    minZ: 9292,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230903193206/20230903193206.tif",
@@ -6614,16 +5930,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12046,
+    minZ: 9604,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230904020426/20230904020426.tif",
@@ -6646,16 +5958,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12047,
+    minZ: 9604,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230904135535/20230904135535.tif",
@@ -6678,16 +5986,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12001,
+    minZ: 9999,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230905134255/20230905134255.tif",
@@ -6710,16 +6014,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11801,
+    minZ: 9999,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230909121925/20230909121925.tif",
@@ -6745,12 +6045,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2046,
+    minZ: 1471,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230918021838/20230918021838.tif",
@@ -6776,12 +6073,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2046,
+    minZ: 1470,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230918022237/20230918022237.tif",
@@ -6807,12 +6101,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2047,
+    minZ: 1465,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230918023430/20230918023430.tif",
@@ -6838,12 +6129,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2046,
+    minZ: 1465,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230918024753/20230918024753.tif",
@@ -6869,12 +6157,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2046,
+    minZ: 1468,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230918140728/20230918140728.tif",
@@ -6900,12 +6185,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2046,
+    minZ: 1465,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230918143910/20230918143910.tif",
@@ -6931,12 +6213,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2046,
+    minZ: 1469,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230918145743/20230918145743.tif",
@@ -6959,16 +6238,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11696,
+    minZ: 10002,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230919113918/20230919113918.tif",
@@ -6991,16 +6266,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11996,
+    minZ: 10002,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230922174128/20230922174128.tif",
@@ -7023,16 +6294,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12096,
+    minZ: 9503,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230925002745/20230925002745.tif",
@@ -7055,16 +6322,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12096,
+    minZ: 9003,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230925090314/20230925090314.tif",
@@ -7087,16 +6350,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12097,
+    minZ: 9303,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230926164631/20230926164631.tif",
@@ -7119,16 +6378,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12097,
+    minZ: 9303,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230926164853/20230926164853.tif",
@@ -7152,16 +6407,10 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20230929220926/20230929220926.tif",
@@ -7184,16 +6433,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13397,
+    minZ: 11001,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231001164029/20231001164029.tif",
@@ -7216,16 +6461,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2495,
+    minZ: 343,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231004222109/20231004222109.tif",
@@ -7249,16 +6490,10 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231005123336/20231005123336.tif",
@@ -7282,16 +6517,10 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231007101619/20231007101619.tif",
@@ -7314,16 +6543,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11895,
+    minZ: 9404,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231011111857/20231011111857.tif",
@@ -7346,16 +6571,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11996,
+    minZ: 9304,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231011144857/20231011144857.tif",
@@ -7378,16 +6599,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12197,
+    minZ: 6004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231012085431/20231012085431.tif",
@@ -7410,16 +6627,10 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231012173610/20231012173610.tif",
@@ -7442,16 +6653,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 11026,
+    minZ: 7092,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231012184420/20231012184420.tif",
@@ -7474,16 +6681,10 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231012184424/20231012184424.tif",
@@ -7507,16 +6708,12 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13699,
+    minZ: 5403,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231016151002/20231016151002.tif",
@@ -7540,16 +6737,12 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13498,
+    minZ: 8001,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231022170901/20231022170901.tif",
@@ -7572,16 +6765,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 12196,
+    minZ: 8004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231024093300/20231024093300.tif",
@@ -7605,16 +6794,12 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9197,
+    minZ: 4,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231031143852/20231031143852.tif",
@@ -7638,16 +6823,12 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 9197,
+    minZ: 5,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231106155351/20231106155351.tif",
@@ -7670,16 +6851,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2996,
+    minZ: 1303,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231205141500/20231205141500.tif",
@@ -7705,12 +6882,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 2496,
+    minZ: 1504,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231206155550/20231206155550.tif",
@@ -7734,16 +6908,12 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13398,
+    minZ: 4,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231210121321/20231210121321.tif",
@@ -7767,16 +6937,12 @@ const initialData = [
       "mask",
       "grand-prize_17_32",
       "polytrope-test3-predictions",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 8496,
+    minZ: 4,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20231221180251/20231221180251.tif",
@@ -7799,16 +6965,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6802,
+    minZ: 3903,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240101215220/20240101215220.tif",
@@ -7834,12 +6996,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 4295,
+    minZ: 3503,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240102231959/20240102231959.tif",
@@ -7865,12 +7024,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 6795,
+    minZ: 5605,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240107134630/20240107134630.tif",
@@ -7896,12 +7052,9 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 7195,
+    minZ: 6204,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240109095720/20240109095720.tif",
@@ -7924,16 +7077,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13447,
+    minZ: 5802,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240110113230/20240110113230.tif",
@@ -7956,16 +7105,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 1694,
+    minZ: 3,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240116164433/20240116164433.tif",
@@ -7988,16 +7133,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10998,
+    minZ: 10004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240218140920/20240218140920.tif",
@@ -8020,16 +7161,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10996,
+    minZ: 10002,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240221073650/20240221073650.tif",
@@ -8052,16 +7189,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10996,
+    minZ: 10003,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240222111510/20240222111510.tif",
@@ -8084,16 +7217,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10996,
+    minZ: 10003,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240223130140/20240223130140.tif",
@@ -8116,16 +7245,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10997,
+    minZ: 10004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240227085920/20240227085920.tif",
@@ -8148,16 +7273,12 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 10998,
+    minZ: 10004,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/paths/20240301161650/20240301161650.tif",
@@ -8177,12 +7298,9 @@ const initialData = [
     height: 16953,
     id: "mesh_window_100414_150414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_100414_150414_flatboi/composite.png",
@@ -8201,18 +7319,10 @@ const initialData = [
   {
     height: 15478,
     id: "mesh_window_100414_150414_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_100414_150414_flatboi_1/composite.png",
@@ -8232,12 +7342,9 @@ const initialData = [
     height: 17063,
     id: "mesh_window_150414_200414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_150414_200414_flatboi/composite.png",
@@ -8256,18 +7363,10 @@ const initialData = [
   {
     height: 16110,
     id: "mesh_window_150414_200414_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_150414_200414_flatboi_1/composite.png",
@@ -8287,12 +7386,9 @@ const initialData = [
     height: 16989,
     id: "mesh_window_200414_250414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_200414_250414_flatboi/composite.png",
@@ -8312,12 +7408,9 @@ const initialData = [
     height: 16430,
     id: "mesh_window_200414_250414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_200414_250414_flatboi_1/composite.png",
@@ -8337,12 +7430,9 @@ const initialData = [
     height: 16731,
     id: "mesh_window_250414_300414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_250414_300414_flatboi/composite.png",
@@ -8362,12 +7452,9 @@ const initialData = [
     height: 16895,
     id: "mesh_window_250414_300414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_250414_300414_flatboi_1/composite.png",
@@ -8387,12 +7474,9 @@ const initialData = [
     height: 16534,
     id: "mesh_window_300414_350414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_300414_350414_flatboi/composite.png",
@@ -8412,12 +7496,9 @@ const initialData = [
     height: 17094,
     id: "mesh_window_300414_350414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_300414_350414_flatboi_1/composite.png",
@@ -8437,12 +7518,9 @@ const initialData = [
     height: 16604,
     id: "mesh_window_350414_400414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_350414_400414_flatboi/composite.png",
@@ -8461,17 +7539,10 @@ const initialData = [
   {
     height: 16741,
     id: "mesh_window_350414_400414_flatboi_1",
-    layers: [
-      "mask",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_350414_400414_flatboi_1/composite.png",
@@ -8491,12 +7562,9 @@ const initialData = [
     height: 16679,
     id: "mesh_window_400414_450414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_400414_450414_flatboi/composite.png",
@@ -8516,12 +7584,9 @@ const initialData = [
     height: 16163,
     id: "mesh_window_400414_450414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_400414_450414_flatboi_1/composite.png",
@@ -8541,12 +7606,9 @@ const initialData = [
     height: 16187,
     id: "mesh_window_414_50414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_414_50414_flatboi/composite.png",
@@ -8566,12 +7628,9 @@ const initialData = [
     height: 15342,
     id: "mesh_window_414_50414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_414_50414_flatboi_1/composite.png",
@@ -8591,12 +7650,9 @@ const initialData = [
     height: 16855,
     id: "mesh_window_450414_500414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_450414_500414_flatboi/composite.png",
@@ -8616,12 +7672,9 @@ const initialData = [
     height: 16600,
     id: "mesh_window_450414_500414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_450414_500414_flatboi_1/composite.png",
@@ -8641,12 +7694,7 @@ const initialData = [
     height: 17007,
     id: "mesh_window_500414_550414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_500414_550414_flatboi/composite.png",
@@ -8666,12 +7714,9 @@ const initialData = [
     height: 16647,
     id: "mesh_window_500414_550414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_500414_550414_flatboi_1/composite.png",
@@ -8691,12 +7736,9 @@ const initialData = [
     height: 17032,
     id: "mesh_window_50414_100414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_50414_100414_flatboi/composite.png",
@@ -8715,18 +7757,10 @@ const initialData = [
   {
     height: 16485,
     id: "mesh_window_50414_100414_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_50414_100414_flatboi_1/composite.png",
@@ -8746,12 +7780,7 @@ const initialData = [
     height: 18358,
     id: "mesh_window_550414_600414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_550414_600414_flatboi/composite.png",
@@ -8770,18 +7799,10 @@ const initialData = [
   {
     height: 16737,
     id: "mesh_window_550414_600414_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_550414_600414_flatboi_1/composite.png",
@@ -8801,12 +7822,9 @@ const initialData = [
     height: 17775,
     id: "mesh_window_600414_650414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_600414_650414_flatboi/composite.png",
@@ -8826,12 +7844,9 @@ const initialData = [
     height: 16571,
     id: "mesh_window_600414_650414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_600414_650414_flatboi_1/composite.png",
@@ -8851,12 +7866,7 @@ const initialData = [
     height: 17063,
     id: "mesh_window_650414_700414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_650414_700414_flatboi/composite.png",
@@ -8875,18 +7885,10 @@ const initialData = [
   {
     height: 17676,
     id: "mesh_window_650414_700414_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_650414_700414_flatboi_1/composite.png",
@@ -8905,18 +7907,10 @@ const initialData = [
   {
     height: 18864,
     id: "mesh_window_700414_750414_flatboi",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_700414_750414_flatboi/composite.png",
@@ -8935,17 +7929,10 @@ const initialData = [
   {
     height: 16707,
     id: "mesh_window_700414_750414_flatboi_1",
-    layers: [
-      "mask",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_700414_750414_flatboi_1/composite.png",
@@ -8965,12 +7952,9 @@ const initialData = [
     height: 16849,
     id: "mesh_window_750414_800414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_750414_800414_flatboi/composite.png",
@@ -8990,12 +7974,9 @@ const initialData = [
     height: 17853,
     id: "mesh_window_750414_800414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_750414_800414_flatboi_1/composite.png",
@@ -9014,17 +7995,8 @@ const initialData = [
   {
     height: 18476,
     id: "mesh_window_800414_850414_flatboi",
-    layers: [
-      "mask",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_800414_850414_flatboi/composite.png",
@@ -9043,18 +8015,10 @@ const initialData = [
   {
     height: 16524,
     id: "mesh_window_800414_850414_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_800414_850414_flatboi_1/composite.png",
@@ -9074,12 +8038,7 @@ const initialData = [
     height: 18686,
     id: "mesh_window_850414_900414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_850414_900414_flatboi/composite.png",
@@ -9099,12 +8058,9 @@ const initialData = [
     height: 17852,
     id: "mesh_window_850414_900414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_850414_900414_flatboi_1/composite.png",
@@ -9124,12 +8080,7 @@ const initialData = [
     height: 16497,
     id: "mesh_window_900414_950414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_900414_950414_flatboi/composite.png",
@@ -9149,12 +8100,7 @@ const initialData = [
     height: 16097,
     id: "mesh_window_900414_950414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_900414_950414_flatboi_1/composite.png",
@@ -9174,12 +8120,7 @@ const initialData = [
     height: 16438,
     id: "mesh_window_950414_1000414_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_950414_1000414_flatboi/composite.png",
@@ -9199,12 +8140,9 @@ const initialData = [
     height: 14785,
     id: "mesh_window_950414_1000414_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHercParis4",
-      isFragment: false,
-      num: "1",
-      oldId: "1",
-    },
+    maxZ: 13354,
+    minZ: -6,
+    scroll: { id: "PHercParis4", isFragment: false, num: "1", oldId: "1" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll1/PHercParis4.volpkg/scroll1_autosegmentation_20240821000000/working_mesh_window_950414_1000414_flatboi_1/composite.png",
@@ -9230,12 +8168,7 @@ const initialData = [
       "first-word_63_32",
       "first-word_63_32",
     ],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20231111135340/20231111135340.tif",
@@ -9256,12 +8189,7 @@ const initialData = [
     height: 8266,
     id: "20231122192640",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20231122192640/20231122192640.tif",
@@ -9281,13 +8209,8 @@ const initialData = [
     areaCm2: 8.98639,
     height: 8790,
     id: "20231210132040",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20231210132040/20231210132040.tif",
@@ -9308,12 +8231,7 @@ const initialData = [
     height: 13115,
     id: "20240304141530",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20240304141530/20240304141530.tif",
@@ -9333,13 +8251,8 @@ const initialData = [
     areaCm2: 187.541,
     height: 13482,
     id: "20240304141531",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20240304141531/20240304141531.tif",
@@ -9359,13 +8272,8 @@ const initialData = [
     areaCm2: 228.4329,
     height: 13077,
     id: "20240304144030",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20240304144030/20240304144030.tif",
@@ -9384,13 +8292,8 @@ const initialData = [
   {
     height: 14377,
     id: "20240304144031",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20240304144031/20240304144031.tif",
@@ -9410,13 +8313,8 @@ const initialData = [
     areaCm2: 232.586,
     height: 13119,
     id: "20240304161940",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20240304161940/20240304161940.tif",
@@ -9436,13 +8334,8 @@ const initialData = [
     areaCm2: 235.084,
     height: 13303,
     id: "20240304161941",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc1667",
-      isFragment: false,
-      num: "4",
-      oldId: "1667",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHerc1667", isFragment: false, num: "4", oldId: "1667" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll4/PHerc1667.volpkg/paths/20240304161941/20240304161941.tif",
@@ -9461,13 +8354,8 @@ const initialData = [
   {
     height: 9981,
     id: "20241025062040",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241025062040/20241025062040.tif",
@@ -9486,13 +8374,8 @@ const initialData = [
   {
     height: 1405,
     id: "20241025101030",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241025101030/20241025101030.tif",
@@ -9511,13 +8394,8 @@ const initialData = [
   {
     height: 1302,
     id: "20241025145341",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241025145341/20241025145341.tif",
@@ -9536,13 +8414,8 @@ const initialData = [
   {
     height: 1301,
     id: "20241025145701",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241025145701/20241025145701.tif",
@@ -9561,13 +8434,8 @@ const initialData = [
   {
     height: 1657,
     id: "20241025150211",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241025150211/20241025150211.tif",
@@ -9586,13 +8454,8 @@ const initialData = [
   {
     height: 2486,
     id: "20241028121111",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241028121111/20241028121111.tif",
@@ -9611,13 +8474,8 @@ const initialData = [
   {
     height: 2472,
     id: "20241030083650",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241030083650/20241030083650.tif",
@@ -9636,13 +8494,8 @@ const initialData = [
   {
     height: 10551,
     id: "20241030152030",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241030152030/20241030152030.tif",
@@ -9661,13 +8514,8 @@ const initialData = [
   {
     height: 10562,
     id: "20241030152031",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241030152031/20241030152031.tif",
@@ -9686,13 +8534,8 @@ const initialData = [
   {
     height: 1831,
     id: "20241101163240",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241101163240/20241101163240.tif",
@@ -9711,13 +8554,8 @@ const initialData = [
   {
     height: 2539,
     id: "20241102125650",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241102125650/20241102125650.tif",
@@ -9736,13 +8574,8 @@ const initialData = [
   {
     height: 1233,
     id: "20241102160330",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241102160330/20241102160330.tif",
@@ -9761,13 +8594,8 @@ const initialData = [
   {
     height: 3636,
     id: "20241105112301",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241105112301/20241105112301.tif",
@@ -9786,13 +8614,8 @@ const initialData = [
   {
     height: 7394,
     id: "20241108111522",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241108111522/20241108111522.tif",
@@ -9811,13 +8634,8 @@ const initialData = [
   {
     height: 7349,
     id: "20241108115232",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241108115232/20241108115232.tif",
@@ -9836,13 +8654,8 @@ const initialData = [
   {
     height: 1197,
     id: "20241108120730",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241108120730/20241108120730.tif",
@@ -9861,13 +8674,8 @@ const initialData = [
   {
     height: 3546,
     id: "20241108120731",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241108120731/20241108120731.tif",
@@ -9886,13 +8694,8 @@ const initialData = [
   {
     height: 7414,
     id: "20241108120732",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241108120732/20241108120732.tif",
@@ -9911,13 +8714,8 @@ const initialData = [
   {
     height: 1556,
     id: "20241113070770",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241113070770/20241113070770.tif",
@@ -9936,13 +8734,8 @@ const initialData = [
   {
     height: 1579,
     id: "20241113080880",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241113080880/20241113080880.tif",
@@ -9961,13 +8754,8 @@ const initialData = [
   {
     height: 1583,
     id: "20241113090990",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/paths/20241113090990/20241113090990.tif",
@@ -9987,12 +8775,7 @@ const initialData = [
     height: 32707,
     id: "mesh_0_window_-4562_45437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_-4562_45437_flatboi/composite.png",
@@ -10012,12 +8795,7 @@ const initialData = [
     height: 33036,
     id: "mesh_0_window_-4562_45437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_-4562_45437_flatboi_1/composite.png",
@@ -10036,13 +8814,8 @@ const initialData = [
   {
     height: 26223,
     id: "mesh_0_window_-4562_45437_flatboi_2",
-    layers: ["mask", "grand-prize_17_32", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_-4562_45437_flatboi_2/composite.png",
@@ -10062,12 +8835,7 @@ const initialData = [
     height: 26328,
     id: "mesh_0_window_145437_195437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_145437_195437_flatboi/composite.png",
@@ -10086,18 +8854,8 @@ const initialData = [
   {
     height: 23938,
     id: "mesh_0_window_145437_195437_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_145437_195437_flatboi_1/composite.png",
@@ -10117,12 +8875,7 @@ const initialData = [
     height: 26179,
     id: "mesh_0_window_145437_195437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_145437_195437_flatboi_2/composite.png",
@@ -10142,12 +8895,7 @@ const initialData = [
     height: 26250,
     id: "mesh_0_window_195437_245437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_195437_245437_flatboi/composite.png",
@@ -10166,18 +8914,8 @@ const initialData = [
   {
     height: 24259,
     id: "mesh_0_window_195437_245437_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_195437_245437_flatboi_1/composite.png",
@@ -10197,12 +8935,7 @@ const initialData = [
     height: 25517,
     id: "mesh_0_window_195437_245437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_195437_245437_flatboi_2/composite.png",
@@ -10221,13 +8954,8 @@ const initialData = [
   {
     height: 25536,
     id: "mesh_0_window_245437_295437_flatboi",
-    layers: ["mask", "grand-prize_17_32", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_245437_295437_flatboi/composite.png",
@@ -10247,12 +8975,7 @@ const initialData = [
     height: 24613,
     id: "mesh_0_window_245437_295437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_245437_295437_flatboi_1/composite.png",
@@ -10272,12 +8995,7 @@ const initialData = [
     height: 25016,
     id: "mesh_0_window_245437_295437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_245437_295437_flatboi_2/composite.png",
@@ -10296,18 +9014,8 @@ const initialData = [
   {
     height: 24672,
     id: "mesh_0_window_295437_345437_flatboi",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_295437_345437_flatboi/composite.png",
@@ -10327,12 +9035,7 @@ const initialData = [
     height: 24534,
     id: "mesh_0_window_295437_345437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_295437_345437_flatboi_1/composite.png",
@@ -10352,12 +9055,7 @@ const initialData = [
     height: 24953,
     id: "mesh_0_window_295437_345437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_295437_345437_flatboi_2/composite.png",
@@ -10377,12 +9075,7 @@ const initialData = [
     height: 24428,
     id: "mesh_0_window_345437_395437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_345437_395437_flatboi/composite.png",
@@ -10402,12 +9095,7 @@ const initialData = [
     height: 24400,
     id: "mesh_0_window_345437_395437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_345437_395437_flatboi_1/composite.png",
@@ -10426,13 +9114,8 @@ const initialData = [
   {
     height: 24750,
     id: "mesh_0_window_345437_395437_flatboi_2",
-    layers: ["mask", "grand-prize_17_32", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_345437_395437_flatboi_2/composite.png",
@@ -10452,12 +9135,7 @@ const initialData = [
     height: 24396,
     id: "mesh_0_window_395437_445437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_395437_445437_flatboi/composite.png",
@@ -10477,12 +9155,7 @@ const initialData = [
     height: 24386,
     id: "mesh_0_window_395437_445437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_395437_445437_flatboi_1/composite.png",
@@ -10501,13 +9174,8 @@ const initialData = [
   {
     height: 24292,
     id: "mesh_0_window_395437_445437_flatboi_2",
-    layers: ["mask", "grand-prize_17_32", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_395437_445437_flatboi_2/composite.png",
@@ -10526,18 +9194,8 @@ const initialData = [
   {
     height: 25087,
     id: "mesh_0_window_445437_495437_flatboi",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_445437_495437_flatboi/composite.png",
@@ -10556,18 +9214,8 @@ const initialData = [
   {
     height: 24714,
     id: "mesh_0_window_445437_495437_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_445437_495437_flatboi_1/composite.png",
@@ -10586,18 +9234,8 @@ const initialData = [
   {
     height: 24283,
     id: "mesh_0_window_445437_495437_flatboi_2",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_445437_495437_flatboi_2/composite.png",
@@ -10617,12 +9255,7 @@ const initialData = [
     height: 26211,
     id: "mesh_0_window_45437_95437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_45437_95437_flatboi/composite.png",
@@ -10641,18 +9274,8 @@ const initialData = [
   {
     height: 23959,
     id: "mesh_0_window_45437_95437_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_45437_95437_flatboi_1/composite.png",
@@ -10672,12 +9295,7 @@ const initialData = [
     height: 26190,
     id: "mesh_0_window_45437_95437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_45437_95437_flatboi_2/composite.png",
@@ -10696,18 +9314,8 @@ const initialData = [
   {
     height: 7105,
     id: "mesh_0_window_45437_95437_flatboi_3",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_45437_95437_flatboi_3/composite.png",
@@ -10727,12 +9335,7 @@ const initialData = [
     height: 25092,
     id: "mesh_0_window_495437_545437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_495437_545437_flatboi/composite.png",
@@ -10752,12 +9355,7 @@ const initialData = [
     height: 24921,
     id: "mesh_0_window_495437_545437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_495437_545437_flatboi_1/composite.png",
@@ -10776,18 +9374,8 @@ const initialData = [
   {
     height: 25451,
     id: "mesh_0_window_495437_545437_flatboi_2",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_495437_545437_flatboi_2/composite.png",
@@ -10806,13 +9394,8 @@ const initialData = [
   {
     height: 24688,
     id: "mesh_0_window_545437_595437_flatboi",
-    layers: ["mask", "grand-prize_17_32", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_545437_595437_flatboi/composite.png",
@@ -10832,12 +9415,7 @@ const initialData = [
     height: 25112,
     id: "mesh_0_window_545437_595437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_545437_595437_flatboi_1/composite.png",
@@ -10857,12 +9435,7 @@ const initialData = [
     height: 25496,
     id: "mesh_0_window_545437_595437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_545437_595437_flatboi_2/composite.png",
@@ -10881,18 +9454,8 @@ const initialData = [
   {
     height: 25315,
     id: "mesh_0_window_595437_645437_flatboi",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_595437_645437_flatboi/composite.png",
@@ -10911,18 +9474,8 @@ const initialData = [
   {
     height: 24967,
     id: "mesh_0_window_595437_645437_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_595437_645437_flatboi_1/composite.png",
@@ -10942,12 +9495,7 @@ const initialData = [
     height: 25621,
     id: "mesh_0_window_595437_645437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_595437_645437_flatboi_2/composite.png",
@@ -10966,18 +9514,8 @@ const initialData = [
   {
     height: 26300,
     id: "mesh_0_window_645437_695437_flatboi",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_645437_695437_flatboi/composite.png",
@@ -10997,12 +9535,7 @@ const initialData = [
     height: 26421,
     id: "mesh_0_window_645437_695437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_645437_695437_flatboi_1/composite.png",
@@ -11022,12 +9555,7 @@ const initialData = [
     height: 26324,
     id: "mesh_0_window_645437_695437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_645437_695437_flatboi_2/composite.png",
@@ -11046,18 +9574,8 @@ const initialData = [
   {
     height: 26104,
     id: "mesh_0_window_695437_745437_flatboi",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_695437_745437_flatboi/composite.png",
@@ -11076,18 +9594,8 @@ const initialData = [
   {
     height: 26152,
     id: "mesh_0_window_695437_745437_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_695437_745437_flatboi_1/composite.png",
@@ -11107,12 +9615,7 @@ const initialData = [
     height: 25749,
     id: "mesh_0_window_695437_745437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_695437_745437_flatboi_2/composite.png",
@@ -11132,12 +9635,7 @@ const initialData = [
     height: 24686,
     id: "mesh_0_window_745437_795437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_745437_795437_flatboi/composite.png",
@@ -11157,12 +9655,7 @@ const initialData = [
     height: 25103,
     id: "mesh_0_window_745437_795437_flatboi_1",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_745437_795437_flatboi_1/composite.png",
@@ -11182,12 +9675,7 @@ const initialData = [
     height: 25274,
     id: "mesh_0_window_745437_795437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_745437_795437_flatboi_2/composite.png",
@@ -11206,18 +9694,8 @@ const initialData = [
   {
     height: 23142,
     id: "mesh_0_window_795437_845437_flatboi",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_795437_845437_flatboi/composite.png",
@@ -11237,12 +9715,7 @@ const initialData = [
     height: 26492,
     id: "mesh_0_window_95437_145437_flatboi",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_95437_145437_flatboi/composite.png",
@@ -11261,18 +9734,8 @@ const initialData = [
   {
     height: 24112,
     id: "mesh_0_window_95437_145437_flatboi_1",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "autosegmented-prediction",
-    ],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    layers: ["mask", "autosegmented-prediction"],
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_95437_145437_flatboi_1/composite.png",
@@ -11292,12 +9755,7 @@ const initialData = [
     height: 26755,
     id: "mesh_0_window_95437_145437_flatboi_2",
     layers: ["mask", "autosegmented-prediction"],
-    scroll: {
-      id: "PHerc172",
-      isFragment: false,
-      num: "5",
-      oldId: "172",
-    },
+    scroll: { id: "PHerc172", isFragment: false, num: "5", oldId: "172" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll5/PHerc172.volpkg/thaumato_outputs/scroll5_thaumato_nov1/working/working_mesh_0_window_95437_145437_flatboi_2/composite.png",
@@ -11323,12 +9781,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230421192746/20230421192746.tif",
@@ -11354,12 +9807,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230421204550/20230421204550.tif",
@@ -11385,12 +9833,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230421215232/20230421215232.tif",
@@ -11416,12 +9859,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230421235552/20230421235552.tif",
@@ -11447,12 +9885,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230422011040/20230422011040.tif",
@@ -11478,12 +9911,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230422213203/20230422213203.tif",
@@ -11509,12 +9937,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230424181417/20230424181417.tif",
@@ -11540,12 +9963,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230424213608/20230424213608.tif",
@@ -11571,12 +9989,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230425163721/20230425163721.tif",
@@ -11602,12 +10015,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230425200944/20230425200944.tif",
@@ -11633,12 +10041,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230426114804/20230426114804.tif",
@@ -11664,12 +10067,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230426144221/20230426144221.tif",
@@ -11695,12 +10093,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230427171131/20230427171131.tif",
@@ -11726,12 +10119,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230501040514/20230501040514.tif",
@@ -11757,12 +10145,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230501042136/20230501042136.tif",
@@ -11788,12 +10171,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230503120034/20230503120034.tif",
@@ -11814,12 +10192,7 @@ const initialData = [
     height: 250,
     id: "20230503213852",
     layers: ["mask", "grand-prize_17_32"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230503213852/20230503213852.tif",
@@ -11845,12 +10218,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230504151750/20230504151750.tif",
@@ -11876,12 +10244,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230505142626/20230505142626.tif",
@@ -11907,12 +10270,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230506111616/20230506111616.tif",
@@ -11933,12 +10291,7 @@ const initialData = [
     height: 292,
     id: "20230506141535",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230506141535/20230506141535.tif",
@@ -11959,12 +10312,7 @@ const initialData = [
     height: 949,
     id: "20230506142341",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230506142341/20230506142341.tif",
@@ -11985,12 +10333,7 @@ const initialData = [
     height: 1068,
     id: "20230506145035",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230506145035/20230506145035.tif",
@@ -12016,12 +10359,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230506145829/20230506145829.tif",
@@ -12042,12 +10380,7 @@ const initialData = [
     height: 949,
     id: "20230506151750",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230506151750/20230506151750.tif",
@@ -12073,12 +10406,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230507064642/20230507064642.tif",
@@ -12104,12 +10432,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230507125513/20230507125513.tif",
@@ -12135,12 +10458,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230507175344/20230507175344.tif",
@@ -12166,12 +10484,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230508032834/20230508032834.tif",
@@ -12197,12 +10510,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230508080928/20230508080928.tif",
@@ -12223,12 +10531,7 @@ const initialData = [
     height: 122,
     id: "20230508131616",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230508131616/20230508131616.tif",
@@ -12254,12 +10557,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230508171353/20230508171353.tif",
@@ -12285,12 +10583,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230508181757/20230508181757.tif",
@@ -12316,12 +10609,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230509163359/20230509163359.tif",
@@ -12347,12 +10635,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230509173534/20230509173534.tif",
@@ -12378,12 +10661,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230512192835/20230512192835.tif",
@@ -12409,12 +10687,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230512211850/20230512211850.tif",
@@ -12440,12 +10713,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230515151114/20230515151114.tif",
@@ -12471,12 +10739,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230516154633/20230516154633.tif",
@@ -12502,12 +10765,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517000306/20230517000306.tif",
@@ -12528,12 +10786,7 @@ const initialData = [
     height: 2649,
     id: "20230517104414",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517104414/20230517104414.tif",
@@ -12559,12 +10812,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517151648/20230517151648.tif",
@@ -12590,12 +10838,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517153958/20230517153958.tif",
@@ -12616,12 +10859,7 @@ const initialData = [
     height: 94,
     id: "20230517164827",
     layers: ["mask"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517164827/20230517164827.tif",
@@ -12647,12 +10885,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517171727/20230517171727.tif",
@@ -12678,12 +10911,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517193901/20230517193901.tif",
@@ -12709,12 +10937,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230517214715/20230517214715.tif",
@@ -12740,12 +10963,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230518210035/20230518210035.tif",
@@ -12771,12 +10989,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230519033308/20230519033308.tif",
@@ -12802,12 +11015,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230520080703/20230520080703.tif",
@@ -12833,12 +11041,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230522172834/20230522172834.tif",
@@ -12864,12 +11067,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230522182853/20230522182853.tif",
@@ -12892,16 +11090,10 @@ const initialData = [
     layers: [
       "mask",
       "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230709155141/20230709155141.tif",
@@ -12927,12 +11119,7 @@ const initialData = [
       "first-word_15_32",
       "first-word_15_32_reverse",
     ],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20230801194757/20230801194757.tif",
@@ -12952,13 +11139,8 @@ const initialData = [
     areaCm2: 26.0456,
     height: 3079,
     id: "20240516205750",
-    layers: ["mask", "grand-prize_17_32", "timesformer-scroll5-27112024_17_32"],
-    scroll: {
-      id: "PHercParis3",
-      isFragment: false,
-      num: "2",
-      oldId: "2",
-    },
+    layers: ["mask", "grand-prize_17_32"],
+    scroll: { id: "PHercParis3", isFragment: false, num: "2", oldId: "2" },
     urls: {
       compositeUrl:
         "https://dl.ash2txt.org/full-scrolls/Scroll2/PHercParis3.volpkg/paths/20240516205750/20240516205750.tif",
@@ -13277,12 +11459,7 @@ const initialData = [
   {
     height: 14830,
     id: "54keV_exposed_surface",
-    layers: [
-      "mask",
-      "grand-prize_17_32",
-      "timesformer-scroll5-27112024_17_32",
-      "inklabel",
-    ],
+    layers: ["mask", "inklabel"],
     scroll: {
       id: "PHercParis2Fr143",
       isFragment: true,
