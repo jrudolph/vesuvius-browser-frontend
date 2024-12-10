@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VesuviusTable from "./components/VesuviusTable";
 import SegmentDetail from "./components/SegmentDetails";
 import Layout from "./Layout";
+import SegmentURLReport from "./components/SegmentUrlReport";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
             path="/scroll/:scrollNum/segment/:segmentId"
             element={<SegmentDetail />}
           />
+          <Route path="/report" element={<SegmentURLReport />} />
         </Routes>
       </Layout>
     </BrowserRouter>

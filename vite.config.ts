@@ -28,6 +28,19 @@ export default defineConfig({
           });
         },
       },
+      "/segments/url-report": {
+        target: "http://localhost:8089",
+        changeOrigin: true,
+        secure: true,
+        configure: (proxy) => {
+          proxy.on("proxyReq", (proxyReq, req) => {
+            // Preserve original path when forwarding
+            const target = new URL(proxyReq.protocol + "//" + proxyReq.host);
+            target.pathname = "api" + req.url;
+            proxyReq.path = target.pathname + target.search;
+          });
+        },
+      },
     },
   },
 });
