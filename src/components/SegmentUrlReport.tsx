@@ -17,7 +17,7 @@ const SegmentUrlReport = () => {
   const [sortField, setSortField] = useState(null);
   const [sortDirection, setSortDirection] = useState("asc");
   const [expandedGroups, setExpandedGroups] = useState(new Set());
-  const [isGrouped, setIsGrouped] = useState(true);
+  const [isGrouped, setIsGrouped] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -303,22 +303,33 @@ const SegmentUrlReport = () => {
     // Group by scroll ID
     const grouped = _.groupBy(data, "scroll.id");
 
-    // Sort segments within each group
-    return Object.entries(grouped).map(([scrollId, segments]) => ({
-      scrollId,
-      segments: sortField
-        ? _.orderBy(
-            segments,
-            [
-              (item) => {
-                const value = getSortValue(item, sortField);
-                return typeof value === "string" ? value.toLowerCase() : value;
-              },
-            ],
-            [sortDirection]
-          )
-        : segments,
-    }));
+    // Sort by scroll number
+    return Object.entries(grouped)
+      .map(([scrollId, segments]) => ({
+        scrollId,
+        scrollNum: segments[0].scroll.num,
+        isFragment: segments[0].scroll.isFragment,
+        segments: sortField
+          ? _.orderBy(
+              segments,
+              [
+                (item) => {
+                  const value = getSortValue(item, sortField);
+                  return typeof value === "string"
+                    ? value.toLowerCase()
+                    : value;
+                },
+              ],
+              [sortDirection]
+            )
+          : segments,
+      }))
+      .sort(
+        (a, b) =>
+          (a.isFragment ? 10000 : 0) +
+          a.scrollNum -
+          ((b.isFragment ? 10000 : 0) + b.scrollNum)
+      );
   }, [data, sortField, sortDirection]);
 
   if (loading)
@@ -420,7 +431,12 @@ const SegmentUrlReport = () => {
                               <ChevronRight size={16} />
                             )}
                           </button>
-                          <span className="font-medium">Scroll {scrollId}</span>
+                          <span className="font-medium">
+                            {segments[0].scroll.isFragment
+                              ? "Fragment"
+                              : "Scroll"}{" "}
+                            {segments[0].scroll.num}/{scrollId}
+                          </span>
                           <span className="text-sm ml-2">
                             ({segments.length} segments)
                           </span>
