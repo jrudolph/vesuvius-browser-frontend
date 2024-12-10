@@ -58,7 +58,16 @@ const SegmentUrlReport = () => {
     }
   };
 
-  const fileTypes = ["mask", "area", "obj", "ppm", "meta", "layer0", "layer32"];
+  const fileTypes = [
+    "mask",
+    "area",
+    "obj",
+    "ppm",
+    "meta",
+    "composite",
+    "layer0",
+    "layer32",
+  ];
 
   const normalizeStatus = (status) => {
     return status?.toLowerCase() === "not-found" ? "404" : status;
