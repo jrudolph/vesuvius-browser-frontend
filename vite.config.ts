@@ -28,7 +28,7 @@ export default defineConfig({
           });
         },
       },
-      "/segments/url-report": {
+      "/api/segments/url-report": {
         target: "http://localhost:8089",
         changeOrigin: true,
         secure: true,
@@ -36,7 +36,7 @@ export default defineConfig({
           proxy.on("proxyReq", (proxyReq, req) => {
             // Preserve original path when forwarding
             const target = new URL(proxyReq.protocol + "//" + proxyReq.host);
-            target.pathname = "api" + req.url;
+            target.pathname = req.url;
             proxyReq.path = target.pathname + target.search;
           });
         },

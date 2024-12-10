@@ -13,7 +13,7 @@ const SegmentUrlReport = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/segments/url-report");
+        const response = await fetch("/api/segments/url-report");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
