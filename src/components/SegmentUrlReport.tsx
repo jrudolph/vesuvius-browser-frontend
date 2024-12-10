@@ -135,7 +135,7 @@ const TableHeaderRow = ({
               onClick={() => handleSort(`${type}_status`)}
               className="inline-flex items-center"
             >
-              Status/URL {renderSortIcon(`${type}_status`)}
+              Status {renderSortIcon(`${type}_status`)}
             </button>
           </TableHead>
           <TableHead>
@@ -241,6 +241,32 @@ const SegmentUrlReport = () => {
       direction:
         prev.field === field && prev.direction === "asc" ? "desc" : "asc",
     }));
+  };
+
+  const getSortValue = (item, field) => {
+    if (field === "overallStatus") {
+      return checkSegmentStatus(item, fileTypes);
+    }
+    if (field.endsWith("_status")) {
+      const type = field.replace("_status", "");
+      return item[type]?.status?.status || "";
+    }
+    if (field.endsWith("_size")) {
+      const type = field.replace("_size", "");
+      return item[type]?.status?.size || 0;
+    }
+    return "";
+  };
+
+  const checkSegmentStatus = (item, types) => {
+    const statuses = types
+      .map((type) => item[type]?.status?.status?.toLowerCase())
+      .filter(Boolean);
+    return statuses.length
+      ? statuses.every((s) => s === "ok")
+        ? "ok"
+        : "error"
+      : "unknown";
   };
 
   const sortedData = React.useMemo(() => {
@@ -429,7 +455,21 @@ const SegmentUrlReport = () => {
                       ))}
                   </React.Fragment>
                 ))
-              : data.map((segment) => (
+              : (sortConfig.field
+                  ? _.orderBy(
+                      data,
+                      [
+                        (item) => {
+                          const value = getSortValue(item, sortConfig.field);
+                          return typeof value === "string"
+                            ? value.toLowerCase()
+                            : value;
+                        },
+                      ],
+                      [sortConfig.direction]
+                    )
+                  : data
+                ).map((segment) => (
                   <SegmentRow
                     key={`${segment.scroll.id}-${segment.id}`}
                     segment={segment}
