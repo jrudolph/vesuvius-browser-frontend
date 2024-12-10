@@ -210,23 +210,18 @@ const SegmentUrlReport = () => {
       );
 
     const status = normalizeStatus(fileInfo.status);
-    const showLink = status?.toLowerCase() !== "404";
 
     return (
       <>
         <td className={`p-2 border text-center ${getStatusColor(status)}`}>
-          {showLink ? (
-            <a
-              href={fileInfo.url}
-              className="hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {status}
-            </a>
-          ) : (
-            <span>{status}</span>
-          )}
+          <a
+            href={fileInfo.url}
+            className="hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {status}
+          </a>
         </td>
         <td className="p-2 border text-right">
           {status === "404" ? "-" : formatFileSize(fileInfo.size)}
