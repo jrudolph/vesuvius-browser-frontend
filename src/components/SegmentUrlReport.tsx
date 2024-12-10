@@ -19,17 +19,15 @@ import {
 import _ from "lodash";
 
 // Constants and utility functions
-const FILE_TYPES = [
-  "mask",
-  "area",
-  "obj",
-  "ppm",
-  "meta",
-  "composite",
-  "layer0",
-  "layer32",
-];
 const SIZE_UNITS = ["B", "KB", "MB", "GB"];
+
+const getFileTypes = (data) => {
+  if (!data?.length) return [];
+  const firstItem = data[0];
+  return Object.keys(firstItem)
+    .filter((key) => firstItem[key]?.status?.status !== undefined)
+    .sort();
+};
 
 const formatFileSize = (bytes) => {
   if (bytes === 0) return "0 B";
@@ -103,6 +101,7 @@ const TableHeaderRow = ({
   handleSort,
   renderSortIcon,
   calculateColumnSummary,
+  fileTypes,
 }) => (
   <>
     <TableRow className="bg-gray-100">
@@ -117,7 +116,7 @@ const TableHeaderRow = ({
         </button>
         <StatusSummary {...calculateColumnSummary("overall")} />
       </TableHead>
-      {FILE_TYPES.map((type) => (
+      {fileTypes.map((type) => (
         <TableHead key={type} colSpan={2} className="bg-gray-50">
           {type}
           <StatusSummary {...calculateColumnSummary(type)} />
@@ -129,14 +128,14 @@ const TableHeaderRow = ({
       <TableHead>#</TableHead>
       <TableHead>ID</TableHead>
       <TableHead className="text-center">All OK?</TableHead>
-      {FILE_TYPES.map((type) => (
+      {fileTypes.map((type) => (
         <React.Fragment key={`${type}-subheaders`}>
           <TableHead>
             <button
               onClick={() => handleSort(`${type}_status`)}
               className="inline-flex items-center"
             >
-              Status{renderSortIcon(`${type}_status`)}
+              Status/URL {renderSortIcon(`${type}_status`)}
             </button>
           </TableHead>
           <TableHead>
@@ -154,8 +153,8 @@ const TableHeaderRow = ({
 );
 
 const SegmentRow = ({ segment, fileTypes }) => {
-  const checkStatus = (item) => {
-    const statuses = fileTypes
+  const checkStatus = (item, types) => {
+    const statuses = types
       .map((type) => item[type]?.status?.status?.toLowerCase())
       .filter(Boolean);
     return statuses.length
@@ -190,7 +189,7 @@ const SegmentRow = ({ segment, fileTypes }) => {
         </a>
       </TableCell>
       <TableCell className="text-center">
-        <StatusIcon status={checkStatus(segment)} counts={counts} />
+        <StatusIcon status={checkStatus(segment, fileTypes)} counts={counts} />
       </TableCell>
       {fileTypes.map((type) => (
         <FileColumn
@@ -212,6 +211,7 @@ const SegmentRow = ({ segment, fileTypes }) => {
 
 const SegmentUrlReport = () => {
   const [data, setData] = useState([]);
+  const [fileTypes, setFileTypes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortConfig, setSortConfig] = useState({
@@ -227,7 +227,10 @@ const SegmentUrlReport = () => {
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         return res.json();
       })
-      .then(setData)
+      .then((jsonData) => {
+        setData(jsonData);
+        setFileTypes(getFileTypes(jsonData));
+      })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
@@ -310,6 +313,7 @@ const SegmentUrlReport = () => {
         <Table>
           <TableHeader>
             <TableHeaderRow
+              fileTypes={fileTypes}
               handleSort={handleSort}
               renderSortIcon={(field) => (
                 <ArrowUpDown
@@ -325,7 +329,7 @@ const SegmentUrlReport = () => {
                 const total = data.length;
                 const ok = data.filter((item) =>
                   type === "overall"
-                    ? FILE_TYPES.every(
+                    ? fileTypes.every(
                         (t) => item[t]?.status?.status?.toLowerCase() === "ok"
                       )
                     : item[type]?.status?.status?.toLowerCase() === "ok"
@@ -377,7 +381,7 @@ const SegmentUrlReport = () => {
                           const stats = segments.reduce(
                             (acc, item) => {
                               if (
-                                FILE_TYPES.every(
+                                fileTypes.every(
                                   (t) =>
                                     item[t]?.status?.status?.toLowerCase() ===
                                     "ok"
@@ -393,7 +397,7 @@ const SegmentUrlReport = () => {
                           return <StatusSummary {...stats} />;
                         })()}
                       </TableCell>
-                      {FILE_TYPES.map((type) => {
+                      {fileTypes.map((type) => {
                         const stats = segments.reduce(
                           (acc, item) => {
                             const status =
@@ -420,7 +424,7 @@ const SegmentUrlReport = () => {
                         <SegmentRow
                           key={`${segment.scroll.id}-${segment.id}`}
                           segment={segment}
-                          fileTypes={FILE_TYPES}
+                          fileTypes={fileTypes}
                         />
                       ))}
                   </React.Fragment>
@@ -429,7 +433,7 @@ const SegmentUrlReport = () => {
                   <SegmentRow
                     key={`${segment.scroll.id}-${segment.id}`}
                     segment={segment}
-                    fileTypes={FILE_TYPES}
+                    fileTypes={fileTypes}
                   />
                 ))}
           </TableBody>
