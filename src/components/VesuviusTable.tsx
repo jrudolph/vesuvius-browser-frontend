@@ -74,7 +74,7 @@ const defaultSettings = {
   ],
   showImages: true,
   activeScrollType: "scrolls",
-  activeScrollId: null,
+  activeScrollId: "PHercParis4",
 };
 
 const useLocalStorage = (key, initialValue) => {
