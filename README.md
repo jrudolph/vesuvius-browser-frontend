@@ -17,7 +17,10 @@ Run the development server:
 npm run dev
 ```
 
-Browser to http://localhost:5173 to see the frontend.
+Browse to http://localhost:5173 to see the frontend.
+
+For development, you can configure the vite proxy in `vite.config.ts` to point to a local backend server. The
+default configuration will use the public API and resources at https://vesuvius.virtual-void.net/.
 
 The frontend project setup is based on Cláudio Silva's https://github.com/claudio-silva/claude-artifact-runner (MIT License).
 See LICENSE.claude-artifact-runner for more information.
