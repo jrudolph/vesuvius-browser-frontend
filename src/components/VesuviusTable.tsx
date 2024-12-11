@@ -536,7 +536,7 @@ const VesuviusTable = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const { scrollGroups, filteredData } = useMemo(() => {
+  const scrollGroups = useMemo(() => {
     const groups = {};
     data.forEach((item) => {
       const scrollId = item.scroll.id;
@@ -549,25 +549,25 @@ const VesuviusTable = () => {
     const entries = Object.entries(groups);
     entries.sort((a, b) => a[1][0].scroll.num - b[1][0].scroll.num);
 
-    const isFragment = settings.activeScrollType === "fragments";
-    const filtered = data.filter(
-      (item) => item.scroll.isFragment === isFragment
-    );
+    return entries;
+  }, [data]);
+
+  const filteredData = useMemo(() => {
+    if (scrollGroups.length === 0) return [];
 
     if (settings.activeScrollId) {
-      return {
-        scrollGroups: entries,
-        filteredData: filtered.filter(
-          (item) => item.scroll.id === settings.activeScrollId
-        ),
-      };
+      return scrollGroups.filter(([key]) => {
+        return key === settings.activeScrollId;
+      })[0][1];
+    } else {
+      return scrollGroups.filter(([, data]) => {
+        return (
+          data[0].scroll.isFragment ===
+          (settings.activeScrollType === "fragments")
+        );
+      })[0][1];
     }
-
-    return {
-      scrollGroups: entries,
-      filteredData: filtered,
-    };
-  }, [settings.activeScrollType, settings.activeScrollId, data]);
+  }, [settings.activeScrollType, settings.activeScrollId, scrollGroups]);
 
   const scrollTabs = useMemo(() => {
     return scrollGroups
@@ -589,7 +589,10 @@ const VesuviusTable = () => {
           setSettings((prev) => ({
             ...prev,
             activeScrollType: value,
-            activeScrollId: null,
+            activeScrollId: scrollGroups.filter(
+              ([, data]) =>
+                data[0].scroll.isFragment === (value === "fragments")
+            )[0][0],
           }));
         }}
       >
