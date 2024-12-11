@@ -31,7 +31,9 @@ const STORAGE_KEY = "vesuvius-table-settings";
 
 const getLayerUrl = (scrollNum, segmentId, layer) => {
   if (layer === "mask") {
-    return `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/mask?v2`;
+    return `/scroll/${scrollNum}/segment/${segmentId}/mask`;
+  } else if (layer === "outline") {
+    return `/scroll/${scrollNum}/segment/${segmentId}/outline`;
   }
   const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
   return `${baseUrl}/${layer}?v2`;
@@ -39,6 +41,7 @@ const getLayerUrl = (scrollNum, segmentId, layer) => {
 
 const layerLabels = {
   mask: "Mask",
+  outline: "Outline",
   "grand-prize_17_32": "Grand Prize Model",
   "timesformer-scroll5-27112024_17_32": "Scroll 5 Model",
   "first-word_15_32": "First Word Model",
@@ -62,7 +65,7 @@ const defaultSettings = {
     maxZ: { min: 0, max: 1000000 },
     author: [],
   },
-  selectedLayers: ["mask", "grand-prize_17_32"],
+  selectedLayers: ["outline", "mask", "grand-prize_17_32"],
   sortConfig: {
     key: null,
     direction: "ascending",
@@ -271,9 +274,9 @@ const ImagePreview = React.memo(
               to={`/scroll/${scrollNum}/segment/${segmentId}/${layerKey ? `#layer=${layerKey}` : ""}`}
             >
               <img
-                src={url}
+                src={`${url}?width=120&height=80`}
                 alt={label}
-                className="w-48 h-36 object-cover rounded"
+                className="w-36 h-24 object-cover rounded"
                 loading="lazy"
               />
               <span className="text-xs text-gray-600 mt-1 text-center break-words w-20">
