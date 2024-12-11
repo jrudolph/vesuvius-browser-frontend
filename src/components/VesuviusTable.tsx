@@ -48,6 +48,7 @@ const layerLabels = {
 const defaultSettings = {
   filters: {
     volume: "",
+    volumeVoxelSize: "",
     id: "",
     width: { min: 0, max: 1000000 },
     height: { min: 0, max: 1000000 },
@@ -62,6 +63,7 @@ const defaultSettings = {
   filterByLayers: false,
   visibleColumns: [
     "volume",
+    "volumeVoxelSize",
     "id",
     "width",
     "height",
@@ -315,6 +317,7 @@ const ScrollTable = React.memo(({ data }) => {
   const columns = useMemo(
     () => [
       { label: "Volume", column: "volume" },
+      { label: "Voxel Resolution/µm", column: "volumeVoxelSize" },
       { label: "Segment ID", column: "id" },
       { label: "Width", column: "width", filterType: "range" },
       { label: "Height", column: "height", filterType: "range" },
