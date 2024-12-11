@@ -4,6 +4,7 @@ import VesuviusTable from "./components/VesuviusTable";
 import SegmentDetail from "./components/SegmentDetails";
 import Layout from "./Layout";
 import SegmentURLReport from "./components/SegmentUrlReport";
+import "./App.css";
 
 const App = () => {
   return (
