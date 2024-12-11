@@ -116,20 +116,20 @@ const useLocalStorage = (key, initialValue) => {
 };
 
 const FilterInput = React.memo(
-  ({ column, value, onChange, type = "text", min = 0, max = 100000 }) => {
+  ({ column, value, onChange, type = "text", filterRange = [0, 1000] }) => {
     if (type === "range") {
-      const [range, setRange] = useState([min, max]);
+      const [range, setRange] = useState(filterRange);
       return (
         <div className="filter-slider px-2">
           <div className="flex justify-between text-xs mb-1">
-            <span>{range[0]}</span>
-            <span>{range[1]}</span>
+            <span>{filterRange[0]}</span>
+            <span>{filterRange[1]}</span>
           </div>
 
           <Slider
             value={range}
-            min={min}
-            max={max}
+            min={filterRange[0]}
+            max={filterRange[1]}
             step={10}
             className="mt-2"
             onValueChange={(newRange) => {
@@ -162,6 +162,7 @@ const HeaderCell = React.memo(
     filterValue,
     onFilterChange,
     filterType,
+    filterRange,
   }) => (
     <TableHead>
       <div className="space-y-2">
@@ -182,6 +183,7 @@ const HeaderCell = React.memo(
         <FilterInput
           column={column}
           value={filterValue}
+          filterRange={filterRange}
           onChange={onFilterChange}
           type={filterType}
         />
@@ -328,6 +330,28 @@ const ScrollTable = React.memo(({ data }) => {
     settings.selectedLayers,
   ]);
 
+  const filterRangeFor = (column, filterType) => {
+    if (filterType === "range") {
+      const columnData = data.map((item) =>
+        item[column] ? parseInt(item[column]) : 0
+      );
+      const min = Math.min(...columnData);
+      const max = Math.max(...columnData);
+      console.log(column, min, max);
+      return [min, max];
+    } else {
+      return [0, 1000];
+    }
+  };
+
+  const filterRanges = useMemo(() => {
+    const ranges = {};
+    columns.forEach(({ column, filterType }) => {
+      ranges[column] = filterRangeFor(column, filterType);
+    });
+    return ranges;
+  }, [data]);
+
   return (
     <div className="rounded-md border">
       <div className="p-4 border-b">
@@ -357,6 +381,7 @@ const ScrollTable = React.memo(({ data }) => {
                   filterValue={settings.filters[column]}
                   onFilterChange={handleFilterChange}
                   filterType={filterType}
+                  filterRange={filterRanges[column]}
                 />
               ))}
             {settings.showImages && (
