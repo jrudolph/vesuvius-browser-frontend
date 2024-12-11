@@ -27,21 +27,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link to="/api/docs" className="px-3 py-2">
+                <a href="/api/docs" className="px-3 py-2">
                   API
-                </Link>
+                </a>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link to="/license" className="px-3 py-2">
+                <a href="/license" className="px-3 py-2">
                   License
-                </Link>
+                </a>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link to="/blog" className="px-3 py-2">
+                <a href="/blog" className="px-3 py-2">
                   Blog / Work Log
-                </Link>
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -79,7 +79,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             All EduceLab-Scrolls data is copyrighted by EduceLab/The University
             of Kentucky.
           </div>
-          <div>Version 159 built at {new Date().toISOString()}</div>
         </div>
       </footer>
     </div>
