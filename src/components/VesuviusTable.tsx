@@ -108,9 +108,8 @@ const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key);
-      return item && item.version === defaultSettings.version
-        ? JSON.parse(item)
-        : initialValue;
+      const item2 = item ? JSON.parse(item) : initialValue;
+      return item2.version === defaultSettings.version ? item2 : initialValue;
     } catch (error) {
       console.error("Error reading from localStorage:", error);
       return initialValue;
