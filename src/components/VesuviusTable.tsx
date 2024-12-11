@@ -224,23 +224,6 @@ const ImagePreview = React.memo(
 const ScrollTable = React.memo(({ data }) => {
   const [settings, setSettings] = useLocalStorage(STORAGE_KEY, defaultSettings);
 
-  // const minColumnValue = (column) => {
-  //   return Math.min(...initialData.map((item) => parseInt(item[column])));
-  // };
-
-  // const maxColumnValue = (column) => {
-  //   return Math.max(...initialData.map((item) => parseInt(item[column])));
-  // };
-
-  // const rangeColumns = ["width", "height", "minZ", "maxZ"];
-  // const minValues = {};
-  // const maxValues = {};
-
-  // rangeColumns.forEach((column) => {
-  //   minValues[column] = minColumnValue(column);
-  //   maxValues[column] = maxColumnValue(column);
-  // });
-
   const updateSettings = (key, value) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
   };
@@ -337,7 +320,6 @@ const ScrollTable = React.memo(({ data }) => {
       );
       const min = Math.min(...columnData);
       const max = Math.max(...columnData);
-      console.log(column, min, max);
       return [min, max];
     } else {
       return [0, 1000];
