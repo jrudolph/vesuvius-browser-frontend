@@ -28,8 +28,9 @@ export default defineConfig({
           });
         },
       },
-      "/api/segments/url-report": {
-        target: "http://localhost:8089",
+      "^/api/segments.*": {
+        //target: "https://localhost:8089",
+        target: "https://vesuvius.virtual-void.net",
         changeOrigin: true,
         secure: true,
         configure: (proxy) => {

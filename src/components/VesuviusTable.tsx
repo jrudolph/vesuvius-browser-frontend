@@ -1,5 +1,4 @@
-import initialData from "../data";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -46,31 +45,14 @@ const layerLabels = {
   "polytrope-inklabels-2024-08-16": "Polytrope Inklabels",
 };
 
-const minColumnValue = (column) => {
-  return Math.min(...initialData.map((item) => parseInt(item[column])));
-};
-
-const maxColumnValue = (column) => {
-  return Math.max(...initialData.map((item) => parseInt(item[column])));
-};
-
-const rangeColumns = ["width", "height", "minZ", "maxZ"];
-const minValues = {};
-const maxValues = {};
-
-rangeColumns.forEach((column) => {
-  minValues[column] = minColumnValue(column);
-  maxValues[column] = maxColumnValue(column);
-});
-
 const defaultSettings = {
   filters: {
     volume: "",
     id: "",
-    width: { min: minValues["width"], max: maxValues["width"] },
-    height: { min: minValues["height"], max: maxValues["height"] },
-    minZ: { min: minValues["minZ"], max: maxValues["minZ"] },
-    maxZ: { min: minValues["maxZ"], max: maxValues["maxZ"] },
+    width: { min: 0, max: 1000000 },
+    height: { min: 0, max: 1000000 },
+    minZ: { min: 0, max: 1000000 },
+    maxZ: { min: 0, max: 1000000 },
   },
   selectedLayers: Object.keys(layerLabels),
   sortConfig: {
@@ -117,41 +99,43 @@ const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 };
 
-const FilterInput = React.memo(({ column, value, onChange, type = "text" }) => {
-  if (type === "range") {
-    const [range, setRange] = useState([minValues[column], maxValues[column]]);
-    return (
-      <div className="filter-slider px-2">
-        <div className="flex justify-between text-xs mb-1">
-          <span>{range[0]}</span>
-          <span>{range[1]}</span>
-        </div>
+const FilterInput = React.memo(
+  ({ column, value, onChange, type = "text", min = 0, max = 100000 }) => {
+    if (type === "range") {
+      const [range, setRange] = useState([min, max]);
+      return (
+        <div className="filter-slider px-2">
+          <div className="flex justify-between text-xs mb-1">
+            <span>{range[0]}</span>
+            <span>{range[1]}</span>
+          </div>
 
-        <Slider
-          value={range}
-          min={minValues[column]}
-          max={maxValues[column]}
-          step={10}
-          className="mt-2"
-          onValueChange={(newRange) => {
-            setRange(newRange);
-            onChange(column, { min: newRange[0], max: newRange[1] });
-          }}
-        />
-      </div>
+          <Slider
+            value={range}
+            min={min}
+            max={max}
+            step={10}
+            className="mt-2"
+            onValueChange={(newRange) => {
+              setRange(newRange);
+              onChange(column, { min: newRange[0], max: newRange[1] });
+            }}
+          />
+        </div>
+      );
+    }
+
+    return (
+      <Input
+        placeholder={`Filter ${column}...`}
+        value={value}
+        onChange={(e) => onChange(column, e.target.value)}
+        className="w-full"
+        size="sm"
+      />
     );
   }
-
-  return (
-    <Input
-      placeholder={`Filter ${column}...`}
-      value={value}
-      onChange={(e) => onChange(column, e.target.value)}
-      className="w-full"
-      size="sm"
-    />
-  );
-});
+);
 
 const HeaderCell = React.memo(
   ({
@@ -221,6 +205,23 @@ const ImagePreview = React.memo(
 
 const ScrollTable = React.memo(({ data }) => {
   const [settings, setSettings] = useLocalStorage(STORAGE_KEY, defaultSettings);
+
+  // const minColumnValue = (column) => {
+  //   return Math.min(...initialData.map((item) => parseInt(item[column])));
+  // };
+
+  // const maxColumnValue = (column) => {
+  //   return Math.max(...initialData.map((item) => parseInt(item[column])));
+  // };
+
+  // const rangeColumns = ["width", "height", "minZ", "maxZ"];
+  // const minValues = {};
+  // const maxValues = {};
+
+  // rangeColumns.forEach((column) => {
+  //   minValues[column] = minColumnValue(column);
+  //   maxValues[column] = maxColumnValue(column);
+  // });
 
   const updateSettings = (key, value) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
@@ -460,10 +461,26 @@ const ScrollTable = React.memo(({ data }) => {
 
 const VesuviusTable = () => {
   const [settings, setSettings] = useLocalStorage(STORAGE_KEY, defaultSettings);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/segments")
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then((jsonData) => {
+        setData(jsonData);
+      })
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, []);
 
   const { scrollGroups, filteredData } = useMemo(() => {
     const groups = {};
-    initialData.forEach((item) => {
+    data.forEach((item) => {
       const scrollId = item.scroll.id;
       if (!groups[scrollId]) {
         groups[scrollId] = [];
@@ -475,7 +492,7 @@ const VesuviusTable = () => {
     entries.sort((a, b) => a[1][0].scroll.num - b[1][0].scroll.num);
 
     const isFragment = settings.activeScrollType === "fragments";
-    const filtered = initialData.filter(
+    const filtered = data.filter(
       (item) => item.scroll.isFragment === isFragment
     );
 
@@ -492,7 +509,7 @@ const VesuviusTable = () => {
       scrollGroups: entries,
       filteredData: filtered,
     };
-  }, [settings.activeScrollType, settings.activeScrollId]);
+  }, [settings.activeScrollType, settings.activeScrollId, data]);
 
   const scrollTabs = useMemo(() => {
     return scrollGroups
