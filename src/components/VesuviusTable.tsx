@@ -276,8 +276,9 @@ const ScrollTable = React.memo(({ data }) => {
           processed = processed.filter((item) => {
             const value = parseInt(item[key]);
             return (
-              value >= settings.filters[key].min &&
-              value <= settings.filters[key].max
+              !value ||
+              (value >= settings.filters[key].min &&
+                value <= settings.filters[key].max)
             );
           });
         } else {
