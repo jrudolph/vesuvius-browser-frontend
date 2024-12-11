@@ -55,6 +55,7 @@ const defaultSettings = {
     area: { min: 0, max: 1000000 },
     minZ: { min: 0, max: 1000000 },
     maxZ: { min: 0, max: 1000000 },
+    author: [],
   },
   selectedLayers: Object.keys(layerLabels),
   sortConfig: {
@@ -79,10 +80,14 @@ const defaultSettings = {
 };
 
 const columns = [
-  { label: "Volume", column: "volume" },
-  { label: "Voxel Resolution/µm", column: "volumeVoxelSize" },
+  { label: "Volume", column: "volume", filterType: "badge" },
+  {
+    label: "Voxel Resolution/µm",
+    column: "volumeVoxelSize",
+    filterType: "badge",
+  },
   { label: "Segment ID", column: "id" },
-  { label: "Author", column: "author" },
+  { label: "Author", column: "author", filterType: "badge" },
   { label: "Width", column: "width", filterType: "range" },
   { label: "Height", column: "height", filterType: "range" },
   { label: "Area/cm²", column: "areaCm2", filterType: "range" },
@@ -137,6 +142,30 @@ const FilterInput = React.memo(
               onChange(column, { min: newRange[0], max: newRange[1] });
             }}
           />
+        </div>
+      );
+    } else if (type === "badge") {
+      const [filter, setFilter] = useState(filterRange);
+      const handleBadgeClick = (val) => {
+        const newValue = filter.includes(val)
+          ? filter.filter((v) => v !== val)
+          : [...filter, val];
+        setFilter(newValue);
+        onChange(column, newValue);
+      };
+      const uniqueValues = filterRange;
+      return (
+        <div className="flex flex-wrap gap-2">
+          {uniqueValues.map((val) => (
+            <Badge
+              key={val}
+              variant={filter.includes(val) ? "default" : "outline"}
+              className="cursor-pointer"
+              onClick={() => handleBadgeClick(val)}
+            >
+              {val}
+            </Badge>
+          ))}
         </div>
       );
     }
@@ -271,9 +300,12 @@ const ScrollTable = React.memo(({ data }) => {
       );
     }
 
-    Object.keys(settings.filters).forEach((key) => {
+    columns.forEach((c) => {
+      const key = c.column;
       if (settings.filters[key]) {
-        if (typeof settings.filters[key] === "object") {
+        const filterType = c.filterType;
+
+        if (filterType === "range") {
           processed = processed.filter((item) => {
             const value = parseInt(item[key]);
             return (
@@ -282,12 +314,21 @@ const ScrollTable = React.memo(({ data }) => {
                 value <= settings.filters[key].max)
             );
           });
-        } else {
-          processed = processed.filter((item) =>
-            String(item[key])
-              .toLowerCase()
-              .includes(settings.filters[key].toLowerCase())
+        } else if (filterType === "badge") {
+          processed = processed.filter(
+            (item) =>
+              !item[key] ||
+              settings.filters[key].length == 0 ||
+              settings.filters[key].includes(item[key].toString().toLowerCase())
           );
+        } else {
+          processed = settings.filters[key]
+            ? processed.filter((item) =>
+                String(item[key])
+                  .toLowerCase()
+                  .includes(settings.filters[key].toLowerCase())
+              )
+            : processed;
         }
       }
     });
@@ -321,8 +362,14 @@ const ScrollTable = React.memo(({ data }) => {
       const min = Math.min(...columnData);
       const max = Math.max(...columnData);
       return [min, max];
+    } else if (filterType === "badge") {
+      const columnData = data
+        .filter((item) => item[column])
+        .map((item) => item[column].toString().trim().toLowerCase());
+      const uniqueValues = [...new Set(columnData)];
+      return uniqueValues;
     } else {
-      return [0, 1000];
+      return [];
     }
   };
 
