@@ -28,19 +28,11 @@ export default defineConfig({
           });
         },
       },
-      "^/api/segments.*": {
-        //target: "https://localhost:8089",
+      "^(/api/segments.*)|(/scroll/.*\\?.*)": {
+        //target: "http://localhost:8089",
         target: "https://vesuvius.virtual-void.net",
         changeOrigin: true,
         secure: true,
-        configure: (proxy) => {
-          proxy.on("proxyReq", (proxyReq, req) => {
-            // Preserve original path when forwarding
-            const target = new URL(proxyReq.protocol + "//" + proxyReq.host);
-            target.pathname = req.url;
-            proxyReq.path = target.pathname + target.search;
-          });
-        },
       },
     },
   },
