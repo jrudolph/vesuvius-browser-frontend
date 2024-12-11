@@ -37,7 +37,7 @@ const TableSettings = ({
       <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="ml-2">
           <Settings2 className="h-4 w-4 mr-2" />
-          Settings
+          Columns
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-56" align="end">

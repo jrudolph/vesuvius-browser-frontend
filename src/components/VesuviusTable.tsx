@@ -6,6 +6,11 @@ import { Slider } from "@/components/ui/slider";
 import { Link } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
   Table,
   TableBody,
   TableCell,
@@ -19,7 +24,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ChevronUp, ChevronDown, ArrowUpDown } from "lucide-react";
+import { ChevronUp, ChevronDown, ArrowUpDown, Filter, X } from "lucide-react";
 import TableSettings from "./TableSettings";
 
 const STORAGE_KEY = "vesuvius-table-settings";
@@ -193,30 +198,64 @@ const HeaderCell = React.memo(
     onFilterChange,
     filterType,
     filterRange,
+    onDisableColumn,
   }) => (
     <TableHead>
-      <div className="space-y-2">
-        <Button
-          variant="ghost"
-          onClick={() => onSort(column)}
-          className="font-semibold w-full flex justify-between items-center"
-        >
-          {label}
-          {sortConfig.key !== column ? (
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          ) : sortConfig.direction === "ascending" ? (
-            <ChevronUp className="ml-2 h-4 w-4" />
-          ) : (
-            <ChevronDown className="ml-2 h-4 w-4" />
-          )}
-        </Button>
-        <FilterInput
-          column={column}
-          value={filterValue}
-          filterRange={filterRange}
-          onChange={onFilterChange}
-          type={filterType}
-        />
+      <div className="w-full">
+        <div>{label}</div>
+        <div className="flex items-center space-x-1">
+          <Button
+            variant="ghost"
+            onClick={() => onSort(column)}
+            className="flex font-semibold justify-between items-center h-6 w-6 p-0"
+          >
+            {sortConfig.key !== column ? (
+              <ArrowUpDown className="ml-2 h-4 w-4" />
+            ) : sortConfig.direction === "ascending" ? (
+              <ChevronUp className="ml-2 h-4 w-4" />
+            ) : (
+              <ChevronDown className="ml-2 h-4 w-4" />
+            )}
+          </Button>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={
+                  (typeof filterValue === "string" && filterValue.length > 0) ||
+                  filterValue?.min !== undefined ||
+                  filterValue?.max !== undefined ||
+                  (Array.isArray(filterValue) && filterValue.length > 0)
+                    ? "text-primary h-6 w-4 p-0 flex "
+                    : "text-muted-foreground opacity-40 h-6 w-4 p-0 flex "
+                }
+              >
+                <Filter className="h-4 w-4" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="space-y-4">
+                <h4 className="font-medium leading-none">Filter {label}</h4>
+                <FilterInput
+                  column={column}
+                  value={filterValue}
+                  filterRange={filterRange}
+                  onChange={onFilterChange}
+                  type={filterType}
+                />
+              </div>
+            </PopoverContent>
+          </Popover>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => onDisableColumn(column)}
+            className="hover:opacity-100 h-6 w-4 p-0 flex "
+          >
+            <X className="h-3 w-3" />
+          </Button>
+        </div>
       </div>
     </TableHead>
   )
@@ -418,6 +457,15 @@ const ScrollTable = React.memo(({ data }) => {
           }
           onReset={resetSettings}
         />
+        <Button
+          variant="outline"
+          size="sm"
+          className="ml-2"
+          onClick={() => updateSettings("filters", defaultSettings.filters)}
+        >
+          <Filter className="h-4 w-4 mr-2" />
+          Reset Filters
+        </Button>
       </div>
       <Table>
         <TableHeader>
@@ -435,59 +483,84 @@ const ScrollTable = React.memo(({ data }) => {
                   onFilterChange={handleFilterChange}
                   filterType={filterType}
                   filterRange={filterRanges[column]}
+                  onDisableColumn={(col) =>
+                    updateSettings(
+                      "visibleColumns",
+                      settings.visibleColumns.filter((c) => c !== col)
+                    )
+                  }
                 />
               ))}
             {settings.showImages && (
               <>
                 <TableHead>
                   Preview Layers
-                  <div className="p-4 border-b flex gap-2 flex-wrap">
-                    <Badge
-                      variant={
-                        settings.selectedLayers.length ===
-                        Object.keys(layerLabels).length
-                          ? "default"
-                          : "outline"
-                      }
-                      className="cursor-pointer font-semibold"
-                      onClick={toggleAll}
-                    >
-                      {settings.selectedLayers.length ===
-                      Object.keys(layerLabels).length
-                        ? "Hide All"
-                        : "Show All"}
-                    </Badge>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button variant="ghost" size="icon">
+                        <Filter className="h-4 w-4" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-80">
+                      <div className="p-4 border-b flex gap-2 flex-wrap">
+                        <Badge
+                          variant={
+                            settings.selectedLayers.length ===
+                            Object.keys(layerLabels).length
+                              ? "default"
+                              : "outline"
+                          }
+                          className="cursor-pointer font-semibold"
+                          onClick={toggleAll}
+                        >
+                          {settings.selectedLayers.length ===
+                          Object.keys(layerLabels).length
+                            ? "Hide All"
+                            : "Show All"}
+                        </Badge>
 
-                    <Badge
-                      variant={settings.filterByLayers ? "default" : "outline"}
-                      className="cursor-pointer font-semibold"
-                      onClick={() =>
-                        updateSettings(
-                          "filterByLayers",
-                          !settings.filterByLayers
-                        )
-                      }
-                    >
-                      Filter
-                    </Badge>
+                        <Badge
+                          variant={
+                            settings.filterByLayers ? "default" : "outline"
+                          }
+                          className="cursor-pointer font-semibold"
+                          onClick={() =>
+                            updateSettings(
+                              "filterByLayers",
+                              !settings.filterByLayers
+                            )
+                          }
+                        >
+                          Filter
+                        </Badge>
 
-                    <div className="w-px h-6 bg-gray-200 mx-2" />
+                        <div className="w-px h-6 bg-gray-200 mx-2" />
 
-                    {Object.entries(layerLabels).map(([key, label]) => (
-                      <Badge
-                        key={key}
-                        variant={
-                          settings.selectedLayers.includes(key)
-                            ? "default"
-                            : "outline"
-                        }
-                        className="cursor-pointer"
-                        onClick={() => toggleLayer(key)}
-                      >
-                        {label}
-                      </Badge>
-                    ))}
-                  </div>
+                        {Object.entries(layerLabels).map(([key, label]) => (
+                          <Badge
+                            key={key}
+                            variant={
+                              settings.selectedLayers.includes(key)
+                                ? "default"
+                                : "outline"
+                            }
+                            className="cursor-pointer"
+                            onClick={() => toggleLayer(key)}
+                          >
+                            {label}
+                          </Badge>
+                        ))}
+                      </div>
+                    </PopoverContent>
+                  </Popover>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => updateSettings("showImages", false)}
+                    className="hover:opacity-100"
+                  >
+                    <X className="h-3 w-3" />
+                  </Button>
                 </TableHead>
               </>
             )}
