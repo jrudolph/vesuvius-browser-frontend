@@ -62,7 +62,7 @@ const defaultSettings = {
     maxZ: { min: 0, max: 1000000 },
     author: [],
   },
-  selectedLayers: Object.keys(layerLabels),
+  selectedLayers: ["mask", "grand-prize_17_32"],
   sortConfig: {
     key: null,
     direction: "ascending",
