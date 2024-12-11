@@ -47,8 +47,8 @@ const layerLabels = {
 
 const defaultSettings = {
   filters: {
-    volume: "",
-    volumeVoxelSize: "",
+    volume: [],
+    volumeVoxelSize: [],
     id: "",
     width: { min: 0, max: 1000000 },
     height: { min: 0, max: 1000000 },
@@ -145,12 +145,10 @@ const FilterInput = React.memo(
         </div>
       );
     } else if (type === "badge") {
-      const [filter, setFilter] = useState(filterRange);
       const handleBadgeClick = (val) => {
-        const newValue = filter.includes(val)
-          ? filter.filter((v) => v !== val)
-          : [...filter, val];
-        setFilter(newValue);
+        const newValue = value.includes(val)
+          ? value.filter((v) => v !== val)
+          : [...value, val];
         onChange(column, newValue);
       };
       const uniqueValues = filterRange;
@@ -159,7 +157,7 @@ const FilterInput = React.memo(
           {uniqueValues.map((val) => (
             <Badge
               key={val}
-              variant={filter.includes(val) ? "default" : "outline"}
+              variant={value.includes(val) ? "default" : "outline"}
               className="cursor-pointer"
               onClick={() => handleBadgeClick(val)}
             >
@@ -290,6 +288,29 @@ const ScrollTable = React.memo(({ data }) => {
   const resetSettings = () => {
     setSettings(defaultSettings);
   };
+
+  useEffect(() => {
+    columns.forEach((c) => {
+      if (c.filterType === "badge") {
+        // remove items that are not in the data
+        const key = c.column;
+        const uniqueValues = [
+          ...new Set(data.map((item) => item[key]).filter(Boolean)),
+        ];
+
+        // filter if it is array
+        const newFilters = Array.isArray(settings.filters[key])
+          ? settings.filters[key].filter((val) => uniqueValues.includes(val))
+          : [];
+        if (newFilters.length !== settings.filters[key].length) {
+          updateSettings("filters", {
+            ...settings.filters,
+            [key]: newFilters,
+          });
+        }
+      }
+    });
+  }, [data]);
 
   const filteredAndSortedData = useMemo(() => {
     let processed = [...data];
