@@ -52,6 +52,7 @@ const defaultSettings = {
     id: "",
     width: { min: 0, max: 1000000 },
     height: { min: 0, max: 1000000 },
+    area: { min: 0, max: 1000000 },
     minZ: { min: 0, max: 1000000 },
     maxZ: { min: 0, max: 1000000 },
   },
@@ -76,6 +77,18 @@ const defaultSettings = {
   activeScrollType: "scrolls",
   activeScrollId: "PHercParis4",
 };
+
+const columns = [
+  { label: "Volume", column: "volume" },
+  { label: "Voxel Resolution/µm", column: "volumeVoxelSize" },
+  { label: "Segment ID", column: "id" },
+  { label: "Author", column: "author" },
+  { label: "Width", column: "width", filterType: "range" },
+  { label: "Height", column: "height", filterType: "range" },
+  { label: "Area/cm²", column: "areaCm2", filterType: "range" },
+  { label: "Min Z", column: "minZ", filterType: "range" },
+  { label: "Max Z", column: "maxZ", filterType: "range" },
+];
 
 const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
@@ -314,21 +327,6 @@ const ScrollTable = React.memo(({ data }) => {
     settings.filterByLayers,
     settings.selectedLayers,
   ]);
-
-  const columns = useMemo(
-    () => [
-      { label: "Volume", column: "volume" },
-      { label: "Voxel Resolution/µm", column: "volumeVoxelSize" },
-      { label: "Segment ID", column: "id" },
-      { label: "Author", column: "author" },
-      { label: "Width", column: "width", filterType: "range" },
-      { label: "Height", column: "height", filterType: "range" },
-      { label: "Area/cm²", column: "areaCm2" },
-      { label: "Min Z", column: "minZ", filterType: "range" },
-      { label: "Max Z", column: "maxZ", filterType: "range" },
-    ],
-    []
-  );
 
   return (
     <div className="rounded-md border">
