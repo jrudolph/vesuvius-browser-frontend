@@ -36,4 +36,25 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Create a separate chunk for Lodash
+          if (id.includes("node_modules/openseadragon")) {
+            return "openseadragon-vendor";
+          }
+
+          if (id.includes("node_modules/lodash")) {
+            return "lodash-vendor";
+          }
+
+          // Other node_modules go to the main vendor chunk
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
+        },
+      },
+    },
+  },
 });

@@ -16,7 +16,7 @@ import {
   ChevronDown,
   ChevronRight,
 } from "lucide-react";
-import _ from "lodash";
+import groupBy from "lodash/groupBy";
 
 // Constants and utility functions
 const SIZE_UNITS = ["B", "KB", "MB", "GB"];
@@ -272,7 +272,7 @@ const SegmentUrlReport = () => {
   const sortedData = React.useMemo(() => {
     if (!data?.length) return [];
 
-    const grouped = _.groupBy(data, "scroll.id");
+    const grouped = groupBy(data, "scroll.id");
     return Object.entries(grouped)
       .map(([scrollId, segments]) => ({
         scrollId,
