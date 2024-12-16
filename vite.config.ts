@@ -40,13 +40,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // Create a separate chunk for Lodash
+          // Openseagdragon is big so avoid loading it for the frontpage
           if (id.includes("node_modules/openseadragon")) {
             return "openseadragon-vendor";
-          }
-
-          if (id.includes("node_modules/lodash")) {
-            return "lodash-vendor";
           }
 
           // Other node_modules go to the main vendor chunk
