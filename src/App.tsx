@@ -1,10 +1,12 @@
 //import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy } from "react";
 import VesuviusTable from "./components/VesuviusTable";
-import SegmentDetail from "./components/SegmentDetails";
 import Layout from "./Layout";
-import SegmentURLReport from "./components/SegmentUrlReport";
 import "./App.css";
+
+const SegmentDetail = lazy(() => import("./components/SegmentDetails"));
+const SegmentURLReport = lazy(() => import("./components/SegmentUrlReport"));
 
 const App = () => {
   return (
