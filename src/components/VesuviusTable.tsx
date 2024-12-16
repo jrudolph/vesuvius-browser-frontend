@@ -84,7 +84,6 @@ const defaultSettings = {
   filterByLayers: false,
   visibleColumns: [
     "volume",
-    "volumeVoxelSize",
     "id",
     "author",
     "width",
@@ -99,12 +98,37 @@ const defaultSettings = {
   version: 2,
 };
 
+const getVolumeId = (volume) => {
+  return volume.volume;
+};
+const showVolume = (volume) => {
+  const sizeColor =
+    volume.voxelSizenM == 7910 ? "bg-emerald-500" : "bg-emerald-700";
+  const energyColor = volume.energykeV == 54 ? "bg-amber-500" : "bg-amber-700";
+
+  return (
+    <div className="flex flex-nowrap">
+      <Badge className="rounded-r-none">{volume.volume}</Badge>
+      <Badge className={`rounded-none ${sizeColor}`}>
+        {volume.voxelSizenM / 1000}µm
+      </Badge>
+      <Badge className={`rounded-l-none ${energyColor}`}>
+        {volume.energykeV}keV
+      </Badge>
+      <a href={volume.baseUrl} target="_blank">
+        <ExternalLink className="w-4 h-4 ml-1" />
+      </a>
+    </div>
+  );
+};
+
 const columns = [
-  { label: "Volume", column: "volume", filterType: "badge" },
   {
-    label: "Voxel Resolution/µm",
-    column: "volumeVoxelSize",
+    label: "Volume",
+    column: "volume",
     filterType: "badge",
+    filterMap: getVolumeId,
+    columnDisplay: showVolume,
   },
   { label: "Segment ID", column: "id" },
   { label: "Author", column: "author", filterType: "badge" },
@@ -210,6 +234,7 @@ const HeaderCell = React.memo(
     filterValue,
     onFilterChange,
     filterType,
+    filterMap,
     filterRange,
     onDisableColumn,
   }) => (
@@ -256,6 +281,7 @@ const HeaderCell = React.memo(
                   filterRange={filterRange}
                   onChange={onFilterChange}
                   type={filterType}
+                  filterMap={filterMap}
                 />
               </div>
             </PopoverContent>
@@ -346,11 +372,13 @@ const ScrollTable = React.memo(({ data }) => {
 
   useEffect(() => {
     columns.forEach((c) => {
+      const filterMap = c.filterMap ? c.filterMap : (val) => val;
+
       if (c.filterType === "badge") {
         // remove items that are not in the data
         const key = c.column;
         const uniqueValues = [
-          ...new Set(data.map((item) => item[key]).filter(Boolean)),
+          ...new Set(data.map((item) => filterMap(item[key])).filter(Boolean)),
         ];
 
         // filter if it is array
@@ -380,10 +408,11 @@ const ScrollTable = React.memo(({ data }) => {
       const key = c.column;
       if (settings.filters[key]) {
         const filterType = c.filterType;
+        const filterMap = c.filterMap ? c.filterMap : (val) => val;
 
         if (filterType === "range") {
           processed = processed.filter((item) => {
-            const value = parseInt(item[key]);
+            const value = parseInt(filterMap(item[key]));
             return (
               !value ||
               (value >= settings.filters[key].min &&
@@ -395,12 +424,14 @@ const ScrollTable = React.memo(({ data }) => {
             (item) =>
               !item[key] ||
               settings.filters[key].length == 0 ||
-              settings.filters[key].includes(item[key].toString().toLowerCase())
+              settings.filters[key].includes(
+                filterMap(item[key]).toString().toLowerCase()
+              )
           );
         } else {
           processed = settings.filters[key]
             ? processed.filter((item) =>
-                String(item[key])
+                String(filterMap(item[key]))
                   .toLowerCase()
                   .includes(settings.filters[key].toLowerCase())
               )
@@ -437,18 +468,21 @@ const ScrollTable = React.memo(({ data }) => {
     settings.selectedLayers,
   ]);
 
-  const filterRangeFor = (column, filterType) => {
+  const filterRangeFor = (column, filterType, filterMap) => {
+    const filterMapFn = filterMap ? filterMap : (val) => val;
     if (filterType === "range") {
       const columnData = data.map((item) =>
-        item[column] ? parseInt(item[column]) : 0
+        item[column] ? parseInt(filterMapFn(item[column])) : 0
       );
       const min = Math.min(...columnData);
       const max = Math.max(...columnData);
       return [min, max];
     } else if (filterType === "badge") {
       const columnData = data
-        .filter((item) => item[column])
-        .map((item) => item[column].toString().trim().toLowerCase());
+        .filter((item) => filterMapFn(item[column]))
+        .map((item) =>
+          filterMapFn(item[column]).toString().trim().toLowerCase()
+        );
       const uniqueValues = [...new Set(columnData)];
       return uniqueValues;
     } else {
@@ -458,8 +492,8 @@ const ScrollTable = React.memo(({ data }) => {
 
   const filterRanges = useMemo(() => {
     const ranges = {};
-    columns.forEach(({ column, filterType }) => {
-      ranges[column] = filterRangeFor(column, filterType);
+    columns.forEach(({ column, filterType, filterMap }) => {
+      ranges[column] = filterRangeFor(column, filterType, filterMap);
     });
     return ranges;
   }, [data]);
@@ -492,7 +526,7 @@ const ScrollTable = React.memo(({ data }) => {
           <TableRow className="align-top">
             {columns
               .filter(({ column }) => settings.visibleColumns.includes(column))
-              .map(({ label, column, filterType }) => (
+              .map(({ label, column, filterType, filterMap }) => (
                 <HeaderCell
                   key={column}
                   label={label}
@@ -502,6 +536,7 @@ const ScrollTable = React.memo(({ data }) => {
                   filterValue={settings.filters[column]}
                   onFilterChange={handleFilterChange}
                   filterType={filterType}
+                  filterMap={filterMap}
                   filterRange={filterRanges[column]}
                   onDisableColumn={(col) =>
                     updateSettings(
@@ -594,7 +629,7 @@ const ScrollTable = React.memo(({ data }) => {
                 .filter(({ column }) =>
                   settings.visibleColumns.includes(column)
                 )
-                .map(({ column }) => (
+                .map(({ column, columnDisplay }) => (
                   <TableCell key={column}>
                     {column === "id" ? (
                       <div className="flex flex-nowrap gap-1">
@@ -608,6 +643,8 @@ const ScrollTable = React.memo(({ data }) => {
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       </div>
+                    ) : columnDisplay ? (
+                      columnDisplay(row[column])
                     ) : (
                       row[column]
                     )}
