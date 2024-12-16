@@ -104,7 +104,12 @@ const getVolumeId = (volume) => {
 const showVolume = (volume) => {
   const sizeColor =
     volume.voxelSizenM == 7910 ? "bg-emerald-500" : "bg-emerald-700";
-  const energyColor = volume.energykeV == 54 ? "bg-amber-500" : "bg-amber-700";
+  const energyColor =
+    volume.energykeV < 60
+      ? "bg-amber-500"
+      : volume.energykeV < 80
+        ? "bg-amber-600"
+        : "bg-amber-700";
 
   return (
     <div className="flex flex-nowrap">
