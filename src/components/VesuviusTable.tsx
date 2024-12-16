@@ -24,7 +24,14 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ChevronUp, ChevronDown, ArrowUpDown, Filter, X } from "lucide-react";
+import {
+  ChevronUp,
+  ChevronDown,
+  ArrowUpDown,
+  Filter,
+  X,
+  ExternalLink,
+} from "lucide-react";
 import TableSettings from "./TableSettings";
 
 const STORAGE_KEY = "vesuvius-table-settings";
@@ -53,7 +60,7 @@ const layerLabels = {
   "autosegmented-prediction": "Auto Segmented Prediction",
   "grand-prize-inklabels": "Grand Prize Inklabels",
   "first-letters-inklabels": "First Letters Inklabels",
-  "polytrope-test3-predictions": "Polytrope Test Model 3 Predictions",
+  "polytrope-test3-predictions": "Polytrope Predictions",
   "polytrope-inklabels-2024-08-16": "Polytrope Inklabels",
 };
 
@@ -590,12 +597,17 @@ const ScrollTable = React.memo(({ data }) => {
                 .map(({ column }) => (
                   <TableCell key={column}>
                     {column === "id" ? (
-                      <Link
-                        to={`/scroll/${row.scroll.oldId}/segment/${row.id}/`}
-                        className="text-blue-600 hover:text-blue-800 hover:underline"
-                      >
-                        {row[column]}
-                      </Link>
+                      <div className="flex flex-nowrap gap-1">
+                        <Link
+                          to={`/scroll/${row.scroll.oldId}/segment/${row.id}/`}
+                          className="text-blue-600 hover:text-blue-800 hover:underline"
+                        >
+                          {row[column]}
+                        </Link>
+                        <a href={row.urls.baseUrl} target="_blank">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
                     ) : (
                       row[column]
                     )}
