@@ -52,7 +52,7 @@ export const getLayerUrl = (
     } else if (layer === "composite") {
       return `/scroll/${scrollNum}/segment/${segmentId}/composite`;
     } else {
-      const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
+      const baseUrl = `/scroll/${scrollNum}/segment/${segmentId}/inferred`;
       return `${baseUrl}/${layer}`;
     }
   };

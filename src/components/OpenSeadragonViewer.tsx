@@ -11,6 +11,19 @@ const OpenSeadragonViewer = ({
   const viewerRef = useRef(null);
   //const [index, setIndex] = useState(0);
   const [position, setPosition] = useState("");
+  const [fragment, setFragment] = useState({});
+
+  useEffect(() => {
+    const getFragmentValues = () => {
+      const fragment = window.location.hash.substring(1);
+      console.log("Fragment:", fragment);
+
+      setFragment(fragment);
+    };
+
+    getFragmentValues();
+  }, []);
+
   const [ppmSocket, setPpmSocket] = useState(null);
 
   const layerSource = (layer) => {
@@ -110,7 +123,9 @@ const OpenSeadragonViewer = ({
         .viewportToImageZoom(viewer.viewport.getZoom(true))
         .toFixed(3);
       const newHash = `#u=${u}&v=${v}&zoom=${zoom}&rot=${rot}&flip=${flip}&layer=${allLayers[index]}`;
-      history.replaceState(undefined, undefined, newHash);
+      console.log("updateHash", newHash);
+      //history.replaceState(undefined, undefined, newHash);
+      window.location.hash = newHash;
     };
 
     const showNext = () => {
@@ -135,8 +150,9 @@ const OpenSeadragonViewer = ({
     viewer.addHandler("rotate", updateHash);
 
     viewer.addHandler("open", () => {
-      const hash = window.location.hash.substring(1);
+      const hash = fragment;
       viewer.canvas.focus();
+      console.log("open", hash);
 
       const params = {};
       hash.split("&").forEach((hk) => {
@@ -194,14 +210,76 @@ const OpenSeadragonViewer = ({
 
     viewer.pixelsPerArrowPress = 250;
 
+    const positionEl = document.querySelectorAll(".info .position")[0];
+    let cachedPosition = { x: 0, y: 0, z: 0 };
+    const lastRequest = { u: 0, v: 0 };
+    const lastResponse = { x: 0, y: 0, z: 0 };
+    let nextRequest = { u: 0, v: 0 };
+    let callback = null;
+    const layers = allLayers;
+    function updatePosition(position) {
+      if (position) {
+        const webPoint = position;
+        const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+        const tiledImage = viewer.world.getItemAt(index);
+        const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
+        const u = imagePoint.x.toFixed();
+        const v = imagePoint.y.toFixed();
+
+        requestXYZ(webPoint, (data) => {
+          cachedPosition = data;
+          positionEl.innerHTML =
+            `u: ${u} v: ${v} layer:${layers[index]}` +
+            "<br>" +
+            `x: ${data.x}, y: ${data.y}, z: ${data.z}`;
+        });
+
+        let color;
+        if (lastRequest.u == u && lastRequest.v == v) {
+          color = "";
+        } else {
+          color = "color: #eee;";
+        }
+        positionEl.innerHTML =
+          `u: ${u} v: ${v} layer:${layers[index]}` +
+          "<br>" +
+          `<span style="${color}">x: ${cachedPosition.x}, y: ${cachedPosition.y}, z: ${cachedPosition.z}</span>`;
+      } else {
+        positionEl.innerHTML = "";
+      }
+    }
+    function requestXYZ(webPoint, f) {
+      const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+      const tiledImage = viewer.world.getItemAt(index);
+      const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
+      const u = imagePoint.x.toFixed();
+      const v = imagePoint.y.toFixed();
+
+      if (lastRequest.u == u && lastRequest.v == v) {
+        f(lastResponse);
+      } else if (ppmSocket && ppmSocket.readyState == 1) {
+        nextRequest = { u: u, v: v };
+
+        callback = f;
+        ppmSocket.send(`${u},${v}`);
+      }
+    }
+
     // WebSocket connection setup
     const connectSocket = () => {
+      new OpenSeadragon.MouseTracker({
+        element: viewer.container,
+        moveHandler: function (event) {
+          updatePosition(event.position);
+        },
+      });
+
       //const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
       //const host = window.location.host;
       const protocol = "wss://";
       const host = "vesuvius.virtual-void.net";
       const socket = new WebSocket(
-        `${protocol}${host}${window.location.pathname}ppm`
+        `${protocol}${host}/scroll/${scrollNum}/segment/${segmentId}/ppm`
       );
 
       socket.onopen = () => {
@@ -229,15 +307,14 @@ const OpenSeadragonViewer = ({
         viewerRef.current.destroy();
       }
     };
-  }, []);
+  }, [fragment, scrollNum, segmentId, allLayers, extraLayers]);
 
   return (
     <div className="w-full">
-      <div id={containerId} className="w-full h-screen">
-        <div className="float-left w-96">
-          <div className="position">{position}</div>
-        </div>
+      <div id="position" className="position">
+        Position: {position}
       </div>
+      <div id={containerId} className="w-full h-screen"></div>
     </div>
   );
 };

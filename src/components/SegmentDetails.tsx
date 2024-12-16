@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -27,15 +27,22 @@ const SegmentDetail = () => {
       .finally(() => setLoading(false));
   }, [segmentId]);
 
-  if (!segmentData) return <div>Loading...</div>;
+  const excludedLayers = new Set(["mask", "outline", "composite"]);
+  const [viewerLayers, viewerExtraLayers] = useMemo(() => {
+    if (!segmentData) return [];
 
-  const getImageUrl = (layer) => {
-    const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}`;
-    if (layer === "mask") {
-      return `${baseUrl}/mask?v2`;
-    }
-    return `${baseUrl}/inferred/${layer}?v2`;
-  };
+    const extraLayers = segmentData.layers.filter(
+      (l) => !excludedLayers.has(l)
+    );
+    // 20 to 50 step 2
+    const normalLayers = Array.from({ length: 16 }, (_, i) => i * 2 + 20).map(
+      (i) => i.toString()
+    );
+
+    return [[...normalLayers, ...extraLayers], extraLayers];
+  }, [segmentData]);
+
+  if (!segmentData) return <div>Loading...</div>;
 
   return (
     <div className="w-full mx-auto p-6 space-y-6">
@@ -89,8 +96,8 @@ const SegmentDetail = () => {
           <OpenSeadragonViewer
             scrollNum={scrollNum}
             segmentId={segmentId}
-            allLayers={["32", "34", "36", "38", ...segmentData.layers]}
-            extraLayers={segmentData.layers}
+            allLayers={viewerLayers}
+            extraLayers={viewerExtraLayers}
           />
         </CardContent>
       </Card>
@@ -100,7 +107,7 @@ const SegmentDetail = () => {
         </CardHeader>
         <CardContent>
           {segmentData.layers.map((layer) => (
-            <div className="grid grid-cols-2 mb-2">
+            <div key={layer} className="grid grid-cols-2 mb-2">
               <div className="flex align-middle">
                 <div>{layerLabels[layer]}</div>
                 <a
