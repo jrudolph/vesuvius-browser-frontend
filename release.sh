@@ -5,5 +5,5 @@ set -x
 
 VERSION=$1
 
-git tag -a $VERSION -m "Released $VERSION"
-docker buildx build --builder kube --platform linux/arm64,linux/amd64 --tag registry.virtual-void.net/jrudolph/vesuvius-browser-frontend:$VERSION --push .
+docker buildx build --builder kube --platform linux/arm64,linux/amd64 --tag registry.virtual-void.net/jrudolph/vesuvius-browser-frontend:$VERSION --push . && \
+    git tag -a $VERSION -m "Released $VERSION"
