@@ -687,48 +687,53 @@ const VesuviusTable = () => {
       }));
   }, [scrollGroups, settings.activeScrollType]);
 
-  return (
-    <div className="p-4">
-      <Tabs
-        value={settings.activeScrollType}
-        onValueChange={(value) => {
-          setSettings((prev) => ({
-            ...prev,
-            activeScrollType: value,
-            activeScrollId: scrollGroups.filter(
-              ([, data]) =>
-                data[0].scroll.isFragment === (value === "fragments")
-            )[0][0],
-          }));
-        }}
-      >
-        <TabsList className="mb-4">
-          <TabsTrigger value="scrolls">Scrolls</TabsTrigger>
-          <TabsTrigger value="fragments">Fragments</TabsTrigger>
-        </TabsList>
-      </Tabs>
-
-      <Tabs
-        value={settings.activeScrollId || scrollTabs[0]?.id}
-        onValueChange={(value) =>
-          setSettings((prev) => ({ ...prev, activeScrollId: value }))
-        }
-        className="mb-4"
-      >
-        <TabsList>
-          {scrollTabs.map((tab) => (
-            <TabsTrigger key={tab.id} value={tab.id}>
-              {tab.label}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-      </Tabs>
-
+  if (loading) {
+    return <div>Loading...</div>;
+  } else if (error) {
+    return <div>Error: {error}</div>;
+  } else
+    return (
       <div className="p-4">
-        <ScrollTable data={filteredData} showImages={settings.showImages} />
+        <Tabs
+          value={settings.activeScrollType}
+          onValueChange={(value) => {
+            setSettings((prev) => ({
+              ...prev,
+              activeScrollType: value,
+              activeScrollId: scrollGroups.filter(
+                ([, data]) =>
+                  data[0].scroll.isFragment === (value === "fragments")
+              )[0][0],
+            }));
+          }}
+        >
+          <TabsList className="mb-4">
+            <TabsTrigger value="scrolls">Scrolls</TabsTrigger>
+            <TabsTrigger value="fragments">Fragments</TabsTrigger>
+          </TabsList>
+        </Tabs>
+
+        <Tabs
+          value={settings.activeScrollId || scrollTabs[0]?.id}
+          onValueChange={(value) =>
+            setSettings((prev) => ({ ...prev, activeScrollId: value }))
+          }
+          className="mb-4"
+        >
+          <TabsList>
+            {scrollTabs.map((tab) => (
+              <TabsTrigger key={tab.id} value={tab.id}>
+                {tab.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </Tabs>
+
+        <div className="p-4">
+          <ScrollTable data={filteredData} showImages={settings.showImages} />
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default VesuviusTable;
