@@ -33,20 +33,34 @@ import {
   ExternalLink,
 } from "lucide-react";
 import TableSettings from "./TableSettings";
+import VolumeBadge from "./VolumeBadge";
 
 const STORAGE_KEY = "vesuvius-table-settings";
 
-const getLayerUrl = (scrollNum, segmentId, layer) => {
-  if (layer === "mask") {
-    return `/scroll/${scrollNum}/segment/${segmentId}/mask`;
-  } else if (layer === "outline") {
-    return `/scroll/${scrollNum}/segment/${segmentId}/outline`;
-  } else if (layer === "composite") {
-    return `/scroll/${scrollNum}/segment/${segmentId}/composite`;
-  }
+export const getLayerUrl = (
+  scrollNum,
+  segmentId,
+  layer,
+  full = false,
+  show = false
+) => {
+  const getLayerUrl = () => {
+    if (layer === "mask") {
+      return `/scroll/${scrollNum}/segment/${segmentId}/mask`;
+    } else if (layer === "outline") {
+      return `/scroll/${scrollNum}/segment/${segmentId}/outline`;
+    } else if (layer === "composite") {
+      return `/scroll/${scrollNum}/segment/${segmentId}/composite`;
+    } else {
+      const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
+      return `${baseUrl}/${layer}`;
+    }
+  };
 
-  const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
-  return `${baseUrl}/${layer}?v2`;
+  const fullPath = full ? "/full" : "";
+  const showQuery = show ? "?show" : "";
+
+  return `${getLayerUrl()}${fullPath}${showQuery}`;
 };
 
 const COLORS = [
@@ -66,7 +80,7 @@ const COLORS = [
   "bg-rose-500",
 ];
 
-const layerLabels = {
+export const layerLabels = {
   mask: "Mask",
   outline: "Outline",
   composite: "Composite",
@@ -118,33 +132,6 @@ const defaultSettings = {
 const getVolumeId = (volume) => {
   return volume.volume;
 };
-const showVolume = (volume, colorFor) => {
-  const sizeColor =
-    volume.voxelSizenM == 7910 ? "bg-emerald-500" : "bg-emerald-700";
-  const energyColor =
-    volume.energykeV < 60
-      ? "bg-amber-500"
-      : volume.energykeV < 80
-        ? "bg-amber-600"
-        : "bg-amber-700";
-
-  return (
-    <div className="flex flex-nowrap">
-      <Badge className={`rounded-r-none ${colorFor("volume", volume.volume)}`}>
-        {volume.volume}
-      </Badge>
-      <Badge className={`rounded-none ${sizeColor}`}>
-        {volume.voxelSizenM / 1000}µm
-      </Badge>
-      <Badge className={`rounded-l-none ${energyColor}`}>
-        {volume.energykeV}keV
-      </Badge>
-      <a href={volume.baseUrl} target="_blank">
-        <ExternalLink className="w-4 h-4 ml-1" />
-      </a>
-    </div>
-  );
-};
 
 const columns = [
   {
@@ -152,7 +139,7 @@ const columns = [
     column: "volume",
     filterType: "badge",
     filterMap: getVolumeId,
-    columnDisplay: showVolume,
+    columnDisplay: VolumeBadge,
   },
   { label: "Segment ID", column: "id" },
   { label: "Author", column: "author", filterType: "badge" },
