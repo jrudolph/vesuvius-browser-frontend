@@ -693,6 +693,12 @@ const ScrollTable = React.memo(({ data }) => {
                   <div className="flex gap-4 flex-wrap">
                     {row.layers
                       .filter((key) => settings.selectedLayers.includes(key))
+                      .sort((a, b) =>
+                        Object.keys(layerLabels).indexOf(a) >
+                        Object.keys(layerLabels).indexOf(b)
+                          ? 1
+                          : -1
+                      )
                       .map((key) => (
                         <ImagePreview
                           key={key}
