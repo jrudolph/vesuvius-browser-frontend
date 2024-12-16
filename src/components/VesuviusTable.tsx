@@ -398,14 +398,14 @@ const ScrollTable = React.memo(({ data }) => {
       }
     });
 
-    const orZero = (value) => {
-      return value && value.toString().trim().length > 0 ? value : 0;
+    const orDummy = (value) => {
+      return value && value.toString().trim().length > 0 ? value : "-1";
     };
 
     if (settings.sortConfig.key) {
       processed.sort((a, b) => {
-        const aV = orZero(a[settings.sortConfig.key]);
-        const bV = orZero(b[settings.sortConfig.key]);
+        const aV = orDummy(a[settings.sortConfig.key]);
+        const bV = orDummy(b[settings.sortConfig.key]);
 
         if (aV < bV) {
           return settings.sortConfig.direction === "ascending" ? -1 : 1;
