@@ -49,6 +49,23 @@ const getLayerUrl = (scrollNum, segmentId, layer) => {
   return `${baseUrl}/${layer}?v2`;
 };
 
+const COLORS = [
+  "bg-red-500",
+  "bg-lime-500",
+  "bg-sky-500",
+  "bg-teal-500",
+  "bg-fuchsia-500",
+  "bg-yellow-500",
+  "bg-green-500",
+  "bg-orange-500",
+  "bg-blue-500",
+  "bg-indigo-500",
+  "bg-violet-500",
+  "bg-amber-500",
+  "bg-pink-500",
+  "bg-rose-500",
+];
+
 const layerLabels = {
   mask: "Mask",
   outline: "Outline",
@@ -101,7 +118,7 @@ const defaultSettings = {
 const getVolumeId = (volume) => {
   return volume.volume;
 };
-const showVolume = (volume) => {
+const showVolume = (volume, colorFor) => {
   const sizeColor =
     volume.voxelSizenM == 7910 ? "bg-emerald-500" : "bg-emerald-700";
   const energyColor =
@@ -113,7 +130,9 @@ const showVolume = (volume) => {
 
   return (
     <div className="flex flex-nowrap">
-      <Badge className="rounded-r-none">{volume.volume}</Badge>
+      <Badge className={`rounded-r-none ${colorFor("volume", volume.volume)}`}>
+        {volume.volume}
+      </Badge>
       <Badge className={`rounded-none ${sizeColor}`}>
         {volume.voxelSizenM / 1000}µm
       </Badge>
@@ -201,14 +220,16 @@ const FilterInput = React.memo(
           : [...value, val];
         onChange(column, newValue);
       };
-      const uniqueValues = filterRange;
+      const uniqueValues = filterRange.sort();
+      // use colors from array above based on value idx
+
       return (
         <div className="flex flex-wrap gap-2">
-          {uniqueValues.map((val) => (
+          {uniqueValues.map((val, idx) => (
             <Badge
               key={val}
               variant={value.includes(val) ? "default" : "outline"}
-              className="cursor-pointer"
+              className={`cursor-pointer ${value.includes(val) ? COLORS[idx % COLORS.length] : ""}`}
               onClick={() => handleBadgeClick(val)}
             >
               {val}
@@ -495,13 +516,21 @@ const ScrollTable = React.memo(({ data }) => {
     }
   };
 
-  const filterRanges = useMemo(() => {
+  const [filterRanges, filterColors] = useMemo(() => {
     const ranges = {};
+    const colors = {};
     columns.forEach(({ column, filterType, filterMap }) => {
-      ranges[column] = filterRangeFor(column, filterType, filterMap);
+      const values = filterRangeFor(column, filterType, filterMap);
+      ranges[column] = values;
+      colors[column] = values.map((_, idx) => COLORS[idx % COLORS.length]);
     });
-    return ranges;
+    return [ranges, colors];
   }, [data]);
+
+  const colorFor = (column, value) => {
+    const idx = filterRanges[column].indexOf(value.toString().toLowerCase());
+    return filterColors[column][idx];
+  };
 
   return (
     <div className="rounded-md border">
@@ -634,7 +663,7 @@ const ScrollTable = React.memo(({ data }) => {
                 .filter(({ column }) =>
                   settings.visibleColumns.includes(column)
                 )
-                .map(({ column, columnDisplay }) => (
+                .map(({ column, columnDisplay, filterType }) => (
                   <TableCell key={column}>
                     {column === "id" ? (
                       <div className="flex flex-nowrap gap-1">
@@ -649,7 +678,11 @@ const ScrollTable = React.memo(({ data }) => {
                         </a>
                       </div>
                     ) : columnDisplay ? (
-                      columnDisplay(row[column])
+                      columnDisplay(row[column], colorFor)
+                    ) : filterType == "badge" && row[column] ? (
+                      <Badge className={colorFor(column, row[column])}>
+                        {row[column]}
+                      </Badge>
                     ) : (
                       row[column]
                     )}
