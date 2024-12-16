@@ -34,7 +34,10 @@ const getLayerUrl = (scrollNum, segmentId, layer) => {
     return `/scroll/${scrollNum}/segment/${segmentId}/mask`;
   } else if (layer === "outline") {
     return `/scroll/${scrollNum}/segment/${segmentId}/outline`;
+  } else if (layer === "composite") {
+    return `/scroll/${scrollNum}/segment/${segmentId}/composite`;
   }
+
   const baseUrl = `https://vesuvius.virtual-void.net/scroll/${scrollNum}/segment/${segmentId}/inferred`;
   return `${baseUrl}/${layer}?v2`;
 };
@@ -42,6 +45,7 @@ const getLayerUrl = (scrollNum, segmentId, layer) => {
 const layerLabels = {
   mask: "Mask",
   outline: "Outline",
+  composite: "Composite",
   "grand-prize_17_32": "Grand Prize Model",
   "timesformer-scroll5-27112024_17_32": "Scroll 5 Model",
   "first-word_15_32": "First Word Model",
