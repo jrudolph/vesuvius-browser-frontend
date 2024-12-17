@@ -121,7 +121,7 @@ const defaultSettings = {
   showImages: true,
   activeScrollType: "scrolls",
   activeScrollId: "PHercParis4",
-  version: 2,
+  version: 3,
 };
 
 const getVolumeId = (volume) => {
