@@ -206,7 +206,6 @@ const OpenSeadragonViewer = ({
 
     viewer.pixelsPerArrowPress = 250;
 
-    const positionEl = document.querySelectorAll(".info .position")[0];
     let cachedPosition = { x: 0, y: 0, z: 0 };
     const lastRequest = { u: 0, v: 0 };
     const lastResponse = { x: 0, y: 0, z: 0 };
@@ -214,6 +213,7 @@ const OpenSeadragonViewer = ({
     let callback = null;
     const layers = allLayers;
     function updatePosition(position) {
+      const positionEl = document.querySelectorAll("#position")[0];
       if (position) {
         const webPoint = position;
         const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
