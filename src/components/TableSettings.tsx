@@ -67,19 +67,13 @@ const TableSettings = ({
                 <Label htmlFor={`column-${column}`}>{label}</Label>
               </div>
             ))}
-          </div>
-
-          <Separator />
-
-          <div className="space-y-2">
-            <h4 className="font-medium">Display Options</h4>
             <div className="flex items-center space-x-2">
               <Switch
                 id="show-images"
                 checked={showImages}
                 onCheckedChange={onShowImagesChange}
               />
-              <Label htmlFor="show-images">Show Layer Previews</Label>
+              <Label htmlFor="show-images">Layers</Label>
             </div>
           </div>
 

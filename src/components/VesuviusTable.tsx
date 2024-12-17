@@ -686,7 +686,7 @@ const ScrollTable = React.memo(({ data }) => {
                 {settings.showImages && (
                   <>
                     <TableHead>
-                      Preview Layers
+                      Layers
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button variant="ghost" size="icon">
