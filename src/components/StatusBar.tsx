@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Server, Monitor } from "lucide-react";
 
+const formatDate = (timestamp) => {
+  try {
+    return new Date(timestamp).toISOString();
+  } catch (err) {
+    console.warn("Failed to parse date:", timestamp, err);
+    return "";
+  }
+};
+
 const BuildInfo = ({ icon: Icon, label, buildInfo }) => (
   <div className="flex items-center space-x-4">
     <div className="flex items-center space-x-1">
       <Icon size={14} />
       <span className="text-gray-400">{label}:</span>
     </div>
-    <span>{new Date(buildInfo.buildTimeMillis).toISOString()}</span>
+    <span>{formatDate(buildInfo.buildTimeMillis)}</span>
     <span className="text-gray-400">|</span>
     <span>{buildInfo.commit}</span>
     <span className="text-gray-400">|</span>
