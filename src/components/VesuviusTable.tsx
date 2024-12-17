@@ -107,7 +107,7 @@ const defaultSettings = {
     maxZ: { min: 0, max: 1000000 },
     author: [],
   },
-  selectedLayers: ["outline", "mask", "grand-prize_17_32"],
+  selectedLayers: ["outline", "composite", "grand-prize_17_32"],
   sortConfig: {
     key: null,
     direction: "ascending",
