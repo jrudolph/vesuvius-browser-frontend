@@ -61,7 +61,12 @@ export const getLayerUrl = (
   const fullPath = full ? "/full" : "";
   const showQuery = show ? "?show" : "";
 
-  return `${getLayerUrl()}${fullPath}${showQuery}`;
+  if (layer == "outline") {
+    if (full) return `${getLayerUrl()}?width=1200&height=800`;
+    else return `${getLayerUrl()}`;
+  } else {
+    return `${getLayerUrl()}${fullPath}${showQuery}`;
+  }
 };
 
 const COLORS = [
