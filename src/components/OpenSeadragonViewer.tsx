@@ -16,7 +16,6 @@ const OpenSeadragonViewer = ({
   useEffect(() => {
     const getFragmentValues = () => {
       const fragment = window.location.hash.substring(1);
-      console.log("Fragment:", fragment);
 
       setFragment(fragment);
     };
@@ -34,7 +33,6 @@ const OpenSeadragonViewer = ({
   useEffect(() => {
     let index = 0;
 
-    console.log("All Layers:", allLayers);
     const viewer = OpenSeadragon({
       id: containerId,
       prefixUrl: "/openseadragon/images/",
@@ -123,7 +121,6 @@ const OpenSeadragonViewer = ({
         .viewportToImageZoom(viewer.viewport.getZoom(true))
         .toFixed(3);
       const newHash = `#u=${u}&v=${v}&zoom=${zoom}&rot=${rot}&flip=${flip}&layer=${allLayers[index]}`;
-      console.log("updateHash", newHash);
       //history.replaceState(undefined, undefined, newHash);
       window.location.hash = newHash;
     };
@@ -152,7 +149,6 @@ const OpenSeadragonViewer = ({
     viewer.addHandler("open", () => {
       const hash = fragment;
       viewer.canvas.focus();
-      console.log("open", hash);
 
       const params = {};
       hash.split("&").forEach((hk) => {
