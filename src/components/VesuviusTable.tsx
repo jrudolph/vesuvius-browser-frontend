@@ -649,145 +649,155 @@ const ScrollTable = React.memo(({ data }) => {
           Reset Filters
         </Button>
       </div>
-      <Table>
-        <TableHeader>
-          <TableRow className="align-top">
-            {columns
-              .filter(({ column }) => settings.visibleColumns.includes(column))
-              .map((c) => (
-                <HeaderCell
-                  key={c.column}
-                  label={c.label}
-                  column={c}
-                  sortConfig={settings.sortConfig}
-                  onSort={handleSort}
-                  filterValue={settings.filters[c.column]}
-                  onFilterChange={handleFilterChange}
-                  filterRange={filterRanges[c.column]}
-                  onDisableColumn={(col) =>
-                    updateSettings(
-                      "visibleColumns",
-                      settings.visibleColumns.filter((c) => c !== col.column)
-                    )
-                  }
-                />
-              ))}
-            {settings.showImages && (
-              <>
-                <TableHead>
-                  Preview Layers
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button variant="ghost" size="icon">
-                        <Filter className="h-4 w-4" />
+      <div className="flex flex-col h-screen">
+        <div className="flex-grow overflow-auto">
+          <table className="w-full">
+            <TableHeader className="sticky top-0 bg-background z-10">
+              <TableRow className="align-top">
+                {columns
+                  .filter(({ column }) =>
+                    settings.visibleColumns.includes(column)
+                  )
+                  .map((c) => (
+                    <HeaderCell
+                      key={c.column}
+                      label={c.label}
+                      column={c}
+                      sortConfig={settings.sortConfig}
+                      onSort={handleSort}
+                      filterValue={settings.filters[c.column]}
+                      onFilterChange={handleFilterChange}
+                      filterRange={filterRanges[c.column]}
+                      onDisableColumn={(col) =>
+                        updateSettings(
+                          "visibleColumns",
+                          settings.visibleColumns.filter(
+                            (c) => c !== col.column
+                          )
+                        )
+                      }
+                    />
+                  ))}
+                {settings.showImages && (
+                  <>
+                    <TableHead>
+                      Preview Layers
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button variant="ghost" size="icon">
+                            <Filter className="h-4 w-4" />
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-80">
+                          <div className="p-4 border-b flex gap-2 flex-wrap">
+                            <Badge
+                              variant={
+                                settings.selectedLayers.length ===
+                                Object.keys(layerLabels).length
+                                  ? "default"
+                                  : "outline"
+                              }
+                              className="cursor-pointer font-semibold"
+                              onClick={toggleAll}
+                            >
+                              {settings.selectedLayers.length ===
+                              Object.keys(layerLabels).length
+                                ? "Hide All"
+                                : "Show All"}
+                            </Badge>
+
+                            <Badge
+                              variant={
+                                settings.filterByLayers ? "default" : "outline"
+                              }
+                              className="cursor-pointer font-semibold"
+                              onClick={() =>
+                                updateSettings(
+                                  "filterByLayers",
+                                  !settings.filterByLayers
+                                )
+                              }
+                            >
+                              Filter
+                            </Badge>
+
+                            <div className="w-px h-6 bg-gray-200 mx-2" />
+
+                            {Object.entries(layerLabels).map(([key, label]) => (
+                              <Badge
+                                key={key}
+                                variant={
+                                  settings.selectedLayers.includes(key)
+                                    ? "default"
+                                    : "outline"
+                                }
+                                className="cursor-pointer"
+                                onClick={() => toggleLayer(key)}
+                              >
+                                {label}
+                              </Badge>
+                            ))}
+                          </div>
+                        </PopoverContent>
+                      </Popover>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => updateSettings("showImages", false)}
+                        className="hover:opacity-100"
+                      >
+                        <X className="h-3 w-3" />
                       </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-80">
-                      <div className="p-4 border-b flex gap-2 flex-wrap">
-                        <Badge
-                          variant={
-                            settings.selectedLayers.length ===
-                            Object.keys(layerLabels).length
-                              ? "default"
-                              : "outline"
-                          }
-                          className="cursor-pointer font-semibold"
-                          onClick={toggleAll}
-                        >
-                          {settings.selectedLayers.length ===
-                          Object.keys(layerLabels).length
-                            ? "Hide All"
-                            : "Show All"}
-                        </Badge>
+                    </TableHead>
+                  </>
+                )}
+              </TableRow>
+            </TableHeader>
 
-                        <Badge
-                          variant={
-                            settings.filterByLayers ? "default" : "outline"
-                          }
-                          className="cursor-pointer font-semibold"
-                          onClick={() =>
-                            updateSettings(
-                              "filterByLayers",
-                              !settings.filterByLayers
-                            )
-                          }
-                        >
-                          Filter
-                        </Badge>
-
-                        <div className="w-px h-6 bg-gray-200 mx-2" />
-
-                        {Object.entries(layerLabels).map(([key, label]) => (
-                          <Badge
-                            key={key}
-                            variant={
-                              settings.selectedLayers.includes(key)
-                                ? "default"
-                                : "outline"
-                            }
-                            className="cursor-pointer"
-                            onClick={() => toggleLayer(key)}
-                          >
-                            {label}
-                          </Badge>
-                        ))}
+            <TableBody>
+              {filteredAndSortedData.map((row) => (
+                <TableRow key={`${row.scroll.id}-${row.id}`} className="h-12">
+                  {columns
+                    .filter(({ column }) =>
+                      settings.visibleColumns.includes(column)
+                    )
+                    .map((column) => (
+                      <TableCell key={column.column}>
+                        {column.display(row, colorFor)}
+                      </TableCell>
+                    ))}
+                  {settings.showImages && (
+                    <TableCell>
+                      <div className="flex gap-4 flex-wrap">
+                        {row.layers
+                          .filter((key) =>
+                            settings.selectedLayers.includes(key)
+                          )
+                          .sort((a, b) =>
+                            Object.keys(layerLabels).indexOf(a) >
+                            Object.keys(layerLabels).indexOf(b)
+                              ? 1
+                              : -1
+                          )
+                          .map((key) => (
+                            <ImagePreview
+                              key={key}
+                              url={getLayerUrl(row.scroll.oldId, row.id, key)}
+                              label={layerLabels[key]}
+                              scrollNum={row.scroll.oldId}
+                              segmentId={row.id}
+                              layerKey={key}
+                            />
+                          ))}
                       </div>
-                    </PopoverContent>
-                  </Popover>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => updateSettings("showImages", false)}
-                    className="hover:opacity-100"
-                  >
-                    <X className="h-3 w-3" />
-                  </Button>
-                </TableHead>
-              </>
-            )}
-          </TableRow>
-        </TableHeader>
-
-        <TableBody>
-          {filteredAndSortedData.map((row) => (
-            <TableRow key={`${row.scroll.id}-${row.id}`} className="h-12">
-              {columns
-                .filter(({ column }) =>
-                  settings.visibleColumns.includes(column)
-                )
-                .map((column) => (
-                  <TableCell key={column.column}>
-                    {column.display(row, colorFor)}
-                  </TableCell>
-                ))}
-              {settings.showImages && (
-                <TableCell>
-                  <div className="flex gap-4 flex-wrap">
-                    {row.layers
-                      .filter((key) => settings.selectedLayers.includes(key))
-                      .sort((a, b) =>
-                        Object.keys(layerLabels).indexOf(a) >
-                        Object.keys(layerLabels).indexOf(b)
-                          ? 1
-                          : -1
-                      )
-                      .map((key) => (
-                        <ImagePreview
-                          key={key}
-                          url={getLayerUrl(row.scroll.oldId, row.id, key)}
-                          label={layerLabels[key]}
-                          scrollNum={row.scroll.oldId}
-                          segmentId={row.id}
-                          layerKey={key}
-                        />
-                      ))}
-                  </div>
-                </TableCell>
-              )}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+                    </TableCell>
+                  )}
+                </TableRow>
+              ))}
+            </TableBody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 });
