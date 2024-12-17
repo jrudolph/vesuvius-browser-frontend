@@ -163,14 +163,36 @@ class Column {
   maxRange(fullData) {
     return Math.max(...fullData.map((item) => this.value(item)));
   }
+  ellipsizeMeshId(str) {
+    const parts = str.split("_");
+    if (parts.length < 4) return str;
+
+    // Extract numeric parts (6 digits)
+    const numbers = parts.filter((part) => /^\d+$/.test(part));
+
+    // Find trailing single digit if it exists
+    const lastPart = parts[parts.length - 1];
+    const hasTrailingNumber = /^\d+$/.test(lastPart) && lastPart.length === 1;
+
+    if (numbers.length >= 2) {
+      if (hasTrailingNumber) {
+        return `mesh...${numbers[0]}_${numbers[1]}..._${lastPart}`;
+      }
+      return `mesh...${numbers[0]}_${numbers[1]}`;
+    }
+
+    return str;
+  }
+
   display(row, colorFor) {
     return this.column === "id" ? (
       <div className="flex flex-nowrap gap-1">
         <Link
           to={`/scroll/${row.scroll.oldId}/segment/${row.id}/`}
           className="text-blue-600 hover:text-blue-800 hover:underline"
+          title={this.value(row)}
         >
-          {this.value(row)}
+          {this.ellipsizeMeshId(this.value(row))}
         </Link>
         <a href={row.urls.baseUrl} target="_blank">
           <ExternalLink className="w-4 h-4" />
