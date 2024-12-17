@@ -19,7 +19,7 @@ const defaultColumns = [
 ];
 
 const TableSettings = ({
-  columns = defaultColumns,
+  columns,
   visibleColumns = columns.map((c) => c.column),
   onToggleColumn,
   showImages,

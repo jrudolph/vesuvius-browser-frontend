@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import TableSettings from "./TableSettings";
 import VolumeBadge from "./VolumeBadge";
+import RangeBar from "./RangeBar";
 
 const STORAGE_KEY = "vesuvius-table-settings";
 
@@ -100,11 +101,6 @@ const defaultSettings = {
     volume: [],
     volumeVoxelSize: [],
     id: "",
-    width: { min: 0, max: 1000000 },
-    height: { min: 0, max: 1000000 },
-    area: { min: 0, max: 1000000 },
-    minZ: { min: 0, max: 1000000 },
-    maxZ: { min: 0, max: 1000000 },
     author: [],
   },
   selectedLayers: ["outline", "composite", "grand-prize_17_32"],
@@ -120,8 +116,7 @@ const defaultSettings = {
     "width",
     "height",
     "areaCm2",
-    "minZ",
-    "maxZ",
+    "zRange",
   ],
   showImages: true,
   activeScrollType: "scrolls",
@@ -136,19 +131,37 @@ const getVolumeId = (volume) => {
 class Column {
   label: string;
   column: string;
-  filterType: string;
-  filterMap: Function;
-  columnDisplay: Function;
-  constructor(label, column, filterType, { filterMap, columnDisplay } = {}) {
+  filterType: any;
+  filterMap: any;
+  columnDisplay: any;
+  constructor(
+    label,
+    column,
+    filterType,
+    { filterMap, columnDisplay, value, sortValue, filterRangeFor, filter } = {}
+  ) {
     this.label = label;
     this.column = column;
     this.filterType = filterType;
     this.filterMap = filterMap;
     this.columnDisplay = columnDisplay;
+    if (value) this.value = value;
+    if (sortValue) this.sortValue = sortValue;
+    if (filterRangeFor) this.filterRangeFor = filterRangeFor;
+    if (filter) this.filter = filter;
   }
 
   value(row) {
     return row[this.column];
+  }
+  sortValue(row) {
+    return this.value(row);
+  }
+  minRange(fullData) {
+    return Math.min(...fullData.map((item) => this.value(item)));
+  }
+  maxRange(fullData) {
+    return Math.max(...fullData.map((item) => this.value(item)));
   }
   display(row, colorFor) {
     return this.column === "id" ? (
@@ -177,12 +190,7 @@ class Column {
   filterRangeFor(fullData) {
     const filterMapFn = this.filterMap ? this.filterMap : (val) => val;
     if (this.filterType === "range") {
-      const columnData = fullData.map((item) =>
-        this.value(item) ? parseInt(filterMapFn(this.value(item))) : 0
-      );
-      const min = Math.min(...columnData);
-      const max = Math.max(...columnData);
-      return [min, max];
+      return [this.minRange(fullData), this.maxRange(fullData)];
     } else if (this.filterType === "badge") {
       const columnData = fullData
         .filter((item) => filterMapFn(this.value(item)))
@@ -195,7 +203,42 @@ class Column {
       return [];
     }
   }
+
+  filter(processed, filterValue) {
+    const filterType = this.filterType;
+    const filterMap = this.filterMap ? this.filterMap : (val) => val;
+
+    if (filterType === "range") {
+      processed = processed.filter((item) => {
+        const value = parseInt(filterMap(this.value(item)));
+        return !value || (value >= filterValue.min && value <= filterValue.max);
+      });
+    } else if (filterType === "badge") {
+      processed = processed.filter(
+        (item) =>
+          !this.value(item) ||
+          filterValue.length == 0 ||
+          filterValue.includes(
+            filterMap(this.value(item)).toString().toLowerCase()
+          )
+      );
+    } else {
+      processed = filterValue
+        ? processed.filter((item) =>
+            String(filterMap(this.value(item)))
+              .toLowerCase()
+              .includes(filterValue.toLowerCase())
+          )
+        : processed;
+    }
+    return processed;
+  }
 }
+
+const volumeRange = (fullData) => {
+  const maxZ = Math.max(...fullData.map((item) => item.volume.maxZ));
+  return [0, maxZ];
+};
 
 const columns = [
   new Column("Volume", "volume", "badge", {
@@ -206,9 +249,31 @@ const columns = [
   new Column("Author", "author", "badge"),
   new Column("Width", "width", "range"),
   new Column("Height", "height", "range"),
-  new Column("Area/cm²", "areaCm2", "range"),
-  new Column("Min Z", "minZ", "range"),
-  new Column("Max Z", "maxZ", "range"),
+  new Column("Area/cm²", "areaCm2", "range", {
+    columnDisplay: (v) => (v ? v.toFixed(2) : ""),
+  }),
+  new Column("Min Z", "minZ", "range", { filterRangeFor: volumeRange }),
+  new Column("Max Z", "maxZ", "range", { filterRangeFor: volumeRange }),
+  new Column("Z Range", "zRange", "range", {
+    value: (row) => [row.minZ, row.maxZ, row.volume.maxZ],
+    sortValue: (row) => row.maxZ - row.minZ,
+    columnDisplay: ([start, end, maxZ]) => {
+      return (
+        <div className="min-w-24">
+          <RangeBar min={0} max={maxZ} start={start} end={end} />
+        </div>
+      );
+    },
+    filterRangeFor: volumeRange,
+    filter: (processed, filterValue) => {
+      const { min, max } = filterValue;
+      return processed.filter((item) => {
+        const [start, end] = [item.minZ, item.maxZ];
+        // if [start,end] overlaps with [min,max]
+        return start <= max && end >= min;
+      });
+    },
+  }),
 ];
 
 const useLocalStorage = (key, initialValue) => {
@@ -237,65 +302,74 @@ const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 };
 
-const FilterInput = React.memo(({ column, onChange, filterRange }) => {
-  if (column.type === "range") {
-    const [range, setRange] = useState(filterRange);
-    return (
-      <div className="filter-slider px-2">
-        <div className="flex justify-between text-xs mb-1">
-          <span>{column.filterRange[0]}</span>
-          <span>{column.filterRange[1]}</span>
+const FilterInput = React.memo(
+  ({ column, onChange, filterRange, filterValue }) => {
+    if (column.filterType === "range") {
+      const [range, setRange] = useState([
+        filterValue ? filterValue.min : filterRange[0],
+        filterValue ? filterValue.max : filterRange[1],
+      ]);
+      return (
+        <div className="filter-slider px-2">
+          <div className="flex justify-between text-xs mb-1">
+            <span className="ml-8">{range[0]}</span>
+            <span className="mr-8">{range[1]}</span>
+          </div>
+
+          <div className="flex">
+            <span>{filterRange[0]}</span>
+            <Slider
+              value={range}
+              min={filterRange[0]}
+              max={filterRange[1]}
+              step={10}
+              className="mt-2"
+              onValueChange={(newRange) => {
+                setRange(newRange);
+                onChange(column, { min: newRange[0], max: newRange[1] });
+              }}
+            />
+            <span>{filterRange[1]}</span>
+          </div>
         </div>
+      );
+    } else if (column.filterType === "badge") {
+      const handleBadgeClick = (val) => {
+        const newValue = filterValue.includes(val)
+          ? filterValue.filter((v) => v !== val)
+          : [...filterValue, val];
+        onChange(column, newValue);
+      };
+      const uniqueValues = filterRange.sort();
+      // use colors from array above based on value idx
 
-        <Slider
-          value={range}
-          min={column.filterRange[0]}
-          max={column.filterRange[1]}
-          step={10}
-          className="mt-2"
-          onValueChange={(newRange) => {
-            setRange(newRange);
-            onChange(column, { min: newRange[0], max: newRange[1] });
-          }}
-        />
-      </div>
-    );
-  } else if (column.type === "badge") {
-    const handleBadgeClick = (val) => {
-      const newValue = column.filterValue.includes(val)
-        ? column.filterValue.filter((v) => v !== val)
-        : [...column.filterValue, val];
-      onChange(column, newValue);
-    };
-    const uniqueValues = filterRange.sort();
-    // use colors from array above based on value idx
+      return (
+        <div className="flex flex-wrap gap-2">
+          {uniqueValues.map((val, idx) => (
+            <Badge
+              key={val}
+              variant={filterValue.includes(val) ? "default" : "outline"}
+              className={`cursor-pointer ${filterValue.includes(val) ? COLORS[idx % COLORS.length] : ""}`}
+              onClick={() => handleBadgeClick(val)}
+            >
+              {val}
+            </Badge>
+          ))}
+        </div>
+      );
+    }
 
     return (
-      <div className="flex flex-wrap gap-2">
-        {uniqueValues.map((val, idx) => (
-          <Badge
-            key={val}
-            variant={column.filterValue.includes(val) ? "default" : "outline"}
-            className={`cursor-pointer ${column.filterValue.includes(val) ? COLORS[idx % COLORS.length] : ""}`}
-            onClick={() => handleBadgeClick(val)}
-          >
-            {val}
-          </Badge>
-        ))}
-      </div>
+      <Input
+        placeholder={`Filter ${column.column}...`}
+        value={filterValue}
+        onChange={(e) => onChange(column, e.target.value)}
+        className="w-full"
+        size="sm"
+      />
     );
   }
-
-  return (
-    <Input
-      placeholder={`Filter ${column}...`}
-      value={column.filterValue}
-      onChange={(e) => onChange(column, e.target.value)}
-      className="w-full"
-      size="sm"
-    />
-  );
-});
+);
 
 const HeaderCell = React.memo(
   ({
@@ -306,6 +380,7 @@ const HeaderCell = React.memo(
     onFilterChange,
     filterRange,
     onDisableColumn,
+    filterValue,
   }) => (
     <TableHead>
       <div className="w-full">
@@ -330,12 +405,10 @@ const HeaderCell = React.memo(
                 variant="ghost"
                 size="icon"
                 className={
-                  (typeof column.filterValue === "string" &&
-                    column.filterValue.length > 0) ||
-                  column.filterValue?.min !== undefined ||
-                  column.filterValue?.max !== undefined ||
-                  (Array.isArray(column.filterValue) &&
-                    column.filterValue.length > 0)
+                  (typeof filterValue === "string" && filterValue.length > 0) ||
+                  filterValue?.min !== undefined ||
+                  filterValue?.max !== undefined ||
+                  (Array.isArray(filterValue) && filterValue.length > 0)
                     ? "text-primary h-6 w-4 p-0 flex "
                     : "text-muted-foreground opacity-40 h-6 w-4 p-0 flex "
                 }
@@ -350,6 +423,7 @@ const HeaderCell = React.memo(
                   column={column}
                   filterRange={filterRange}
                   onChange={onFilterChange}
+                  filterValue={filterValue}
                 />
               </div>
             </PopoverContent>
@@ -415,8 +489,9 @@ const ScrollTable = React.memo(({ data }) => {
     updateSettings("sortConfig", { column: column.column, direction });
   };
 
-  const handleFilterChange = (key, value) => {
-    updateSettings("filters", { ...settings.filters, [key]: value });
+  const handleFilterChange = (c, value) => {
+    console.log("Filter change", c.column, value);
+    updateSettings("filters", { ...settings.filters, [c.column]: value });
   };
 
   const toggleLayer = (layer) => {
@@ -475,36 +550,7 @@ const ScrollTable = React.memo(({ data }) => {
     columns.forEach((c) => {
       const key = c.column;
       if (settings.filters[key]) {
-        const filterType = c.filterType;
-        const filterMap = c.filterMap ? c.filterMap : (val) => val;
-
-        if (filterType === "range") {
-          processed = processed.filter((item) => {
-            const value = parseInt(filterMap(c.value(item)));
-            return (
-              !value ||
-              (value >= settings.filters[key].min &&
-                value <= settings.filters[key].max)
-            );
-          });
-        } else if (filterType === "badge") {
-          processed = processed.filter(
-            (item) =>
-              !c.value(item) ||
-              settings.filters[key].length == 0 ||
-              settings.filters[key].includes(
-                filterMap(c.value(item)).toString().toLowerCase()
-              )
-          );
-        } else {
-          processed = settings.filters[key]
-            ? processed.filter((item) =>
-                String(filterMap(c.value(item)))
-                  .toLowerCase()
-                  .includes(settings.filters[key].toLowerCase())
-              )
-            : processed;
-        }
+        processed = c.filter(processed, settings.filters[key]);
       }
     });
 
@@ -520,8 +566,8 @@ const ScrollTable = React.memo(({ data }) => {
         return processed;
       }
       processed.sort((a, b) => {
-        const aV = orDummy(c.value(a));
-        const bV = orDummy(c.value(b));
+        const aV = orDummy(c.sortValue(a));
+        const bV = orDummy(c.sortValue(b));
 
         if (aV < bV) {
           return settings.sortConfig.direction === "ascending" ? -1 : 1;
@@ -593,6 +639,7 @@ const ScrollTable = React.memo(({ data }) => {
                   column={c}
                   sortConfig={settings.sortConfig}
                   onSort={handleSort}
+                  filterValue={settings.filters[c.column]}
                   onFilterChange={handleFilterChange}
                   filterRange={filterRanges[c.column]}
                   onDisableColumn={(col) =>
