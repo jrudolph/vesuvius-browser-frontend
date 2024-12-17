@@ -3,10 +3,10 @@ import { Server, Monitor } from "lucide-react";
 
 const formatDate = (timestamp) => {
   try {
-    return new Date(timestamp).toISOString();
+    return new Date(Number(timestamp)).toISOString();
   } catch (err) {
     console.warn("Failed to parse date:", timestamp, err);
-    return "";
+    return "error";
   }
 };
 
