@@ -9,6 +9,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Github } from "lucide-react";
+import StatusBar from "./components/StatusBar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -97,6 +98,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             of Kentucky.
           </div>
         </div>
+        <StatusBar />
       </footer>
     </div>
   );

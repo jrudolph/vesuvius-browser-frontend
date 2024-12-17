@@ -28,9 +28,9 @@ export default defineConfig({
           });
         },
       },
-      "^(/api/segments.*)|(^/scroll.*)": {
         //target: "http://localhost:8089",
         target: "https://vesuvius.virtual-void.net",
+      "^(/api/.*)|(^/scroll.*)": {
         changeOrigin: true,
         secure: true,
       },

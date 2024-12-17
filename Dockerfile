@@ -12,7 +12,9 @@ RUN git reset --hard HEAD
 
 WORKDIR /tmp/
 
-RUN npx vite build
+ARG BUILD_VERSION=latest
+ENV VITE_BUILD_VERSION=$BUILD_VERSION
+RUN VITE_BUILD_GIT_VERSION=`git rev-parse --short HEAD` VITE_BUILD_TIME=`date +%s000` npx vite build
 
 FROM node:23 AS node-runner
 
