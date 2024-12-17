@@ -139,7 +139,7 @@ class Column {
   filterType: string;
   filterMap: Function;
   columnDisplay: Function;
-  constructor(label, column, filterType, filterMap, columnDisplay) {
+  constructor(label, column, filterType, { filterMap, columnDisplay } = {}) {
     this.label = label;
     this.column = column;
     this.filterType = filterType;
@@ -149,6 +149,29 @@ class Column {
 
   value(row) {
     return row[this.column];
+  }
+  display(row, colorFor) {
+    return this.column === "id" ? (
+      <div className="flex flex-nowrap gap-1">
+        <Link
+          to={`/scroll/${row.scroll.oldId}/segment/${row.id}/`}
+          className="text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          {this.value(row)}
+        </Link>
+        <a href={row.urls.baseUrl} target="_blank">
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
+    ) : this.columnDisplay ? (
+      this.columnDisplay(this.value(row), colorFor)
+    ) : this.filterType == "badge" && this.value(row) ? (
+      <Badge className={colorFor(this.column, this.value(row))}>
+        {this.value(row)}
+      </Badge>
+    ) : (
+      this.value(row)
+    );
   }
 
   filterRangeFor(fullData) {
@@ -175,8 +198,11 @@ class Column {
 }
 
 const columns = [
-  new Column("Volume", "volume", "badge", getVolumeId, VolumeBadge),
-  new Column("Segment ID", "id"),
+  new Column("Volume", "volume", "badge", {
+    filterMap: getVolumeId,
+    columnDisplay: VolumeBadge,
+  }),
+  new Column("Segment ID", "id", "id"),
   new Column("Author", "author", "badge"),
   new Column("Width", "width", "range"),
   new Column("Height", "height", "range"),
@@ -290,7 +316,7 @@ const HeaderCell = React.memo(
             onClick={() => onSort(column)}
             className="flex font-semibold justify-between items-center h-6 w-6 p-0"
           >
-            {sortConfig.column !== column ? (
+            {sortConfig.column !== column.column ? (
               <ArrowUpDown className="ml-2 h-4 w-4" />
             ) : sortConfig.direction === "ascending" ? (
               <ChevronUp className="ml-2 h-4 w-4" />
@@ -381,12 +407,12 @@ const ScrollTable = React.memo(({ data }) => {
   const handleSort = (column) => {
     let direction = "ascending";
     if (
-      settings.sortConfig.column === column &&
+      settings.sortConfig.column === column.column &&
       settings.sortConfig.direction === "ascending"
     ) {
       direction = "descending";
     }
-    updateSettings("sortConfig", { column, direction });
+    updateSettings("sortConfig", { column: column.column, direction });
   };
 
   const handleFilterChange = (key, value) => {
@@ -487,7 +513,12 @@ const ScrollTable = React.memo(({ data }) => {
     };
 
     if (settings.sortConfig.column) {
-      const c = settings.sortConfig.column;
+      const column = settings.sortConfig.column;
+      const c = columns.find((col) => col.column === column);
+      if (!c) {
+        console.log("Column not found", column);
+        return processed;
+      }
       processed.sort((a, b) => {
         const aV = orDummy(c.value(a));
         const bV = orDummy(c.value(b));
@@ -567,7 +598,7 @@ const ScrollTable = React.memo(({ data }) => {
                   onDisableColumn={(col) =>
                     updateSettings(
                       "visibleColumns",
-                      settings.visibleColumns.filter((c) => c !== col)
+                      settings.visibleColumns.filter((c) => c !== col.column)
                     )
                   }
                 />
@@ -655,29 +686,9 @@ const ScrollTable = React.memo(({ data }) => {
                 .filter(({ column }) =>
                   settings.visibleColumns.includes(column)
                 )
-                .map(({ column, columnDisplay, filterType }) => (
-                  <TableCell key={column}>
-                    {column === "id" ? (
-                      <div className="flex flex-nowrap gap-1">
-                        <Link
-                          to={`/scroll/${row.scroll.oldId}/segment/${row.id}/`}
-                          className="text-blue-600 hover:text-blue-800 hover:underline"
-                        >
-                          {row[column]}
-                        </Link>
-                        <a href={row.urls.baseUrl} target="_blank">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </div>
-                    ) : columnDisplay ? (
-                      columnDisplay(row[column], colorFor)
-                    ) : filterType == "badge" && row[column] ? (
-                      <Badge className={colorFor(column, row[column])}>
-                        {row[column]}
-                      </Badge>
-                    ) : (
-                      row[column]
-                    )}
+                .map((column) => (
+                  <TableCell key={column.column}>
+                    {column.display(row, colorFor)}
                   </TableCell>
                 ))}
               {settings.showImages && (
