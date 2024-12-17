@@ -32,7 +32,7 @@ const StatusBar = () => {
     };
 
     fetchBuildInfo();
-    const interval = setInterval(fetchBuildInfo, 5 * 60 * 1000);
+    const interval = setInterval(fetchBuildInfo, 10 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
