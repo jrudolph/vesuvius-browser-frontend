@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
+import { Toggle } from "@/components/ui/toggle";
 import { Link } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -11,7 +12,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import {
-  Table,
   TableBody,
   TableCell,
   TableHead,
@@ -31,10 +31,17 @@ import {
   Filter,
   X,
   ExternalLink,
+  Settings2,
+  Grid2x2,
+  Square,
+  Grid3X3,
+  Grid3x3,
+  Grid2X2,
 } from "lucide-react";
 import TableSettings from "./TableSettings";
 import VolumeBadge from "./VolumeBadge";
 import RangeBar from "./RangeBar";
+import { Separator } from "./ui/separator";
 
 const STORAGE_KEY = "vesuvius-table-settings";
 
@@ -109,6 +116,7 @@ const defaultSettings = {
     author: [],
   },
   selectedLayers: ["outline", "composite", "grand-prize_17_32"],
+  layerSize: "small",
   sortConfig: {
     column: null,
     direction: "ascending",
@@ -126,7 +134,7 @@ const defaultSettings = {
   showImages: true,
   activeScrollType: "scrolls",
   activeScrollId: "PHercParis4",
-  version: 3,
+  version: 4,
 };
 
 const getVolumeId = (volume) => {
@@ -470,32 +478,40 @@ const HeaderCell = React.memo(
 );
 
 const ImagePreview = React.memo(
-  ({ url, label, scrollNum, segmentId, layerKey }) => (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <div className="flex flex-col items-center">
-            <Link
-              to={`/scroll/${scrollNum}/segment/${segmentId}/${layerKey ? `#layer=${layerKey}` : ""}`}
-            >
-              <img
-                src={`${url}?width=120&height=80`}
-                alt={label}
-                className="w-36 h-24 object-cover rounded"
-                loading="lazy"
-              />
-              <span className="text-xs text-gray-600 mt-1 text-center break-words w-20">
-                {label}
-              </span>
-            </Link>
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{label}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  )
+  ({ url, label, scrollNum, segmentId, layerKey, size }) => {
+    const { width, height, classes } = {
+      small: { width: 120, height: 80, classes: "w-36 h-24" },
+      medium: { width: 240, height: 160, classes: "w-72 h-48" },
+      large: { width: 480, height: 320, classes: "w-144 h-96" },
+    }[size];
+
+    return (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="flex flex-col items-center">
+              <Link
+                to={`/scroll/${scrollNum}/segment/${segmentId}/${layerKey ? `#layer=${layerKey}` : ""}`}
+              >
+                <img
+                  src={`${url}?width=${width}&height=${height}`}
+                  alt={label}
+                  className={`${classes} object-cover rounded`}
+                  loading="lazy"
+                />
+                <span className="text-xs text-gray-600 mt-1 text-center break-words w-20">
+                  {label}
+                </span>
+              </Link>
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{label}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
+  }
 );
 
 const ScrollTable = React.memo(({ data }) => {
@@ -538,6 +554,10 @@ const ScrollTable = React.memo(({ data }) => {
 
   const resetSettings = () => {
     setSettings(defaultSettings);
+  };
+
+  const setLayerSize = (size) => {
+    updateSettings("layerSize", size);
   };
 
   useEffect(() => {
@@ -690,11 +710,38 @@ const ScrollTable = React.memo(({ data }) => {
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button variant="ghost" size="icon">
-                            <Filter className="h-4 w-4" />
+                            <Settings2 className="h-4 w-4" />
                           </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-80">
                           <div className="p-4 border-b flex gap-2 flex-wrap">
+                            <Toggle
+                              pressed={settings.layerSize === "small"}
+                              onPressedChange={() => setLayerSize("small")}
+                              aria-label="Small view"
+                              className="data-[state=on]:bg-gray-200"
+                            >
+                              <Grid3x3 className="h-4 w-4" />
+                            </Toggle>
+                            <Toggle
+                              pressed={settings.layerSize === "medium"}
+                              onPressedChange={() => setLayerSize("medium")}
+                              aria-label="Medium view"
+                              className="data-[state=on]:bg-gray-200"
+                            >
+                              <Grid2X2 className="h-4 w-4" />
+                            </Toggle>
+                            <Toggle
+                              pressed={settings.layerSize === "large"}
+                              onPressedChange={() => setLayerSize("large")}
+                              aria-label="Large view"
+                              className="data-[state=on]:bg-gray-200"
+                            >
+                              <Square className="h-4 w-4" />
+                            </Toggle>
+
+                            <Separator />
+
                             <Badge
                               variant={
                                 settings.selectedLayers.length ===
@@ -726,7 +773,7 @@ const ScrollTable = React.memo(({ data }) => {
                               Filter
                             </Badge>
 
-                            <div className="w-px h-6 bg-gray-200 mx-2" />
+                            <Separator />
 
                             {Object.entries(layerLabels).map(([key, label]) => (
                               <Badge
@@ -792,6 +839,7 @@ const ScrollTable = React.memo(({ data }) => {
                               scrollNum={row.scroll.oldId}
                               segmentId={row.id}
                               layerKey={key}
+                              size={settings.layerSize}
                             />
                           ))}
                       </div>
