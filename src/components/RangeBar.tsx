@@ -35,7 +35,7 @@ const Range = ({ min = 0, max = 100, start = 25, end = 75 }) => {
     <div className="w-full" ref={containerRef}>
       {showValues && (
         <div className="flex items-center">
-          <div className="" />
+          {showLabels && <div className="w-6" />}
           <div className="flex-1 relative">
             <div className="h-4 text-xs text-gray-600">
               <span
@@ -49,21 +49,25 @@ const Range = ({ min = 0, max = 100, start = 25, end = 75 }) => {
               </span>
               <span
                 className="absolute"
-                style={{ left: `${endPercent}%`, transform: "translateX(0%)" }}
+                style={{
+                  left: `${endPercent}%`,
+                  transform: "translateX(-0%)",
+                }}
               >
                 {validEnd}
               </span>
             </div>
           </div>
-          <div className="" />
+          {showLabels && <div className="w-6" />}
         </div>
       )}
 
       <div className="flex items-center">
-        <span className="text-xs text-gray-500 w-6 text-right pr-2">
-          {showLabels && validMin}
-        </span>
-
+        {showLabels && (
+          <span className="text-xs text-gray-500 w-6 text-right pr-2">
+            {validMin}
+          </span>
+        )}
         <div className="flex-1 relative h-2 bg-gray-100 rounded-full">
           <div
             className="absolute inset-y-0 bg-blue-400 rounded-full"
@@ -73,10 +77,9 @@ const Range = ({ min = 0, max = 100, start = 25, end = 75 }) => {
             }}
           />
         </div>
-
-        <span className="text-xs text-gray-500 w-6 pl-2">
-          {showLabels && validMax}
-        </span>
+        {showLabels && (
+          <span className="text-xs text-gray-500 w-6 pl-2">{validMax}</span>
+        )}
       </div>
     </div>
   );
