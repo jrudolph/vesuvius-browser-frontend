@@ -109,7 +109,7 @@ const defaultSettings = {
   },
   selectedLayers: ["outline", "composite", "grand-prize_17_32"],
   sortConfig: {
-    key: null,
+    column: null,
     direction: "ascending",
   },
   filterByLayers: false,
@@ -133,21 +133,56 @@ const getVolumeId = (volume) => {
   return volume.volume;
 };
 
+class Column {
+  label: string;
+  column: string;
+  filterType: string;
+  filterMap: Function;
+  columnDisplay: Function;
+  constructor(label, column, filterType, filterMap, columnDisplay) {
+    this.label = label;
+    this.column = column;
+    this.filterType = filterType;
+    this.filterMap = filterMap;
+    this.columnDisplay = columnDisplay;
+  }
+
+  value(row) {
+    return row[this.column];
+  }
+
+  filterRangeFor(fullData) {
+    const filterMapFn = this.filterMap ? this.filterMap : (val) => val;
+    if (this.filterType === "range") {
+      const columnData = fullData.map((item) =>
+        this.value(item) ? parseInt(filterMapFn(this.value(item))) : 0
+      );
+      const min = Math.min(...columnData);
+      const max = Math.max(...columnData);
+      return [min, max];
+    } else if (this.filterType === "badge") {
+      const columnData = fullData
+        .filter((item) => filterMapFn(this.value(item)))
+        .map((item) =>
+          filterMapFn(this.value(item)).toString().trim().toLowerCase()
+        );
+      const uniqueValues = [...new Set(columnData)];
+      return uniqueValues;
+    } else {
+      return [];
+    }
+  }
+}
+
 const columns = [
-  {
-    label: "Volume",
-    column: "volume",
-    filterType: "badge",
-    filterMap: getVolumeId,
-    columnDisplay: VolumeBadge,
-  },
-  { label: "Segment ID", column: "id" },
-  { label: "Author", column: "author", filterType: "badge" },
-  { label: "Width", column: "width", filterType: "range" },
-  { label: "Height", column: "height", filterType: "range" },
-  { label: "Area/cm²", column: "areaCm2", filterType: "range" },
-  { label: "Min Z", column: "minZ", filterType: "range" },
-  { label: "Max Z", column: "maxZ", filterType: "range" },
+  new Column("Volume", "volume", "badge", getVolumeId, VolumeBadge),
+  new Column("Segment ID", "id"),
+  new Column("Author", "author", "badge"),
+  new Column("Width", "width", "range"),
+  new Column("Height", "height", "range"),
+  new Column("Area/cm²", "areaCm2", "range"),
+  new Column("Min Z", "minZ", "range"),
+  new Column("Max Z", "maxZ", "range"),
 ];
 
 const useLocalStorage = (key, initialValue) => {
@@ -176,67 +211,65 @@ const useLocalStorage = (key, initialValue) => {
   return [storedValue, setValue];
 };
 
-const FilterInput = React.memo(
-  ({ column, value, onChange, type = "text", filterRange = [0, 1000] }) => {
-    if (type === "range") {
-      const [range, setRange] = useState(filterRange);
-      return (
-        <div className="filter-slider px-2">
-          <div className="flex justify-between text-xs mb-1">
-            <span>{filterRange[0]}</span>
-            <span>{filterRange[1]}</span>
-          </div>
-
-          <Slider
-            value={range}
-            min={filterRange[0]}
-            max={filterRange[1]}
-            step={10}
-            className="mt-2"
-            onValueChange={(newRange) => {
-              setRange(newRange);
-              onChange(column, { min: newRange[0], max: newRange[1] });
-            }}
-          />
+const FilterInput = React.memo(({ column, onChange, filterRange }) => {
+  if (column.type === "range") {
+    const [range, setRange] = useState(filterRange);
+    return (
+      <div className="filter-slider px-2">
+        <div className="flex justify-between text-xs mb-1">
+          <span>{column.filterRange[0]}</span>
+          <span>{column.filterRange[1]}</span>
         </div>
-      );
-    } else if (type === "badge") {
-      const handleBadgeClick = (val) => {
-        const newValue = value.includes(val)
-          ? value.filter((v) => v !== val)
-          : [...value, val];
-        onChange(column, newValue);
-      };
-      const uniqueValues = filterRange.sort();
-      // use colors from array above based on value idx
 
-      return (
-        <div className="flex flex-wrap gap-2">
-          {uniqueValues.map((val, idx) => (
-            <Badge
-              key={val}
-              variant={value.includes(val) ? "default" : "outline"}
-              className={`cursor-pointer ${value.includes(val) ? COLORS[idx % COLORS.length] : ""}`}
-              onClick={() => handleBadgeClick(val)}
-            >
-              {val}
-            </Badge>
-          ))}
-        </div>
-      );
-    }
+        <Slider
+          value={range}
+          min={column.filterRange[0]}
+          max={column.filterRange[1]}
+          step={10}
+          className="mt-2"
+          onValueChange={(newRange) => {
+            setRange(newRange);
+            onChange(column, { min: newRange[0], max: newRange[1] });
+          }}
+        />
+      </div>
+    );
+  } else if (column.type === "badge") {
+    const handleBadgeClick = (val) => {
+      const newValue = column.filterValue.includes(val)
+        ? column.filterValue.filter((v) => v !== val)
+        : [...column.filterValue, val];
+      onChange(column, newValue);
+    };
+    const uniqueValues = filterRange.sort();
+    // use colors from array above based on value idx
 
     return (
-      <Input
-        placeholder={`Filter ${column}...`}
-        value={value}
-        onChange={(e) => onChange(column, e.target.value)}
-        className="w-full"
-        size="sm"
-      />
+      <div className="flex flex-wrap gap-2">
+        {uniqueValues.map((val, idx) => (
+          <Badge
+            key={val}
+            variant={column.filterValue.includes(val) ? "default" : "outline"}
+            className={`cursor-pointer ${column.filterValue.includes(val) ? COLORS[idx % COLORS.length] : ""}`}
+            onClick={() => handleBadgeClick(val)}
+          >
+            {val}
+          </Badge>
+        ))}
+      </div>
     );
   }
-);
+
+  return (
+    <Input
+      placeholder={`Filter ${column}...`}
+      value={column.filterValue}
+      onChange={(e) => onChange(column, e.target.value)}
+      className="w-full"
+      size="sm"
+    />
+  );
+});
 
 const HeaderCell = React.memo(
   ({
@@ -244,10 +277,7 @@ const HeaderCell = React.memo(
     column,
     sortConfig,
     onSort,
-    filterValue,
     onFilterChange,
-    filterType,
-    filterMap,
     filterRange,
     onDisableColumn,
   }) => (
@@ -260,7 +290,7 @@ const HeaderCell = React.memo(
             onClick={() => onSort(column)}
             className="flex font-semibold justify-between items-center h-6 w-6 p-0"
           >
-            {sortConfig.key !== column ? (
+            {sortConfig.column !== column ? (
               <ArrowUpDown className="ml-2 h-4 w-4" />
             ) : sortConfig.direction === "ascending" ? (
               <ChevronUp className="ml-2 h-4 w-4" />
@@ -274,10 +304,12 @@ const HeaderCell = React.memo(
                 variant="ghost"
                 size="icon"
                 className={
-                  (typeof filterValue === "string" && filterValue.length > 0) ||
-                  filterValue?.min !== undefined ||
-                  filterValue?.max !== undefined ||
-                  (Array.isArray(filterValue) && filterValue.length > 0)
+                  (typeof column.filterValue === "string" &&
+                    column.filterValue.length > 0) ||
+                  column.filterValue?.min !== undefined ||
+                  column.filterValue?.max !== undefined ||
+                  (Array.isArray(column.filterValue) &&
+                    column.filterValue.length > 0)
                     ? "text-primary h-6 w-4 p-0 flex "
                     : "text-muted-foreground opacity-40 h-6 w-4 p-0 flex "
                 }
@@ -290,11 +322,8 @@ const HeaderCell = React.memo(
                 <h4 className="font-medium leading-none">Filter {label}</h4>
                 <FilterInput
                   column={column}
-                  value={filterValue}
                   filterRange={filterRange}
                   onChange={onFilterChange}
-                  type={filterType}
-                  filterMap={filterMap}
                 />
               </div>
             </PopoverContent>
@@ -349,15 +378,15 @@ const ScrollTable = React.memo(({ data }) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handleSort = (key) => {
+  const handleSort = (column) => {
     let direction = "ascending";
     if (
-      settings.sortConfig.key === key &&
+      settings.sortConfig.column === column &&
       settings.sortConfig.direction === "ascending"
     ) {
       direction = "descending";
     }
-    updateSettings("sortConfig", { key, direction });
+    updateSettings("sortConfig", { column, direction });
   };
 
   const handleFilterChange = (key, value) => {
@@ -425,7 +454,7 @@ const ScrollTable = React.memo(({ data }) => {
 
         if (filterType === "range") {
           processed = processed.filter((item) => {
-            const value = parseInt(filterMap(item[key]));
+            const value = parseInt(filterMap(c.value(item)));
             return (
               !value ||
               (value >= settings.filters[key].min &&
@@ -435,16 +464,16 @@ const ScrollTable = React.memo(({ data }) => {
         } else if (filterType === "badge") {
           processed = processed.filter(
             (item) =>
-              !item[key] ||
+              !c.value(item) ||
               settings.filters[key].length == 0 ||
               settings.filters[key].includes(
-                filterMap(item[key]).toString().toLowerCase()
+                filterMap(c.value(item)).toString().toLowerCase()
               )
           );
         } else {
           processed = settings.filters[key]
             ? processed.filter((item) =>
-                String(filterMap(item[key]))
+                String(filterMap(c.value(item)))
                   .toLowerCase()
                   .includes(settings.filters[key].toLowerCase())
               )
@@ -457,10 +486,11 @@ const ScrollTable = React.memo(({ data }) => {
       return value && value.toString().trim().length > 0 ? value : "-1";
     };
 
-    if (settings.sortConfig.key) {
+    if (settings.sortConfig.column) {
+      const c = settings.sortConfig.column;
       processed.sort((a, b) => {
-        const aV = orDummy(a[settings.sortConfig.key]);
-        const bV = orDummy(b[settings.sortConfig.key]);
+        const aV = orDummy(c.value(a));
+        const bV = orDummy(c.value(b));
 
         if (aV < bV) {
           return settings.sortConfig.direction === "ascending" ? -1 : 1;
@@ -481,35 +511,13 @@ const ScrollTable = React.memo(({ data }) => {
     settings.selectedLayers,
   ]);
 
-  const filterRangeFor = (column, filterType, filterMap) => {
-    const filterMapFn = filterMap ? filterMap : (val) => val;
-    if (filterType === "range") {
-      const columnData = data.map((item) =>
-        item[column] ? parseInt(filterMapFn(item[column])) : 0
-      );
-      const min = Math.min(...columnData);
-      const max = Math.max(...columnData);
-      return [min, max];
-    } else if (filterType === "badge") {
-      const columnData = data
-        .filter((item) => filterMapFn(item[column]))
-        .map((item) =>
-          filterMapFn(item[column]).toString().trim().toLowerCase()
-        );
-      const uniqueValues = [...new Set(columnData)];
-      return uniqueValues;
-    } else {
-      return [];
-    }
-  };
-
   const [filterRanges, filterColors] = useMemo(() => {
     const ranges = {};
     const colors = {};
-    columns.forEach(({ column, filterType, filterMap }) => {
-      const values = filterRangeFor(column, filterType, filterMap);
-      ranges[column] = values;
-      colors[column] = values.map((_, idx) => COLORS[idx % COLORS.length]);
+    columns.forEach((c) => {
+      const values = c.filterRangeFor(data);
+      ranges[c.column] = values;
+      colors[c.column] = values.map((_, idx) => COLORS[idx % COLORS.length]);
     });
     return [ranges, colors];
   }, [data]);
@@ -547,18 +555,15 @@ const ScrollTable = React.memo(({ data }) => {
           <TableRow className="align-top">
             {columns
               .filter(({ column }) => settings.visibleColumns.includes(column))
-              .map(({ label, column, filterType, filterMap }) => (
+              .map((c) => (
                 <HeaderCell
-                  key={column}
-                  label={label}
-                  column={column}
+                  key={c.column}
+                  label={c.label}
+                  column={c}
                   sortConfig={settings.sortConfig}
                   onSort={handleSort}
-                  filterValue={settings.filters[column]}
                   onFilterChange={handleFilterChange}
-                  filterType={filterType}
-                  filterMap={filterMap}
-                  filterRange={filterRanges[column]}
+                  filterRange={filterRanges[c.column]}
                   onDisableColumn={(col) =>
                     updateSettings(
                       "visibleColumns",
