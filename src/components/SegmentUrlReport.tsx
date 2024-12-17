@@ -219,7 +219,7 @@ const SegmentUrlReport = () => {
     direction: "asc",
   });
   const [expandedGroups, setExpandedGroups] = useState(new Set());
-  const [isGrouped, setIsGrouped] = useState(false);
+  const [isGrouped, setIsGrouped] = useState(true);
 
   useEffect(() => {
     fetch("/api/segments/url-report")

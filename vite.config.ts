@@ -14,7 +14,6 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      //"/.*/dzi": {
       "^(.*/dzi)|(/openseadragon/.*)": {
         target: "https://vesuvius.virtual-void.net",
         changeOrigin: true,
@@ -28,9 +27,9 @@ export default defineConfig({
           });
         },
       },
-        //target: "http://localhost:8089",
-        target: "https://vesuvius.virtual-void.net",
       "^(/api/.*)|(^/scroll.*)": {
+        target: "http://localhost:8089",
+        //target: "https://vesuvius.virtual-void.net",
         changeOrigin: true,
         secure: true,
       },

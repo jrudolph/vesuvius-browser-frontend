@@ -35,6 +35,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <Link to="/report" className="px-3 py-2">
+                  Data Server URL Report
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <a href="/license" className="px-3 py-2">
                   License
                 </a>
