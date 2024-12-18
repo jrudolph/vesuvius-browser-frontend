@@ -557,6 +557,10 @@ const ScrollTable = React.memo(({ data }) => {
   const resetSettings = () => {
     setSettings(defaultSettings);
   };
+  const resetFilters = () => {
+    updateSettings("filters", defaultSettings.filters);
+    updateSettings("filterByLayers", false);
+  };
 
   const setLayerSize = (size) => {
     updateSettings("layerSize", size);
@@ -670,7 +674,7 @@ const ScrollTable = React.memo(({ data }) => {
           variant="outline"
           size="sm"
           className="ml-2 px-1"
-          onClick={() => updateSettings("filters", defaultSettings.filters)}
+          onClick={resetFilters}
         >
           <Filter className="h-4 w-4 mr-1" />
           Reset Filters
