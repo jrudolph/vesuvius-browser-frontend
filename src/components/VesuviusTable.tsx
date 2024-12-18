@@ -171,10 +171,16 @@ class Column {
     return this.value(row);
   }
   minRange(fullData) {
-    return Math.min(...fullData.map((item) => this.value(item)));
+    return Math.min(
+      ...fullData.map((item) =>
+        this.value(item) ? this.value(item) : Number.MAX_SAFE_INTEGER
+      )
+    );
   }
   maxRange(fullData) {
-    return Math.max(...fullData.map((item) => this.value(item)));
+    return Math.max(
+      ...fullData.map((item) => (this.value(item) ? this.value(item) : 0))
+    );
   }
   ellipsizeMeshId(str) {
     const parts = str.split("_");
