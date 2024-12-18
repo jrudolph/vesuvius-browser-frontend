@@ -181,11 +181,13 @@ class Column {
     if (parts.length < 4) return str;
 
     // Extract numeric parts (6 digits)
-    const numbers = parts.filter((part) => /^\d+$/.test(part));
+    const numbers0 = parts.filter((part) => /^\d+$/.test(part));
 
     // Find trailing single digit if it exists
     const lastPart = parts[parts.length - 1];
     const hasTrailingNumber = /^\d+$/.test(lastPart) && lastPart.length === 1;
+    const numbers =
+      numbers0.length >= 1 && numbers0[0] == "0" ? numbers0.slice(1) : numbers0;
 
     if (numbers.length >= 2) {
       if (hasTrailingNumber) {
