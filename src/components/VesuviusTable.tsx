@@ -187,7 +187,7 @@ class Column {
     if (parts.length < 4) return str;
 
     // Extract numeric parts (6 digits)
-    const numbers0 = parts.filter((part) => /^\d+$/.test(part));
+    const numbers0 = parts.filter((part) => /^-?\d+$/.test(part));
 
     // Find trailing single digit if it exists
     const lastPart = parts[parts.length - 1];
