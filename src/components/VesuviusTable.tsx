@@ -808,18 +808,18 @@ const ScrollTable = React.memo(({ data }) => {
 
             <TableBody>
               {filteredAndSortedData.map((row) => (
-                <TableRow key={`${row.scroll.id}-${row.id}`} className="h-12">
+                <TableRow key={`${row.scroll.id}-${row.id}`}>
                   {columns
                     .filter(({ column }) =>
                       settings.visibleColumns.includes(column)
                     )
                     .map((column) => (
-                      <TableCell key={column.column}>
+                      <TableCell key={column.column} className="p-1">
                         {column.display(row, colorFor)}
                       </TableCell>
                     ))}
                   {settings.showImages && (
-                    <TableCell>
+                    <TableCell className="p-1">
                       <div className="flex gap-4 flex-wrap">
                         {row.layers
                           .filter((key) =>
@@ -925,7 +925,7 @@ const VesuviusTable = () => {
     return <div>Error: {error}</div>;
   } else
     return (
-      <div className="p-4">
+      <div className="p-1">
         <Tabs
           value={settings.activeScrollType}
           onValueChange={(value) => {
@@ -961,7 +961,7 @@ const VesuviusTable = () => {
           </TabsList>
         </Tabs>
 
-        <div className="p-4">
+        <div className="p-0">
           <ScrollTable data={filteredData} showImages={settings.showImages} />
         </div>
       </div>
