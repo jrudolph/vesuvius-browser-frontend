@@ -419,7 +419,7 @@ const HeaderCell = React.memo(
     onDisableColumn,
     filterValue,
   }) => (
-    <TableHead>
+    <TableHead className="p-0 px-4 py-1">
       <div className="w-full">
         <div>{label}</div>
         <div className="flex items-center space-x-1">
@@ -655,7 +655,7 @@ const ScrollTable = React.memo(({ data }) => {
 
   return (
     <div className="rounded-md border">
-      <div className="p-4 border-b">
+      <div className="p-1">
         <TableSettings
           columns={columns}
           visibleColumns={settings.visibleColumns}
@@ -669,10 +669,10 @@ const ScrollTable = React.memo(({ data }) => {
         <Button
           variant="outline"
           size="sm"
-          className="ml-2"
+          className="ml-2 px-1"
           onClick={() => updateSettings("filters", defaultSettings.filters)}
         >
-          <Filter className="h-4 w-4 mr-2" />
+          <Filter className="h-4 w-4 mr-1" />
           Reset Filters
         </Button>
       </div>
@@ -927,46 +927,47 @@ const VesuviusTable = () => {
     return <div>Error: {error}</div>;
   } else
     return (
-      <div className="p-1">
-        <Tabs
-          value={settings.activeScrollType}
-          onValueChange={(value) => {
-            setSettings((prev) => ({
-              ...prev,
-              activeScrollType: value,
-              activeScrollId: scrollGroups.filter(
-                ([, data]) =>
-                  data[0].scroll.isFragment === (value === "fragments")
-              )[0][0],
-            }));
-          }}
-        >
-          <TabsList className="mb-4">
-            <TabsTrigger value="scrolls">Scrolls</TabsTrigger>
-            <TabsTrigger value="fragments">Fragments</TabsTrigger>
-          </TabsList>
-        </Tabs>
+      <>
+        <div className="flex p-1 gap-4">
+          <Tabs
+            value={settings.activeScrollType}
+            onValueChange={(value) => {
+              setSettings((prev) => ({
+                ...prev,
+                activeScrollType: value,
+                activeScrollId: scrollGroups.filter(
+                  ([, data]) =>
+                    data[0].scroll.isFragment === (value === "fragments")
+                )[0][0],
+              }));
+            }}
+          >
+            <TabsList className="mb-4">
+              <TabsTrigger value="scrolls">Scrolls</TabsTrigger>
+              <TabsTrigger value="fragments">Fragments</TabsTrigger>
+            </TabsList>
+          </Tabs>
 
-        <Tabs
-          value={settings.activeScrollId || scrollTabs[0]?.id}
-          onValueChange={(value) =>
-            setSettings((prev) => ({ ...prev, activeScrollId: value }))
-          }
-          className="mb-4"
-        >
-          <TabsList>
-            {scrollTabs.map((tab) => (
-              <TabsTrigger key={tab.id} value={tab.id}>
-                {tab.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-        </Tabs>
-
+          <Tabs
+            value={settings.activeScrollId || scrollTabs[0]?.id}
+            onValueChange={(value) =>
+              setSettings((prev) => ({ ...prev, activeScrollId: value }))
+            }
+            className="mb-4"
+          >
+            <TabsList>
+              {scrollTabs.map((tab) => (
+                <TabsTrigger key={tab.id} value={tab.id}>
+                  {tab.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+        </div>
         <div className="p-0">
           <ScrollTable data={filteredData} showImages={settings.showImages} />
         </div>
-      </div>
+      </>
     );
 };
 

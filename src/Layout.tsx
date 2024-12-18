@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="container mx-auto px-4 py-1 flex justify-between items-center">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
