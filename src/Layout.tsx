@@ -85,7 +85,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <main className="flex-1 px-1 py-1">{children}</main>
 
-      <footer className="border-t py-6 text-sm text-muted-foreground">
+      <footer className="border-t py-0 pt-1 text-sm text-muted-foreground">
         <div className="container mx-auto px-4 space-y-2">
           <div>
             <a
