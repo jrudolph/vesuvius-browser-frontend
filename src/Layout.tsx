@@ -98,10 +98,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <a href="https://virtual-void.net" className="hover:underline">
               Johannes Rudolph
             </a>
-          </div>
-          <div>
-            All EduceLab-Scrolls data is copyrighted by EduceLab/The University
-            of Kentucky.
+            . All EduceLab-Scrolls data is copyrighted by EduceLab/The
+            University of Kentucky.
           </div>
         </div>
         <StatusBar />
