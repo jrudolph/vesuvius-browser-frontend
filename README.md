@@ -20,7 +20,7 @@ Run the development server:
 npm run dev
 ```
 
-Browse to http://localhost:5173 to see the frontend.
+Browse to http://localhost:5173 to see the frontend. Any changes to the source code will be automatically reloaded.
 
 For development, you can configure the vite proxy in `vite.config.ts` to point to a local backend server. The
 default configuration will use the public API and resources at https://vesuvius.virtual-void.net/.

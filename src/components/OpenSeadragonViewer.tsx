@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import OpenSeadragon from "openseadragon";
 
 const OpenSeadragonViewer = ({
@@ -144,6 +144,11 @@ const OpenSeadragonViewer = ({
     viewer.addHandler("pan", updateHash);
     viewer.addHandler("zoom", updateHash);
     viewer.addHandler("rotate", updateHash);
+
+    viewer.addHandler("canvas-scroll", function (event) {
+      event.preventDefault = event.originalEvent.ctrlKey; // prevent zooming in web page when ctrl is pressed
+      event.preventDefaultAction = !event.originalEvent.ctrlKey; // prevent zooming in image viewer when ctrl is not pressed
+    });
 
     viewer.addHandler("open", () => {
       const hash = fragment;
