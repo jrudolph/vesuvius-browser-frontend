@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import OpenSeadragon from "openseadragon";
 
 const OpenSeadragonViewer = ({
@@ -9,9 +9,10 @@ const OpenSeadragonViewer = ({
   extraLayers = [],
 }) => {
   const viewerRef = useRef(null);
-  //const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
   const [position, setPosition] = useState("");
   const [fragment, setFragment] = useState({});
+  const [viewerContainer, setViewerContainer] = useState(null);
 
   useEffect(() => {
     const getFragmentValues = () => {
@@ -30,8 +31,125 @@ const OpenSeadragonViewer = ({
     return relative;
   };
 
+  const requestInfo = useRef({
+    cachedPosition: { x: 0, y: 0, z: 0 },
+    lastRequest: { u: 0, v: 0 },
+    lastResponse: { x: 0, y: 0, z: 0 },
+    nextRequest: { u: 0, v: 0 },
+    callback: null,
+  });
+
   useEffect(() => {
-    let index = 0;
+    const viewer = viewerRef.current;
+    console.log("viewer", viewer);
+    if (!viewer || !viewerContainer) return;
+
+    const layers = allLayers;
+    function updatePosition(position) {
+      const positionEl = document.querySelectorAll("#position")[0];
+      if (position) {
+        const webPoint = position;
+        const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+        const tiledImage = viewer.world.getItemAt(index);
+        const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
+        const u = imagePoint.x.toFixed();
+        const v = imagePoint.y.toFixed();
+
+        requestXYZ(webPoint, (data) => {
+          requestInfo.current.cachedPosition = data;
+          positionEl.innerHTML =
+            `u: ${u} v: ${v} layer:${layers[index]}` +
+            "<br>" +
+            `x: ${data.x}, y: ${data.y}, z: ${data.z}`;
+        });
+
+        let color;
+        if (
+          requestInfo.current.lastRequest.u == u &&
+          requestInfo.current.lastRequest.v == v
+        ) {
+          color = "";
+        } else {
+          color = "color: #eee;";
+        }
+        positionEl.innerHTML =
+          `u: ${u} v: ${v} layer:${layers[index]}` +
+          "<br>" +
+          `<span style="${color}">x: ${requestInfo.current.cachedPosition.x}, y: ${requestInfo.current.cachedPosition.y}, z: ${requestInfo.current.cachedPosition.z}</span>`;
+      } else {
+        positionEl.innerHTML = "";
+      }
+    }
+    function requestXYZ(webPoint, f) {
+      const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+      const tiledImage = viewer.world.getItemAt(index);
+      const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
+      const u = imagePoint.x.toFixed();
+      const v = imagePoint.y.toFixed();
+
+      if (
+        requestInfo.current.lastRequest.u == u &&
+        requestInfo.current.lastRequest.v == v
+      ) {
+        f(requestInfo.current.lastResponse);
+      } else if (ppmSocket && ppmSocket.readyState == 1) {
+        requestInfo.current.nextRequest.u = u;
+        requestInfo.current.nextRequest.v = v;
+
+        requestInfo.current.callback = f;
+        ppmSocket.send(`${u},${v}`);
+      }
+    }
+
+    // WebSocket connection setup
+    const connectSocket = () => {
+      new OpenSeadragon.MouseTracker({
+        element: viewerContainer,
+        moveHandler: function (event) {
+          updatePosition(event.position);
+        },
+      });
+
+      //const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+      //const host = window.location.host;
+      const protocol = "wss://";
+      const host = "vesuvius.virtual-void.net";
+      const socket = new WebSocket(
+        `${protocol}${host}/scroll/${scrollNum}/segment/${segmentId}/ppm`
+      );
+
+      socket.onopen = () => {
+        console.log("socket open", socket.readyState);
+        setPpmSocket(socket);
+      };
+
+      socket.onclose = () => {
+        setTimeout(connectSocket, 3000);
+      };
+
+      socket.onmessage = (event) => {
+        if (event.data === "ping") return;
+
+        const [u, v, x, y, z] = event.data.split(",").map(Number);
+        if (
+          requestInfo.current.nextRequest.u == u &&
+          requestInfo.current.nextRequest.v == v
+        ) {
+          requestInfo.current.lastResponse = { x: x, y: y, z: z };
+          requestInfo.current.lastRequest = requestInfo.current.nextRequest;
+          if (requestInfo.current.callback) {
+            requestInfo.current.callback(requestInfo.current.lastResponse);
+            requestInfo.current.callback = null;
+          }
+        }
+      };
+    };
+
+    connectSocket();
+  }, [scrollNum, segmentId, allLayers, viewerRef, index, viewerContainer]);
+
+  useEffect(() => {
+    //let index = 0;
 
     const viewer = OpenSeadragon({
       id: containerId,
@@ -85,7 +203,7 @@ const OpenSeadragonViewer = ({
         nextIndex = viewer.world.getItemCount() - 1;
       if (nextIndex < 0) nextIndex = 0;
 
-      index = nextIndex;
+      setIndex(nextIndex);
 
       const newTiledImage = viewer.world.getItemAt(nextIndex);
       oldTiledImage.setOpacity(0);
@@ -153,6 +271,7 @@ const OpenSeadragonViewer = ({
     viewer.addHandler("open", () => {
       const hash = fragment;
       viewer.canvas.focus();
+      setViewerContainer(viewer.container);
 
       const params = {};
       hash.split("&").forEach((hk) => {
@@ -209,98 +328,6 @@ const OpenSeadragonViewer = ({
     };
 
     viewer.pixelsPerArrowPress = 250;
-
-    let cachedPosition = { x: 0, y: 0, z: 0 };
-    const lastRequest = { u: 0, v: 0 };
-    const lastResponse = { x: 0, y: 0, z: 0 };
-    let nextRequest = { u: 0, v: 0 };
-    let callback = null;
-    const layers = allLayers;
-    function updatePosition(position) {
-      const positionEl = document.querySelectorAll("#position")[0];
-      if (position) {
-        const webPoint = position;
-        const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-        const tiledImage = viewer.world.getItemAt(index);
-        const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
-        const u = imagePoint.x.toFixed();
-        const v = imagePoint.y.toFixed();
-
-        requestXYZ(webPoint, (data) => {
-          cachedPosition = data;
-          positionEl.innerHTML =
-            `u: ${u} v: ${v} layer:${layers[index]}` +
-            "<br>" +
-            `x: ${data.x}, y: ${data.y}, z: ${data.z}`;
-        });
-
-        let color;
-        if (lastRequest.u == u && lastRequest.v == v) {
-          color = "";
-        } else {
-          color = "color: #eee;";
-        }
-        positionEl.innerHTML =
-          `u: ${u} v: ${v} layer:${layers[index]}` +
-          "<br>" +
-          `<span style="${color}">x: ${cachedPosition.x}, y: ${cachedPosition.y}, z: ${cachedPosition.z}</span>`;
-      } else {
-        positionEl.innerHTML = "";
-      }
-    }
-    function requestXYZ(webPoint, f) {
-      const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-      const tiledImage = viewer.world.getItemAt(index);
-      const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
-      const u = imagePoint.x.toFixed();
-      const v = imagePoint.y.toFixed();
-
-      if (lastRequest.u == u && lastRequest.v == v) {
-        f(lastResponse);
-      } else if (ppmSocket && ppmSocket.readyState == 1) {
-        nextRequest = { u: u, v: v };
-
-        callback = f;
-        ppmSocket.send(`${u},${v}`);
-      }
-    }
-
-    // WebSocket connection setup
-    const connectSocket = () => {
-      new OpenSeadragon.MouseTracker({
-        element: viewer.container,
-        moveHandler: function (event) {
-          updatePosition(event.position);
-        },
-      });
-
-      //const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
-      //const host = window.location.host;
-      const protocol = "wss://";
-      const host = "vesuvius.virtual-void.net";
-      const socket = new WebSocket(
-        `${protocol}${host}/scroll/${scrollNum}/segment/${segmentId}/ppm`
-      );
-
-      socket.onopen = () => {
-        setPpmSocket(socket);
-      };
-
-      socket.onclose = () => {
-        setTimeout(connectSocket, 3000);
-      };
-
-      socket.onmessage = (event) => {
-        if (event.data === "ping") return;
-
-        const [u, v, x, y, z] = event.data.split(",").map(Number);
-        setPosition(
-          `u: ${u} v: ${v} layer:${allLayers[index]}\nx: ${x}, y: ${y}, z: ${z}`
-        );
-      };
-    };
-
-    connectSocket();
 
     return () => {
       if (viewerRef.current) {
