@@ -121,8 +121,7 @@ const OpenSeadragonViewer = ({
         .viewportToImageZoom(viewer.viewport.getZoom(true))
         .toFixed(3);
       const newHash = `#u=${u}&v=${v}&zoom=${zoom}&rot=${rot}&flip=${flip}&layer=${allLayers[index]}`;
-      //history.replaceState(undefined, undefined, newHash);
-      window.location.hash = newHash;
+      history.replaceState(undefined, undefined, newHash);
     };
 
     const showNext = () => {
