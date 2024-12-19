@@ -114,6 +114,7 @@ const defaultSettings = {
     volumeVoxelSize: [],
     id: "",
     author: [],
+    layers: false,
   },
   selectedLayers: ["outline", "composite", "grand-prize_17_32"],
   layerSize: "small",
@@ -121,7 +122,6 @@ const defaultSettings = {
     column: null,
     direction: "ascending",
   },
-  filterByLayers: false,
   visibleColumns: [
     "volume",
     "id",
@@ -134,7 +134,7 @@ const defaultSettings = {
   showImages: true,
   activeScrollType: "scrolls",
   activeScrollId: "PHercParis4",
-  version: 4,
+  version: 5,
 };
 
 const getVolumeId = (volume) => {
@@ -565,7 +565,6 @@ const ScrollTable = React.memo(({ data }) => {
   };
   const resetFilters = () => {
     updateSettings("filters", defaultSettings.filters);
-    updateSettings("filterByLayers", false);
   };
 
   const setLayerSize = (size) => {
@@ -600,7 +599,7 @@ const ScrollTable = React.memo(({ data }) => {
   const filteredAndSortedData = useMemo(() => {
     let processed = [...data];
 
-    if (settings.filterByLayers) {
+    if (settings.filters.layers) {
       processed = processed.filter((item) =>
         item.layers.some((layer) => settings.selectedLayers.includes(layer))
       );
@@ -639,13 +638,7 @@ const ScrollTable = React.memo(({ data }) => {
     }
 
     return processed;
-  }, [
-    settings.filters,
-    settings.sortConfig,
-    data,
-    settings.filterByLayers,
-    settings.selectedLayers,
-  ]);
+  }, [settings.filters, settings.sortConfig, data, settings.selectedLayers]);
 
   const [filterRanges, filterColors] = useMemo(() => {
     const ranges = {};
@@ -772,14 +765,14 @@ const ScrollTable = React.memo(({ data }) => {
 
                             <Badge
                               variant={
-                                settings.filterByLayers ? "default" : "outline"
+                                settings.filters.layers ? "default" : "outline"
                               }
                               className="cursor-pointer font-semibold"
                               onClick={() =>
-                                updateSettings(
-                                  "filterByLayers",
-                                  !settings.filterByLayers
-                                )
+                                updateSettings("filters", {
+                                  ...settings.filters,
+                                  layers: !settings.filters.layers,
+                                })
                               }
                             >
                               Filter
