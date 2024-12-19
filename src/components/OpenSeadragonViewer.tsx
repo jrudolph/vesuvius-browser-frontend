@@ -134,7 +134,7 @@ const OpenSeadragonViewer = ({
         positionEl.innerHTML =
           `u: ${u} v: ${v} layer:${layers[index]}` +
           "<br>" +
-          `<span style="${color}">x: ${requestInfo.current.cachedPosition.x}, y: ${requestInfo.current.cachedPosition.y}, z: ${requestInfo.current.cachedPosition.z}</span>`;
+          `<span style="${color}">x: ${requestInfo.current.cachedPosition.x}, y: ${requestInfo.current.cachedPosition.y}, z: ${requestInfo.current.cachedPosition.z}</span> (Shift-click to open volume at this position)`;
       } else {
         positionEl.innerHTML = "";
       }
@@ -171,8 +171,6 @@ const OpenSeadragonViewer = ({
   ]);
 
   useEffect(() => {
-    //let index = 0;
-
     const viewer = OpenSeadragon({
       id: containerId,
       prefixUrl: "/openseadragon/images/",
