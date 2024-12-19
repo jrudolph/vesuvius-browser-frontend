@@ -40,11 +40,70 @@ const OpenSeadragonViewer = ({
   });
 
   useEffect(() => {
+    const connectSocket = () => {
+      //const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+      //const host = window.location.host;
+      const protocol = "wss://";
+      const host = "vesuvius.virtual-void.net";
+      const socket = new WebSocket(
+        `${protocol}${host}/scroll/${scrollNum}/segment/${segmentId}/ppm`
+      );
+
+      socket.onopen = () => {
+        setPpmSocket(socket);
+      };
+
+      socket.onclose = () => {
+        setTimeout(connectSocket, 3000);
+      };
+
+      socket.onmessage = (event) => {
+        if (event.data === "ping") return;
+
+        const [u, v, x, y, z] = event.data.split(",").map(Number);
+        if (
+          requestInfo.current.nextRequest.u == u &&
+          requestInfo.current.nextRequest.v == v
+        ) {
+          requestInfo.current.lastResponse = { x: x, y: y, z: z };
+          requestInfo.current.lastRequest = requestInfo.current.nextRequest;
+          if (requestInfo.current.callback) {
+            requestInfo.current.callback(requestInfo.current.lastResponse);
+            requestInfo.current.callback = null;
+          }
+        }
+      };
+    };
+
+    connectSocket();
+  }, [scrollNum, segmentId]);
+
+  useEffect(() => {
     const viewer = viewerRef.current;
-    console.log("viewer", viewer);
     if (!viewer || !viewerContainer) return;
 
     const layers = allLayers;
+
+    function requestXYZ(webPoint, f) {
+      const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
+      const tiledImage = viewer.world.getItemAt(index);
+      const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
+      const u = imagePoint.x.toFixed();
+      const v = imagePoint.y.toFixed();
+
+      if (
+        requestInfo.current.lastRequest.u == u &&
+        requestInfo.current.lastRequest.v == v
+      ) {
+        f(requestInfo.current.lastResponse);
+      } else if (ppmSocket && ppmSocket.readyState == 1) {
+        requestInfo.current.nextRequest.u = u;
+        requestInfo.current.nextRequest.v = v;
+        requestInfo.current.callback = f;
+        ppmSocket.send(`${u},${v}`);
+      }
+    }
+
     function updatePosition(position) {
       const positionEl = document.querySelectorAll("#position")[0];
       if (position) {
@@ -80,73 +139,36 @@ const OpenSeadragonViewer = ({
         positionEl.innerHTML = "";
       }
     }
-    function requestXYZ(webPoint, f) {
-      const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-      const tiledImage = viewer.world.getItemAt(index);
-      const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
-      const u = imagePoint.x.toFixed();
-      const v = imagePoint.y.toFixed();
 
-      if (
-        requestInfo.current.lastRequest.u == u &&
-        requestInfo.current.lastRequest.v == v
-      ) {
-        f(requestInfo.current.lastResponse);
-      } else if (ppmSocket && ppmSocket.readyState == 1) {
-        requestInfo.current.nextRequest.u = u;
-        requestInfo.current.nextRequest.v = v;
+    new OpenSeadragon.MouseTracker({
+      element: viewerContainer,
+      moveHandler: function (event) {
+        updatePosition(event.position);
+      },
+    });
+    viewer.addHandler("canvas-click", function (event) {
+      if (event.shift) {
+        // The canvas-click event gives us a position in web coordinates.
+        const webPoint = event.position;
 
-        requestInfo.current.callback = f;
-        ppmSocket.send(`${u},${v}`);
+        if (scrollNum == 1)
+          requestXYZ(webPoint, (data) => {
+            window.open(
+              `https://neuroglancer-demo.appspot.com/#!%7B%22dimensions%22:%7B%22z%22:%5B1%2C%22%22%5D%2C%22y%22:%5B1%2C%22%22%5D%2C%22x%22:%5B1%2C%22%22%5D%7D%2C%22position%22:%5B${data.z}%2C${data.y}%2C${data.x}%5D%2C%22crossSectionOrientation%22:%5B0.5%2C0.5%2C-0.5%2C-0.5%5D%2C%22crossSectionScale%22:9.97573495387749%2C%22projectionOrientation%22:%5B-0.15356537699699402%2C0.12269044667482376%2C0.013992083258926868%2C0.9803922176361084%5D%2C%22projectionScale%22:13614.041135923644%2C%22layers%22:%5B%7B%22type%22:%22image%22%2C%22source%22:%7B%22url%22:%22zarr2://https://dl.ash2txt.org/other/dev/scrolls/1/volumes/54keV_7.91um.zarr/%22%2C%22subsources%22:%7B%22default%22:true%2C%22bounds%22:true%7D%2C%22enableDefaultSubsources%22:false%7D%2C%22tab%22:%22source%22%2C%22name%22:%2254keV_7.91um.zarr%22%7D%5D%2C%22selectedLayer%22:%7B%22visible%22:true%2C%22layer%22:%2254keV_7.91um.zarr%22%7D%2C%22layout%22:%224panel%22%7D`,
+              "_blank"
+            );
+          });
       }
-    }
-
-    // WebSocket connection setup
-    const connectSocket = () => {
-      new OpenSeadragon.MouseTracker({
-        element: viewerContainer,
-        moveHandler: function (event) {
-          updatePosition(event.position);
-        },
-      });
-
-      //const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
-      //const host = window.location.host;
-      const protocol = "wss://";
-      const host = "vesuvius.virtual-void.net";
-      const socket = new WebSocket(
-        `${protocol}${host}/scroll/${scrollNum}/segment/${segmentId}/ppm`
-      );
-
-      socket.onopen = () => {
-        console.log("socket open", socket.readyState);
-        setPpmSocket(socket);
-      };
-
-      socket.onclose = () => {
-        setTimeout(connectSocket, 3000);
-      };
-
-      socket.onmessage = (event) => {
-        if (event.data === "ping") return;
-
-        const [u, v, x, y, z] = event.data.split(",").map(Number);
-        if (
-          requestInfo.current.nextRequest.u == u &&
-          requestInfo.current.nextRequest.v == v
-        ) {
-          requestInfo.current.lastResponse = { x: x, y: y, z: z };
-          requestInfo.current.lastRequest = requestInfo.current.nextRequest;
-          if (requestInfo.current.callback) {
-            requestInfo.current.callback(requestInfo.current.lastResponse);
-            requestInfo.current.callback = null;
-          }
-        }
-      };
-    };
-
-    connectSocket();
-  }, [scrollNum, segmentId, allLayers, viewerRef, index, viewerContainer]);
+    });
+  }, [
+    ppmSocket,
+    scrollNum,
+    segmentId,
+    allLayers,
+    viewerRef,
+    index,
+    viewerContainer,
+  ]);
 
   useEffect(() => {
     //let index = 0;
