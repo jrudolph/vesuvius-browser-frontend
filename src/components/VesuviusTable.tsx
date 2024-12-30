@@ -590,7 +590,6 @@ const ScrollTable = React.memo(({ data }) => {
   };
 
   const handleFilterChange = (c, value) => {
-    console.log("Filter change", c.column, value);
     updateSettings("filters", { ...settings.filters, [c.column]: value });
   };
 
