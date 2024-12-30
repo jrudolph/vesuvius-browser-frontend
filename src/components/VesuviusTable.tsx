@@ -417,7 +417,7 @@ const FilterInput = React.memo(
             <Badge
               key={val}
               variant={filterValue.includes(val) ? "default" : "outline"}
-              className={`cursor-pointer ${filterValue.includes(val) ? colorFor(column, val) : ""}`}
+              className={`cursor-pointer ${filterValue.includes(val) ? colorFor(column.column, val) : ""}`}
               onClick={() => handleBadgeClick(val)}
             >
               {val}
@@ -435,11 +435,11 @@ const FilterInput = React.memo(
       const uniqueValues = filterRange;
       return (
         <div className="flex flex-wrap gap-2">
-          {uniqueValues.map((val, idx) => (
+          {uniqueValues.map((val) => (
             <Badge
               key={val}
               variant={filterValue.includes(val) ? "default" : "outline"}
-              className={`cursor-pointer ${filterValue.includes(val) ? colorFor(column, val) : ""}`}
+              className={`cursor-pointer ${filterValue.includes(val) ? colorFor(column.column, val) : ""}`}
               onClick={() => handleBadgeClick(val)}
             >
               {val}
