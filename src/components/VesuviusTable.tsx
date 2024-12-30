@@ -32,9 +32,7 @@ import {
   X,
   ExternalLink,
   Settings2,
-  Grid2x2,
   Square,
-  Grid3X3,
   Grid3x3,
   Grid2X2,
 } from "lucide-react";
@@ -136,7 +134,7 @@ const defaultSettings = {
   showImages: true,
   activeScrollType: "scrolls",
   activeScrollId: "PHercParis4",
-  version: 5,
+  version: 6,
 };
 
 class Column {
