@@ -114,6 +114,7 @@ const defaultSettings = {
     volumeVoxelSize: [],
     id: "",
     author: [],
+    labels: [],
     layers: false,
   },
   selectedLayers: ["outline", "composite", "grand-prize_17_32"],
@@ -126,6 +127,7 @@ const defaultSettings = {
     "volume",
     "id",
     "author",
+    "labels",
     "width",
     "height",
     "areaCm2",
@@ -135,10 +137,6 @@ const defaultSettings = {
   activeScrollType: "scrolls",
   activeScrollId: "PHercParis4",
   version: 5,
-};
-
-const getVolumeId = (volume) => {
-  return volume.volume;
 };
 
 class Column {
@@ -225,6 +223,14 @@ class Column {
       <Badge className={colorFor(this.column, this.value(row))}>
         {this.value(row)}
       </Badge>
+    ) : this.filterType == "multibadge" && this.value(row) ? (
+      <div className="space-x-1">
+        {this.value(row).map((label) => (
+          <Badge key={label} className={colorFor(this.column, label)}>
+            {label}
+          </Badge>
+        ))}
+      </div>
     ) : (
       this.value(row)
     );
@@ -241,6 +247,12 @@ class Column {
           filterMapFn(this.value(item)).toString().trim().toLowerCase()
         );
       const uniqueValues = [...new Set(columnData)];
+      return uniqueValues;
+    } else if (this.filterType === "multibadge") {
+      const columnData = fullData
+        .filter((item) => filterMapFn(this.value(item)))
+        .map((item) => filterMapFn(this.value(item)));
+      const uniqueValues = [...new Set(columnData.flat())];
       return uniqueValues;
     } else {
       return [];
@@ -265,6 +277,14 @@ class Column {
             filterMap(this.value(item)).toString().toLowerCase()
           )
       );
+    } else if (filterType === "multibadge") {
+      processed = processed.filter((item) =>
+        filterValue.length === 0
+          ? true
+          : filterValue.every((val) =>
+              filterMap(this.value(item)).includes(val)
+            )
+      );
     } else {
       processed = filterValue
         ? processed.filter((item) =>
@@ -278,6 +298,10 @@ class Column {
   }
 }
 
+const getVolumeId = (volume) => {
+  return volume.volume;
+};
+
 const volumeRange = (fullData) => {
   const maxZ = Math.max(...fullData.map((item) => item.volume.maxZ));
   return [0, maxZ];
@@ -290,6 +314,9 @@ const columns = [
   }),
   new Column("Segment ID", "id", "id"),
   new Column("Author", "author", "badge"),
+  new Column("Labels", "labels", "multibadge", {
+    filterRangeFor: () => ["autosegmented", "official", "community"],
+  }),
   new Column("Width", "width", "range"),
   new Column("Height", "height", "range"),
   new Column("Area/cm²", "areaCm2", "range", {
@@ -346,7 +373,7 @@ const useLocalStorage = (key, initialValue) => {
 };
 
 const FilterInput = React.memo(
-  ({ column, onChange, filterRange, filterValue }) => {
+  ({ column, onChange, filterRange, filterValue, colorFor }) => {
     if (column.filterType === "range") {
       const [range, setRange] = useState([
         filterValue ? filterValue.min : filterRange[0],
@@ -383,16 +410,38 @@ const FilterInput = React.memo(
           : [...filterValue, val];
         onChange(column, newValue);
       };
-      const uniqueValues = filterRange.sort();
+      const uniqueValues = filterRange;
       // use colors from array above based on value idx
 
+      return (
+        <div className="flex flex-wrap gap-2">
+          {uniqueValues.map((val) => (
+            <Badge
+              key={val}
+              variant={filterValue.includes(val) ? "default" : "outline"}
+              className={`cursor-pointer ${filterValue.includes(val) ? colorFor(column, val) : ""}`}
+              onClick={() => handleBadgeClick(val)}
+            >
+              {val}
+            </Badge>
+          ))}
+        </div>
+      );
+    } else if (column.filterType === "multibadge") {
+      const handleBadgeClick = (val) => {
+        const newValue = filterValue.includes(val)
+          ? filterValue.filter((v) => v !== val)
+          : [...filterValue, val];
+        onChange(column, newValue);
+      };
+      const uniqueValues = filterRange;
       return (
         <div className="flex flex-wrap gap-2">
           {uniqueValues.map((val, idx) => (
             <Badge
               key={val}
               variant={filterValue.includes(val) ? "default" : "outline"}
-              className={`cursor-pointer ${filterValue.includes(val) ? COLORS[idx % COLORS.length] : ""}`}
+              className={`cursor-pointer ${filterValue.includes(val) ? colorFor(column, val) : ""}`}
               onClick={() => handleBadgeClick(val)}
             >
               {val}
@@ -424,6 +473,7 @@ const HeaderCell = React.memo(
     filterRange,
     onDisableColumn,
     filterValue,
+    colorFor,
   }) => (
     <TableHead className="p-0 px-4 py-1">
       <div className="w-full">
@@ -467,6 +517,7 @@ const HeaderCell = React.memo(
                   filterRange={filterRange}
                   onChange={onFilterChange}
                   filterValue={filterValue}
+                  colorFor={colorFor}
                 />
               </div>
             </PopoverContent>
@@ -706,6 +757,7 @@ const ScrollTable = React.memo(({ data }) => {
                           )
                         )
                       }
+                      colorFor={colorFor}
                     />
                   ))}
                 {settings.showImages && (
