@@ -9,7 +9,7 @@ const OpenSeadragonViewer = ({
   extraLayers = [],
 }) => {
   const viewerRef = useRef(null);
-  const [index, setIndex] = useState(0);
+  const [extIndex, setExtIndex] = useState(0);
   const [position, setPosition] = useState("");
   const [fragment, setFragment] = useState({});
   const [viewerContainer, setViewerContainer] = useState(null);
@@ -86,7 +86,7 @@ const OpenSeadragonViewer = ({
 
     function requestXYZ(webPoint, f) {
       const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-      const tiledImage = viewer.world.getItemAt(index);
+      const tiledImage = viewer.world.getItemAt(extIndex);
       const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
       const u = imagePoint.x.toFixed();
       const v = imagePoint.y.toFixed();
@@ -109,7 +109,7 @@ const OpenSeadragonViewer = ({
       if (position) {
         const webPoint = position;
         const viewportPoint = viewer.viewport.pointFromPixel(webPoint);
-        const tiledImage = viewer.world.getItemAt(index);
+        const tiledImage = viewer.world.getItemAt(extIndex);
         const imagePoint = tiledImage.viewportToImageCoordinates(viewportPoint);
         const u = imagePoint.x.toFixed();
         const v = imagePoint.y.toFixed();
@@ -117,7 +117,7 @@ const OpenSeadragonViewer = ({
         requestXYZ(webPoint, (data) => {
           requestInfo.current.cachedPosition = data;
           positionEl.innerHTML =
-            `u: ${u} v: ${v} layer:${layers[index]}` +
+            `u: ${u} v: ${v} layer:${layers[extIndex]}` +
             "<br>" +
             `x: ${data.x}, y: ${data.y}, z: ${data.z}`;
         });
@@ -132,7 +132,7 @@ const OpenSeadragonViewer = ({
           color = "color: #eee;";
         }
         positionEl.innerHTML =
-          `u: ${u} v: ${v} layer:${layers[index]}` +
+          `u: ${u} v: ${v} layer:${layers[extIndex]}` +
           "<br>" +
           `<span style="${color}">x: ${requestInfo.current.cachedPosition.x}, y: ${requestInfo.current.cachedPosition.y}, z: ${requestInfo.current.cachedPosition.z}</span> (Shift-click to open volume at this position)`;
       } else {
@@ -166,7 +166,7 @@ const OpenSeadragonViewer = ({
     segmentId,
     allLayers,
     viewerRef,
-    index,
+    extIndex,
     viewerContainer,
   ]);
 
@@ -191,6 +191,7 @@ const OpenSeadragonViewer = ({
 
     viewerRef.current = viewer;
     //setIndex(0);
+    let index = 0;
 
     const sibling = (idx, shownIdx) => {
       if (idx >= viewer.world.getItemCount())
@@ -223,7 +224,9 @@ const OpenSeadragonViewer = ({
         nextIndex = viewer.world.getItemCount() - 1;
       if (nextIndex < 0) nextIndex = 0;
 
-      setIndex(nextIndex);
+      console.log("show", nextIndex);
+      index = nextIndex;
+      setExtIndex(nextIndex);
 
       const newTiledImage = viewer.world.getItemAt(nextIndex);
       oldTiledImage.setOpacity(0);
@@ -265,10 +268,13 @@ const OpenSeadragonViewer = ({
     const showNext = () => {
       show(index + 1);
     };
+    const showPrevious = () => {
+      show(index - 1);
+    };
 
     viewer.bindSequenceControls();
     viewer.previousButton.removeAllHandlers("release");
-    viewer.previousButton.addHandler("release", () => show(index - 1));
+    viewer.previousButton.addHandler("release", () => showPrevious);
     viewer.nextButton.removeAllHandlers("release");
     viewer.nextButton.addHandler("release", showNext);
 
