@@ -186,6 +186,7 @@ const OpenSeadragonViewer = ({
       zoomPerClick: 1.0,
       preserveViewport: true,
       preload: true,
+      maxZoomLevel: 500,
       debugMode: false,
     });
 
