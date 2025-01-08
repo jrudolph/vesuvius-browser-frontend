@@ -275,7 +275,7 @@ const OpenSeadragonViewer = ({
 
     viewer.bindSequenceControls();
     viewer.previousButton.removeAllHandlers("release");
-    viewer.previousButton.addHandler("release", () => showPrevious);
+    viewer.previousButton.addHandler("release", showPrevious);
     viewer.nextButton.removeAllHandlers("release");
     viewer.nextButton.addHandler("release", showNext);
 
