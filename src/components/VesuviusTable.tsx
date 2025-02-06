@@ -180,22 +180,32 @@ class Column {
   }
   ellipsizeMeshId(str) {
     const parts = str.split("_");
-    if (parts.length < 4) return str;
 
-    // Extract numeric parts (6 digits)
+    // need to convert
+    // thaumato_20240821000000_mesh_window_250414_300414_flatboi     to thaumato_2024082100000...250414_300414
+    // thaumato_20241003234631_mesh_0_window_399831_449831_flatboi_1 to thaumato_20241003234631...399831_449831_1
+    // thaumato_2024_nov1_mesh_0_window_695437_745437_flatboi_2      to thaumato_2024_nov1...695437_745437_2
+    if (parts.length < 4 || parts[0] != "thaumato") return str;
+
+    // prefix is all before "mesh"
+    const prefix = parts.slice(1, parts.indexOf("mesh")).join("_");
+
     const numbers0 = parts.filter((part) => /^-?\d+$/.test(part));
 
     // Find trailing single digit if it exists
     const lastPart = parts[parts.length - 1];
     const hasTrailingNumber = /^\d+$/.test(lastPart) && lastPart.length === 1;
-    const numbers =
-      numbers0.length >= 1 && numbers0[0] == "0" ? numbers0.slice(1) : numbers0;
+    const numbers = hasTrailingNumber
+      ? // drop last and take last two
+        numbers0.slice(-3, -1)
+      : // just take last two
+        numbers0.slice(-2);
 
     if (numbers.length >= 2) {
       if (hasTrailingNumber) {
-        return `mesh...${numbers[0]}_${numbers[1]}..._${lastPart}`;
+        return `${prefix}...${numbers[0]}_${numbers[1]}..._${lastPart}`;
       }
-      return `mesh...${numbers[0]}_${numbers[1]}`;
+      return `${prefix}...${numbers[0]}_${numbers[1]}`;
     }
 
     return str;
