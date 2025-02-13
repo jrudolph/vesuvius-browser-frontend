@@ -104,6 +104,9 @@ export const layerLabels = {
   "first-letters-inklabels": "First Letters Inklabels",
   "polytrope-test3-predictions": "Polytrope Predictions",
   "polytrope-inklabels-2024-08-16": "Polytrope Inklabels",
+  "autogens-ink-forward": "Autogens Predictions",
+  "autogens-ink-reverse": "Autogens Predictions (reverse)",
+  inklabel: "Fragment Inklabels",
 };
 
 const defaultSettings = {
@@ -181,7 +184,7 @@ class Column {
   ellipsizeMeshId(str) {
     const parts = str.split("_");
 
-    // need to convert
+    // convert
     // thaumato_20240821000000_mesh_window_250414_300414_flatboi     to thaumato_2024082100000...250414_300414
     // thaumato_20241003234631_mesh_0_window_399831_449831_flatboi_1 to thaumato_20241003234631...399831_449831_1
     // thaumato_2024_nov1_mesh_0_window_695437_745437_flatboi_2      to thaumato_2024_nov1...695437_745437_2
